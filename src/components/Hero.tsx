@@ -225,38 +225,7 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    {/* Credentials */}
-                    <div
-                        style={{
-                            display: "flex",
-                            gap: 40,
-                            flexWrap: "wrap",
-                        }}
-                    >
-                        {[
-                            { value: "100+", label: "Brides Served" },
-                            { value: "7+", label: "Years Experience" },
-                            { value: "100%", label: "Bespoke Looks" },
-                        ].map((s) => (
-                            <div key={s.label} style={{ textAlign: "right" }}>
-                                <p
-                                    style={{
-                                        fontFamily: "var(--font-display)",
-                                        fontSize: "clamp(24px, 2.5vw, 40px)",
-                                        fontWeight: 300,
-                                        color: "#fff",
-                                        lineHeight: 1,
-                                        marginBottom: 4,
-                                    }}
-                                >
-                                    {s.value}
-                                </p>
-                                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)" }}>
-                                    {s.label}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
+
                 </div>
             </div>
 
