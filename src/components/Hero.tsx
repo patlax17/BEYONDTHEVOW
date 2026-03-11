@@ -42,39 +42,21 @@ export default function Hero() {
                     zIndex: 0,
                 }}
             >
-                {/* VIDEO PLACEHOLDER — swap this <div> for a <video> tag once the client provides the file */}
-                <div
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                     style={{
                         width: "100%",
                         height: "100%",
-                        background: `
-              radial-gradient(ellipse at 20% 70%, rgba(180,120,130,0.28) 0%, transparent 55%),
-              radial-gradient(ellipse at 80% 20%, rgba(201,169,110,0.15) 0%, transparent 50%),
-              linear-gradient(160deg, #0E0809 0%, #1A0E12 45%, #0C0A0C 100%)
-            `,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        display: "block",
                     }}
-                />
-                {/*
-          UNCOMMENT BELOW AND REMOVE THE DIV ABOVE ONCE YOU HAVE THE VIDEO:
-
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center",
-              display: "block",
-            }}
-          >
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
-        */}
+                >
+                    <source src="/hero-video.mp4" type="video/mp4" />
+                </video>
             </div>
 
             {/* Dark gradient overlay */}
