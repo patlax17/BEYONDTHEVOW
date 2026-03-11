@@ -6,10 +6,9 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
     { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
-    { label: "The Experience", href: "/experience" },
-    { label: "Journal", href: "/journal" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Bridal Makeup", href: "/bridal-makeup" },
+    { label: "How to Book", href: "/consultation" },
 ];
 
 export default function Navigation() {
@@ -106,7 +105,7 @@ export default function Navigation() {
                                 whiteSpace: "nowrap",
                             }}
                         >
-                            Luxury Wedding Atelier
+                            Bridal Beauty Atelier
                         </span>
                     </Link>
 
@@ -131,7 +130,9 @@ export default function Navigation() {
                                     fontWeight: 400,
                                     letterSpacing: "0.18em",
                                     textTransform: "uppercase",
-                                    color: textColor,
+                                    color: pathname === link.href
+                                        ? (isTransparent ? "var(--white)" : "var(--vogue-red)")
+                                        : textColor,
                                     textDecoration: "none",
                                     transition: "color 0.4s ease, opacity 0.3s ease",
                                     whiteSpace: "nowrap",
@@ -147,7 +148,7 @@ export default function Navigation() {
                     {/* Right side */}
                     <div style={{ display: "flex", alignItems: "center", gap: 20, flexShrink: 0 }}>
                         <Link
-                            href="/inquiry"
+                            href="/consultation"
                             className="btv-desktop-nav"
                             style={{
                                 display: "inline-flex",
@@ -168,7 +169,7 @@ export default function Navigation() {
                             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--black)")}
                             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--vogue-red)")}
                         >
-                            Begin Your Story
+                            Book a Consultation
                         </Link>
 
                         {/* Hamburger */}
@@ -249,7 +250,7 @@ export default function Navigation() {
                     </Link>
                 ))}
                 <Link
-                    href="/inquiry"
+                    href="/consultation"
                     onClick={() => setMenuOpen(false)}
                     style={{
                         marginTop: 16,
@@ -264,7 +265,7 @@ export default function Navigation() {
                         textDecoration: "none",
                     }}
                 >
-                    Begin Your Story
+                    Book a Consultation
                 </Link>
             </div>
 

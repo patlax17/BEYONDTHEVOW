@@ -3,21 +3,14 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 
-const stats = [
-    { value: "500+", label: "Hours per Wedding" },
-    { value: "12", label: "Countries" },
-    { value: "100%", label: "Bespoke" },
-    { value: "∞", label: "Intentionality" },
-];
-
 export default function Hero() {
-    const videoRef = useRef<HTMLDivElement>(null);
+    const overlayRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (!videoRef.current) return;
+            if (!overlayRef.current) return;
             const y = window.scrollY;
-            videoRef.current.style.transform = `translateY(${y * 0.35}px)`;
+            overlayRef.current.style.transform = `translateY(${y * 0.3}px)`;
         };
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
@@ -38,18 +31,61 @@ export default function Hero() {
                 background: "#080808",
             }}
         >
-            {/* Background gradient */}
+            {/* ─── VIDEO BACKGROUND ─── */}
+            {/* Replace the src below with your video file once ready */}
+            {/* e.g. src="/hero-video.mp4" */}
             <div
-                ref={videoRef}
+                ref={overlayRef}
                 style={{
                     position: "absolute",
-                    inset: "-15%",
-                    background: `
-            radial-gradient(ellipse at 15% 60%, rgba(55,55,143,0.35) 0%, transparent 55%),
-            radial-gradient(ellipse at 85% 25%, rgba(201,169,110,0.12) 0%, transparent 50%),
-            linear-gradient(160deg, #0E0E12 0%, #1A1218 40%, #0C0C0E 100%)
-          `,
+                    inset: "-10%",
                     zIndex: 0,
+                }}
+            >
+                {/* VIDEO PLACEHOLDER — swap this <div> for a <video> tag once the client provides the file */}
+                <div
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        background: `
+              radial-gradient(ellipse at 20% 70%, rgba(180,120,130,0.28) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 20%, rgba(201,169,110,0.15) 0%, transparent 50%),
+              linear-gradient(160deg, #0E0809 0%, #1A0E12 45%, #0C0A0C 100%)
+            `,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                />
+                {/*
+          UNCOMMENT BELOW AND REMOVE THE DIV ABOVE ONCE YOU HAVE THE VIDEO:
+
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+              display: "block",
+            }}
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+        */}
+            </div>
+
+            {/* Dark gradient overlay */}
+            <div
+                aria-hidden
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                        "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.15) 100%)",
+                    zIndex: 1,
                 }}
             />
 
@@ -60,8 +96,8 @@ export default function Hero() {
                     position: "absolute",
                     inset: 0,
                     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`,
-                    opacity: 0.5,
-                    zIndex: 1,
+                    opacity: 0.45,
+                    zIndex: 2,
                     pointerEvents: "none",
                 }}
             />
@@ -75,7 +111,7 @@ export default function Hero() {
                     right: "clamp(24px,8vw,140px)",
                     width: 1,
                     height: "55vh",
-                    background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.12), transparent)",
+                    background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent)",
                     zIndex: 2,
                 }}
             />
@@ -100,10 +136,10 @@ export default function Hero() {
                         animation: "fadeIn 1s ease 0.3s both",
                     }}
                 >
-                    Luxury Wedding Atelier — Worldwide
+                    Bridal Beauty Atelier — Beyond The Vow
                 </p>
 
-                {/* Main headline — contained, no overflow */}
+                {/* Main headline */}
                 <h1
                     style={{
                         fontFamily: "var(--font-display)",
@@ -116,11 +152,11 @@ export default function Hero() {
                         animation: "fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.4s both",
                     }}
                 >
-                    Beyond
+                    Your Most
                     <br />
-                    <em style={{ fontStyle: "italic", color: "rgba(255,255,255,0.55)" }}>the</em>
+                    <em style={{ fontStyle: "italic", color: "rgba(255,255,255,0.55)" }}>Beautiful</em>
                     <br />
-                    Expected.
+                    Day.
                 </h1>
 
                 {/* Sub + CTA row */}
@@ -134,7 +170,7 @@ export default function Hero() {
                         animation: "fadeUp 0.9s ease 0.8s both",
                     }}
                 >
-                    <div style={{ maxWidth: 400 }}>
+                    <div style={{ maxWidth: 420 }}>
                         <p
                             style={{
                                 fontFamily: "var(--font-display)",
@@ -146,12 +182,12 @@ export default function Hero() {
                                 lineHeight: 1.45,
                             }}
                         >
-                            Celebrations built on intentionality — where every detail speaks
-                            the language of your love.
+                            Flawless bridal artistry crafted for every complexion —
+                            because you deserve to feel as radiant as you look.
                         </p>
                         <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
                             <Link
-                                href="/inquiry"
+                                href="/consultation"
                                 style={{
                                     display: "inline-flex",
                                     alignItems: "center",
@@ -170,10 +206,10 @@ export default function Hero() {
                                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#A80000")}
                                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--vogue-red)")}
                             >
-                                Begin Your Story →
+                                Book a Consultation →
                             </Link>
                             <Link
-                                href="/portfolio"
+                                href="/gallery"
                                 style={{
                                     display: "inline-flex",
                                     alignItems: "center",
@@ -202,12 +238,12 @@ export default function Hero() {
                                     el.style.borderColor = "rgba(255,255,255,0.35)";
                                 }}
                             >
-                                View Our Work
+                                View Gallery
                             </Link>
                         </div>
                     </div>
 
-                    {/* Stats */}
+                    {/* Credentials */}
                     <div
                         style={{
                             display: "flex",
@@ -215,7 +251,11 @@ export default function Hero() {
                             flexWrap: "wrap",
                         }}
                     >
-                        {stats.map((s) => (
+                        {[
+                            { value: "100+", label: "Brides Served" },
+                            { value: "7+", label: "Years Experience" },
+                            { value: "100%", label: "Bespoke Looks" },
+                        ].map((s) => (
                             <div key={s.label} style={{ textAlign: "right" }}>
                                 <p
                                     style={{
@@ -229,10 +269,7 @@ export default function Hero() {
                                 >
                                     {s.value}
                                 </p>
-                                <p
-                                    className="eyebrow"
-                                    style={{ color: "rgba(255,255,255,0.3)" }}
-                                >
+                                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)" }}>
                                     {s.label}
                                 </p>
                             </div>

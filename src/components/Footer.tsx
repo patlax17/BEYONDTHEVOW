@@ -6,21 +6,20 @@ const footerLinks = {
     Studio: [
         { label: "About", href: "/about" },
         { label: "Our Philosophy", href: "/about#philosophy" },
-        { label: "The Team", href: "/about#team" },
     ],
-    Offerings: [
-        { label: "Full Planning", href: "/services#full-planning" },
-        { label: "Design Direction", href: "/services#design" },
-        { label: "Destination Weddings", href: "/services#destination" },
+    Services: [
+        { label: "Bridal Makeup", href: "/bridal-makeup" },
+        { label: "Full Bridal Package", href: "/bridal-makeup#full-bridal" },
+        { label: "Bridesmaids & Party", href: "/bridal-makeup#party" },
+        { label: "Airbrush Upgrade", href: "/bridal-makeup#airbrush" },
     ],
-    Work: [
-        { label: "Portfolio", href: "/portfolio" },
-        { label: "Journal", href: "/journal" },
-        { label: "The Experience", href: "/experience" },
+    Explore: [
+        { label: "Gallery", href: "/gallery" },
+        { label: "How to Book", href: "/consultation" },
     ],
     Connect: [
-        { label: "Start Your Inquiry", href: "/inquiry" },
-        { label: "Schedule a Call", href: "/inquiry#calendar" },
+        { label: "Book a Consultation", href: "/consultation" },
+        { label: "Email Us", href: "mailto:hello@beyondthevow.com" },
         { label: "Instagram", href: "https://instagram.com", target: "_blank" },
     ],
 };
@@ -57,16 +56,16 @@ export default function Footer() {
                                 color: "var(--white)",
                             }}
                         >
-                            Every love story deserves<br />
-                            <em>its own language.</em>
+                            Every bride deserves<br />
+                            <em>to feel radiant.</em>
                         </h2>
                         <p className="body-sm" style={{ color: "var(--light-grey)", maxWidth: 420 }}>
-                            We craft celebrations that are not just beautiful — they are unmistakably
-                            <em style={{ color: "var(--white)" }}> you</em>.
+                            We create looks that are not just beautiful — they are unmistakably{" "}
+                            <em style={{ color: "var(--white)" }}>you</em>.
                         </p>
                     </div>
-                    <Link href="/inquiry" className="btn-primary" style={{ whiteSpace: "nowrap" }}>
-                        <span>Begin Your Story</span>
+                    <Link href="/consultation" className="btn-primary" style={{ whiteSpace: "nowrap" }}>
+                        <span>Book a Consultation</span>
                     </Link>
                 </div>
 
@@ -132,7 +131,7 @@ export default function Footer() {
                         © 2026 Beyond The Vow. All rights reserved.
                     </p>
                     <div style={{ display: "flex", gap: 32 }}>
-                        {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((t) => (
+                        {["Privacy Policy", "Terms of Service"].map((t) => (
                             <Link
                                 key={t}
                                 href="#"

@@ -1,36 +1,42 @@
 "use client";
 
 import Hero from "@/components/Hero";
-import Portfolio from "@/components/Portfolio";
-import Timeline from "@/components/Timeline";
 import Link from "next/link";
+import Image from "next/image";
 
 const marqueeItems = [
-  "Full Planning", "Design Direction", "Destination Weddings",
-  "Intimate Ceremonies", "Multicultural Celebrations", "Elopements",
-  "Full Planning", "Design Direction", "Destination Weddings",
-  "Intimate Ceremonies", "Multicultural Celebrations", "Elopements",
+  "Bridal Makeup", "Wedding Day Glam", "Trial Sessions",
+  "Group Packages", "Editorial Looks", "Airbrush Artistry",
+  "Bridal Makeup", "Wedding Day Glam", "Trial Sessions",
+  "Group Packages", "Editorial Looks", "Airbrush Artistry",
 ];
 
 const services = [
   {
     number: "01",
-    title: "Full Planning & Design",
-    description: "From vision to execution — every vendor, every detail, every contingency. We build your wedding from the ground up.",
-    features: ["12-month planning timeline", "Vendor curation & management", "Full budget architecture", "On-site coordination team"],
+    title: "Full Bridal Package",
+    description: "Complete wedding day glam from morning prep to ceremony — including a pre-wedding trial, hair styling coordination, and on-site touch-up kit.",
+    features: ["Bridal makeup trial", "Wedding day application", "Touch-up kit included", "On-site artist available"],
   },
   {
     number: "02",
-    title: "Wedding Design Direction",
-    description: "Already have a planner? We step in as your creative director — concepting, art directing, and executing the aesthetic.",
-    features: ["Full concept development", "Design specifications", "Visual direction deck", "Vendor art direction"],
+    title: "Bridesmaids & Party",
+    description: "Elevate your entire party with a cohesive look that keeps everyone glowing from the aisle to the dance floor.",
+    features: ["Group pricing available", "Coordinated aesthetic", "Flexible timing", "Flawless all-day wear"],
   },
   {
     number: "03",
-    title: "Destination & International",
-    description: "Global fluency. Local expertise. We plan seamlessly across continents, cultures, and logistical complexities.",
-    features: ["International vendor network", "Multi-timezone coordination", "Cultural ceremony expertise", "Guest travel logistics"],
+    title: "Airbrush & Editorial",
+    description: "Camera-ready, ultra-smooth finish for brides who want their photographs to last as long as their memories.",
+    features: ["HD airbrush technique", "Long-wear formula", "Photo-ready finish", "Custom to your skin tone"],
   },
+];
+
+const galleryPreview = [
+  { src: "/wedding-01.jpg", caption: "Soft Glam" },
+  { src: "/wedding-02.jpg", caption: "Classic Bridal" },
+  { src: "/wedding-03.jpg", caption: "Bold & Radiant" },
+  { src: "/wedding-04.jpg", caption: "Airbrush Finish" },
 ];
 
 export default function HomePage() {
@@ -70,7 +76,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* PHILOSOPHY */}
+      {/* PHILOSOPHY / INTRO */}
       <section
         style={{
           padding: "160px clamp(24px,5vw,100px)",
@@ -100,7 +106,7 @@ export default function HomePage() {
                   marginBottom: 24,
                 }}
               />
-              <p className="section-number">Est. 2019</p>
+              <p className="section-number">Est. 2017</p>
             </div>
             <div>
               <blockquote
@@ -116,17 +122,17 @@ export default function HomePage() {
                   padding: 0,
                 }}
               >
-                &ldquo;We do not plan weddings.
+                &ldquo;We don't just do makeup.
                 <br />
-                <em style={{ fontStyle: "italic" }}>We craft legacies.&rdquo;</em>
+                <em style={{ fontStyle: "italic" }}>We reveal your light.&rdquo;</em>
               </blockquote>
               <p
                 className="body-lg"
                 style={{ color: "var(--midnight-grey)", maxWidth: 560, marginBottom: 40 }}
               >
-                Every celebration we design is built on a single conviction: that intentionality
-                is the highest form of love. We listen before we concept. We research before
-                we design. We question before we execute.
+                Every bride is unique — her skin, her story, her vision. Our craft begins
+                with listening before we ever open a brush. We build looks that feel
+                like you on your best day, not a costume.
               </p>
               <Link href="/about" className="btn-outline">
                 <span>Our Story</span>
@@ -136,25 +142,126 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PORTFOLIO */}
-      <Portfolio />
+      {/* GALLERY PREVIEW */}
+      <section
+        style={{
+          background: "var(--black)",
+          padding: "100px 0 0",
+          overflow: "hidden",
+        }}
+        aria-label="Gallery Preview"
+      >
+        <div
+          style={{
+            padding: "0 clamp(24px,5vw,100px) 60px",
+            maxWidth: 1440,
+            margin: "0 auto",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+          }}
+        >
+          <div>
+            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.25)", marginBottom: 12 }}>
+              02 — The Gallery
+            </p>
+            <h2 className="headline-lg" style={{ color: "var(--white)" }}>
+              Looks we&apos;ve had<br />
+              <em>the honour to create.</em>
+            </h2>
+          </div>
+          <Link
+            href="/gallery"
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: 10,
+              fontWeight: 500,
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.4)",
+              textDecoration: "none",
+              border: "1px solid rgba(255,255,255,0.2)",
+              padding: "12px 28px",
+              transition: "all 0.3s ease",
+              whiteSpace: "nowrap",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.color = "#fff";
+              el.style.borderColor = "rgba(255,255,255,0.6)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.color = "rgba(255,255,255,0.4)";
+              el.style.borderColor = "rgba(255,255,255,0.2)";
+            }}
+          >
+            View Full Gallery
+          </Link>
+        </div>
 
-      {/* SERVICES */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 3,
+            paddingBottom: 3,
+          }}
+        >
+          {galleryPreview.map((item, i) => (
+            <div
+              key={i}
+              style={{ position: "relative", aspectRatio: "3/4", overflow: "hidden" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={item.src}
+                alt={item.caption}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                  transition: "transform 0.7s ease",
+                }}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.transform = "scale(1.04)")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.transform = "scale(1)")}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  padding: "40px 20px 20px",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%)",
+                }}
+              >
+                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.7)" }}>
+                  {item.caption}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SERVICES / BRIDAL PACKAGES */}
       <section
         style={{
           padding: "120px clamp(24px,5vw,100px)",
           background: "var(--pale)",
         }}
-        aria-label="Services"
+        aria-label="Bridal Makeup Services"
       >
         <div style={{ maxWidth: 1440, margin: "0 auto" }}>
           <div style={{ marginBottom: 80 }}>
             <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 12 }}>
-              02 — The Bespoke Journey
+              03 — Bridal Packages
             </p>
             <h2 className="headline-lg" style={{ color: "var(--black)" }}>
               Choose your path<br />
-              <em>to extraordinary.</em>
+              <em>to radiance.</em>
             </h2>
           </div>
 
@@ -242,7 +349,7 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <Link
-                  href="/services"
+                  href="/bridal-makeup"
                   className={i === 1 ? "btn-primary" : "btn-outline"}
                   style={{
                     marginTop: 40,
@@ -254,132 +361,6 @@ export default function HomePage() {
                   <span>Learn More</span>
                 </Link>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TIMELINE / EXPERIENCE */}
-      <Timeline />
-
-      {/* JOURNAL TEASER */}
-      <section
-        style={{
-          padding: "120px clamp(24px,5vw,100px)",
-          background: "var(--white)",
-        }}
-        aria-label="Journal"
-      >
-        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-end",
-              marginBottom: 60,
-            }}
-          >
-            <div>
-              <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 12 }}>
-                06 — Journal
-              </p>
-              <h2 className="headline-lg" style={{ color: "var(--black)" }}>
-                2026 Trend<br />
-                <em>Intelligence.</em>
-              </h2>
-            </div>
-            <Link href="/journal" className="btn-outline">
-              <span>Read All</span>
-            </Link>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 2 }}>
-            {[
-              {
-                cat: "Trend Report",
-                title: "Sculptural Food Architecture: When the Menu Becomes the Decor",
-                date: "March 2026",
-                large: true,
-              },
-              {
-                cat: "Design",
-                title: "The Return of Maximalist Floral Installations",
-                date: "February 2026",
-                large: false,
-              },
-              {
-                cat: "Technology",
-                title: "Drone Light Shows: The New Wedding Grand Finale",
-                date: "January 2026",
-                large: false,
-              },
-            ].map((article) => (
-              <Link
-                key={article.title}
-                href="/journal"
-                style={{
-                  textDecoration: "none",
-                  background: "var(--pale)",
-                  padding: "48px 40px",
-                  display: "block",
-                  position: "relative",
-                  overflow: "hidden",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = "var(--black)";
-                  e.currentTarget.querySelectorAll("[data-text]").forEach((el) => {
-                    (el as HTMLElement).style.color = "var(--white)";
-                  });
-                  e.currentTarget.querySelectorAll("[data-sub]").forEach((el) => {
-                    (el as HTMLElement).style.color = "rgba(255,255,255,0.4)";
-                  });
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = "var(--pale)";
-                  e.currentTarget.querySelectorAll("[data-text]").forEach((el) => {
-                    (el as HTMLElement).style.color = "var(--black)";
-                  });
-                  e.currentTarget.querySelectorAll("[data-sub]").forEach((el) => {
-                    (el as HTMLElement).style.color = "var(--light-grey)";
-                  });
-                }}
-              >
-                <p
-                  data-sub
-                  className="eyebrow"
-                  style={{
-                    color: "var(--light-grey)",
-                    marginBottom: 20,
-                    transition: "color 0.3s ease",
-                  }}
-                >
-                  {article.cat}
-                </p>
-                <h3
-                  data-text
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: article.large ? "clamp(24px, 2.5vw, 40px)" : "clamp(18px, 1.8vw, 28px)",
-                    fontWeight: 400,
-                    color: "var(--black)",
-                    lineHeight: 1.15,
-                    marginBottom: 24,
-                    transition: "color 0.3s ease",
-                  }}
-                >
-                  {article.title}
-                </h3>
-                <p
-                  data-sub
-                  className="eyebrow"
-                  style={{
-                    color: "var(--light-grey)",
-                    transition: "color 0.3s ease",
-                  }}
-                >
-                  {article.date}
-                </p>
-              </Link>
             ))}
           </div>
         </div>
@@ -404,7 +385,7 @@ export default function HomePage() {
           >
             Your wedding deserves
             <br />
-            <em>more than beautiful.</em>
+            <em>flawless beauty.</em>
           </h2>
           <p
             className="body-lg"
@@ -414,11 +395,11 @@ export default function HomePage() {
               margin: "0 auto 60px",
             }}
           >
-            Every great celebration starts with a single conversation.
+            Every great look starts with a conversation.
             Let us begin yours.
           </p>
-          <Link href="/inquiry" className="btn-primary" style={{ display: "inline-flex" }}>
-            <span>Start Your Inquiry</span>
+          <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
+            <span>Book a Consultation</span>
             <span style={{ fontSize: 18 }}>→</span>
           </Link>
         </div>

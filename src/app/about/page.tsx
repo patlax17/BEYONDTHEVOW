@@ -2,59 +2,35 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "About — The Studio",
+    title: "About — Our Story",
     description:
-        "The story of Beyond The Vow — a luxury wedding planning and design studio built on the conviction that intentionality is the highest form of love.",
+        "Meet the artist behind Beyond The Vow — a bridal beauty studio dedicated to making every bride feel radiant, confident, and undeniably herself on her wedding day.",
 };
 
 const values = [
     {
         number: "01",
-        title: "Intentionality",
+        title: "Authenticity",
         description:
-            "We make no decision without reason. Every flower, every font, every timeline slot is chosen with purpose and aligned to your narrative.",
+            "We create looks that honour who you truly are. Makeup should enhance your natural beauty — not mask it.",
     },
     {
         number: "02",
-        title: "Restraint",
+        title: "Precision",
         description:
-            "The most powerful weddings are defined as much by what we leave out as what we include. We edit with rigour.",
+            "Every brush stroke is intentional. We take the time to perfect every detail, from liner to highlight.",
     },
     {
         number: "03",
-        title: "Cultural Fluency",
+        title: "Inclusivity",
         description:
-            "We have planned weddings across 12 countries and 6 cultural traditions. Nuance is not a checkbox — it is our native language.",
+            "We are trained across all skin tones and textures. Every complexion is celebrated, not accommodated.",
     },
     {
         number: "04",
-        title: "Invisible Service",
+        title: "Calm Presence",
         description:
-            "On your day, our greatest achievement is that you never notice us. We manage every thread, so you feel nothing but joy.",
-    },
-];
-
-const team = [
-    {
-        name: "Vivienne Okafor",
-        title: "Founder & Creative Director",
-        bio: "With a background in fashion editorial and a decade in luxury events, Vivienne founded Beyond The Vow on the conviction that weddings are the most personal art form. She has directed celebrations across four continents.",
-        color: "#1A1A2E",
-        accent: "#C9A96E",
-    },
-    {
-        name: "Alexandre Renard",
-        title: "Lead Planner & Logistics Director",
-        bio: "Formerly of the Ritz Paris events team, Alexandre brings an obsessive precision to every logistical architecture. His specialty: making the impossible feel inevitable.",
-        color: "#2D1B1B",
-        accent: "#E8D5B0",
-    },
-    {
-        name: "Taini Moana",
-        title: "Design & Art Direction Lead",
-        bio: "A trained interior architect and florist from Auckland, Taini approaches every wedding as a spatial narrative. She is the origin of our signature sculptural tablescapes.",
-        color: "#0F1A0F",
-        accent: "#8B9E5A",
+            "Wedding mornings are sacred. We bring a calm, professional energy so you can breathe, enjoy, and glow.",
     },
 ];
 
@@ -75,7 +51,7 @@ export default function AboutPage() {
                         position: "absolute",
                         inset: 0,
                         background:
-                            "radial-gradient(ellipse at 80% 20%, rgba(55,55,143,0.2) 0%, transparent 60%)",
+                            "radial-gradient(ellipse at 80% 20%, rgba(180,120,130,0.18) 0%, transparent 60%)",
                     }}
                 />
                 <div
@@ -95,13 +71,13 @@ export default function AboutPage() {
                             className="eyebrow"
                             style={{ color: "rgba(255,255,255,0.25)", marginBottom: 24 }}
                         >
-                            08 — About the Studio
+                            About the Studio
                         </p>
                         <h1 className="headline-xl" style={{ color: "var(--white)" }}>
-                            We plan<br />
-                            <em>with intention,</em><br />
-                            design with<br />
-                            <em>precision.</em>
+                            Beauty with<br />
+                            <em>intention,</em><br />
+                            artistry with<br />
+                            <em>heart.</em>
                         </h1>
                     </div>
                     <div>
@@ -109,17 +85,17 @@ export default function AboutPage() {
                             className="body-lg"
                             style={{ color: "rgba(255,255,255,0.5)", marginBottom: 48 }}
                         >
-                            Beyond The Vow was founded in 2019 on the belief that a wedding should
-                            be the most intentional day of your life — not just aesthetically,
-                            but emotionally, logistically, and narratively.
+                            Beyond The Vow was founded on a single belief: that every person who sits
+                            in our chair should leave feeling like the most beautiful version of
+                            themselves — not a painted version of someone else.
                         </p>
                         <p
                             className="body-lg"
                             style={{ color: "rgba(255,255,255,0.35)" }}
                         >
-                            We are a boutique studio capped at 12 weddings per year. That limit
-                            is not a marketing device — it is what allows us to give every couple
-                            the singular focus they deserve.
+                            We are a boutique bridal beauty studio serving brides who want intimacy,
+                            expertise, and a calm, joyful morning experience on the most important
+                            day of their lives.
                         </p>
                     </div>
                 </div>
@@ -139,11 +115,119 @@ export default function AboutPage() {
                         textAlign: "center",
                     }}
                 >
-                    INTENTIONALITY
+                    BEYOND THE VOW
                 </div>
             </section>
 
-            {/* Philosophy */}
+            {/* The Artist */}
+            <section
+                style={{
+                    padding: "120px clamp(24px,5vw,100px)",
+                    background: "var(--white)",
+                }}
+            >
+                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+                    <div
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns: "1fr 1fr",
+                            gap: 100,
+                            alignItems: "center",
+                        }}
+                    >
+                        {/* Artist photo placeholder */}
+                        <div
+                            style={{
+                                aspectRatio: "3/4",
+                                background: "#1A0E12",
+                                position: "relative",
+                                overflow: "hidden",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    inset: 0,
+                                    background:
+                                        "radial-gradient(ellipse at 30% 80%, rgba(180,120,130,0.2), transparent 60%)",
+                                }}
+                            />
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    bottom: 32,
+                                    left: 32,
+                                }}
+                            >
+                                <p
+                                    style={{
+                                        fontFamily: "var(--font-display)",
+                                        fontSize: "clamp(24px, 3vw, 40px)",
+                                        fontWeight: 300,
+                                        color: "var(--white)",
+                                        lineHeight: 1.1,
+                                    }}
+                                >
+                                    The Artist
+                                    <br />
+                                    <em style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.65em" }}>
+                                        Beyond The Vow
+                                    </em>
+                                </p>
+                            </div>
+                            {/* Artist photo will go here */}
+                            <p
+                                style={{
+                                    position: "absolute",
+                                    top: "50%",
+                                    left: "50%",
+                                    transform: "translate(-50%, -50%)",
+                                    fontFamily: "var(--font-body)",
+                                    fontSize: 10,
+                                    letterSpacing: "0.2em",
+                                    textTransform: "uppercase",
+                                    color: "rgba(255,255,255,0.1)",
+                                    textAlign: "center",
+                                    pointerEvents: "none",
+                                    userSelect: "none",
+                                }}
+                            >
+                                Artist photo<br />coming soon
+                            </p>
+                        </div>
+
+                        <div>
+                            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>
+                                The Artist
+                            </p>
+                            <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 32 }}>
+                                A vision built<br />
+                                <em>on your story.</em>
+                            </h2>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
+                                With over 7 years of experience in bridal, editorial, and special occasion
+                                makeup, our lead artist has had the privilege of working with hundreds of
+                                brides across a wide range of skin tones, cultures, and wedding styles.
+                            </p>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
+                                Trained in airbrush technique, colour theory, and long-wear application,
+                                every look is built to last from the first look to the last dance — without
+                                ever feeling heavy on the skin.
+                            </p>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
+                                Beyond The Vow was born from a commitment to intimacy and excellence:
+                                a studio small enough to care deeply, skilled enough to deliver
+                                flawlessly.
+                            </p>
+                            <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
+                                <span>Book Your Consultation</span>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Values */}
             <section
                 id="philosophy"
                 style={{
@@ -163,25 +247,21 @@ export default function AboutPage() {
                     >
                         <div>
                             <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>
-                                The Philosophy
+                                Our Philosophy
                             </p>
                             <h2 className="headline-lg" style={{ color: "var(--black)" }}>
-                                Story to<br />Soirée.
+                                Face to<br />Flawless.
                             </h2>
                         </div>
                         <div>
                             <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 28 }}>
-                                Every wedding we design begins with a question no one else asks:
-                                <em style={{ fontFamily: "var(--font-display)", fontSize: "1.1em" }}>&ldquo;Who are you — truly?&rdquo;</em>
-                            </p>
-                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 28 }}>
-                                Not &ldquo;what are your colors?&rdquo; Not &ldquo;how many guests?&rdquo; We start with your story —
-                                how you met, what you value, what makes you laugh. From that foundation,
-                                everything else becomes obvious.
+                                Great bridal makeup starts before a brush is ever picked up. We begin
+                                every relationship with a consultation — understanding your skin, your
+                                vision, and how you want to feel on your day.
                             </p>
                             <p className="body-lg" style={{ color: "var(--midnight-grey)" }}>
-                                This is the Beyond The Vow method. It is slower, more personal, and
-                                more expensive than convention. It is also, without question, more meaningful.
+                                We don&apos;t apply the same look to every bride. We listen, we observe,
+                                and we craft. The result is always uniquely, unmistakably <em>you</em>.
                             </p>
                         </div>
                     </div>
@@ -231,81 +311,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Team */}
-            <section
-                id="team"
-                style={{
-                    padding: "120px clamp(24px,5vw,100px)",
-                    background: "var(--white)",
-                }}
-            >
-                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-                    <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>
-                        The People
-                    </p>
-                    <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 80 }}>
-                        Meet the<br />
-                        <em>studio.</em>
-                    </h2>
-
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
-                        {team.map((member) => (
-                            <div key={member.name}>
-                                {/* Photo placeholder */}
-                                <div
-                                    style={{
-                                        width: "100%",
-                                        aspectRatio: "3/4",
-                                        background: member.color,
-                                        marginBottom: 24,
-                                        position: "relative",
-                                        overflow: "hidden",
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            position: "absolute",
-                                            inset: 0,
-                                            background: `radial-gradient(ellipse at 30% 80%, ${member.accent}20, transparent 60%)`,
-                                        }}
-                                    />
-                                    <div
-                                        style={{
-                                            position: "absolute",
-                                            bottom: 24,
-                                            left: 24,
-                                        }}
-                                    >
-                                        <p
-                                            style={{
-                                                fontFamily: "var(--font-display)",
-                                                fontSize: "clamp(20px, 2.5vw, 32px)",
-                                                fontWeight: 300,
-                                                color: "var(--white)",
-                                                lineHeight: 1.1,
-                                            }}
-                                        >
-                                            {member.name.split(" ")[0]}
-                                            <br />
-                                            <em>{member.name.split(" ").slice(1).join(" ")}</em>
-                                        </p>
-                                    </div>
-                                </div>
-                                <p
-                                    className="eyebrow"
-                                    style={{ color: "var(--vogue-red)", marginBottom: 12 }}
-                                >
-                                    {member.title}
-                                </p>
-                                <p className="body-sm" style={{ color: "var(--midnight-grey)" }}>
-                                    {member.bio}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Credentials strip */}
             <section
                 style={{
@@ -323,10 +328,10 @@ export default function AboutPage() {
                     }}
                 >
                     {[
-                        { value: "12+", label: "Countries" },
-                        { value: "500+", label: "Hours per Wedding" },
-                        { value: "6", label: "Per Year (Max)" },
-                        { value: "100%", label: "Independent Studio" },
+                        { value: "100+", label: "Brides Served" },
+                        { value: "7+", label: "Years Experience" },
+                        { value: "All", label: "Skin Tones" },
+                        { value: "100%", label: "Bespoke Looks" },
                     ].map((stat) => (
                         <div key={stat.label} style={{ textAlign: "center" }}>
                             <p
@@ -359,14 +364,14 @@ export default function AboutPage() {
             >
                 <div style={{ maxWidth: 640, margin: "0 auto" }}>
                     <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 24 }}>
-                        Let us begin<br />
-                        <em>your story.</em>
+                        Let us celebrate<br />
+                        <em>your beauty.</em>
                     </h2>
                     <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
-                        Twelve couples per year. One irreplaceable story each time.
+                        Every bride deserves to feel extraordinary. Let&apos;s talk about your vision.
                     </p>
-                    <Link href="/inquiry" className="btn-primary" style={{ display: "inline-flex" }}>
-                        <span>Start Your Inquiry</span>
+                    <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
+                        <span>Book a Consultation</span>
                     </Link>
                 </div>
             </section>

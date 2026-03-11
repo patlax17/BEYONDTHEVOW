@@ -5,33 +5,34 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Beyond The Vow | Luxury Wedding Planning & Design",
+    default: "Beyond The Vow | Bridal Makeup & Beauty Atelier",
     template: "%s | Beyond The Vow",
   },
   description:
-    "Beyond The Vow is a luxury wedding planning and design studio crafting intentional, editorial celebrations that reflect personal narratives. Based globally, serving destination couples worldwide.",
+    "Beyond The Vow is a luxury bridal makeup studio crafting flawless, personalised looks for every bride. Expert artistry across all skin tones — from soft glam to bold editorial.",
   keywords: [
-    "luxury wedding planner",
-    "destination wedding planner",
-    "bespoke wedding design",
-    "editorial wedding",
-    "high-end wedding planning",
-    "wedding design studio",
+    "bridal makeup artist",
+    "wedding makeup",
+    "bridal beauty",
+    "airbrush makeup",
+    "wedding day glam",
+    "bridesmaids makeup",
     "Beyond The Vow",
+    "bridal makeup trial",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://beyondthevow.com",
     siteName: "Beyond The Vow",
-    title: "Beyond The Vow | Luxury Wedding Planning & Design",
+    title: "Beyond The Vow | Bridal Makeup & Beauty Atelier",
     description:
-      "Intentional celebrations that reflect personal narratives. A luxury wedding planning and design studio.",
+      "Flawless bridal artistry for every complexion. Expert wedding makeup that reveals your most radiant self.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Beyond The Vow | Luxury Wedding Planning & Design",
-    description: "Intentional celebrations that reflect personal narratives.",
+    title: "Beyond The Vow | Bridal Makeup & Beauty Atelier",
+    description: "Flawless bridal artistry for every complexion.",
   },
   robots: {
     index: true,
@@ -41,35 +42,39 @@ export const metadata: Metadata = {
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "BeautySalon",
   name: "Beyond The Vow",
   description:
-    "Luxury wedding planning and design studio crafting intentional, editorial celebrations.",
+    "Luxury bridal makeup studio crafting flawless, personalised looks for every bride.",
   url: "https://beyondthevow.com",
-  priceRange: "$$$$$",
-  serviceArea: {
-    "@type": "GeoShape",
-    description: "Worldwide destination weddings",
-  },
+  priceRange: "$$$",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Wedding Planning & Design Services",
+    name: "Bridal Makeup Services",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Full Wedding Planning",
+          name: "Full Bridal Package",
           description:
-            "Comprehensive wedding planning from concept to execution",
+            "Complete wedding day makeup including trial, application, and touch-up kit",
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Wedding Design & Art Direction",
-          description: "Bespoke visual concept and aesthetic direction",
+          name: "Bridesmaids & Party Makeup",
+          description: "Group bridal party makeup with coordinated aesthetic",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Airbrush Bridal Makeup",
+          description: "Ultra-smooth HD airbrush finish for photography and video",
         },
       },
     ],
