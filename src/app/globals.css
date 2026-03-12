@@ -32,13 +32,14 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overscroll-behavior: none;
+  overflow-x: hidden; /* ← prevents any element from creating horizontal page scroll */
 }
 
 body {
   font-family: var(--font-body);
   background-color: var(--white);
   color: var(--black);
-  overflow-x: hidden;
+  overflow-x: hidden; /* ← belt-and-suspenders: also on body */
   line-height: 1.6;
 }
 

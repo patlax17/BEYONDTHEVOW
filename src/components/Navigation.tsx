@@ -78,40 +78,37 @@ export default function Navigation() {
                     WebkitBackdropFilter: !isTransparent ? "blur(16px)" : "none",
                 }}
             >
-                {/* ── TOP ROW: social icons | brand | book CTA ── */}
+                {/* ── TOP ROW: social icons | brand | hamburger ── */}
+                {/* Uses relative positioning so brand is always truly centred regardless of what's on left/right */}
                 <div
                     style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr auto 1fr",
+                        position: "relative",
+                        display: "flex",
                         alignItems: "center",
-                        padding: "16px clamp(24px,5vw,100px) 14px",
+                        justifyContent: "space-between",
+                        padding: "16px clamp(20px,5vw,100px) 14px",
                         maxWidth: 1440,
                         margin: "0 auto",
                     }}
                 >
-                    {/* LEFT: Social icons */}
+                    {/* LEFT: Social icons — desktop only */}
                     <div
+                        className="btv-desktop-nav"
                         style={{
                             display: "flex",
                             alignItems: "center",
                             gap: 18,
                             color: iconColor,
                             transition: "color 0.4s ease",
+                            flexShrink: 0,
                         }}
-                        className="btv-desktop-nav"
                     >
                         <a
                             href="https://www.instagram.com/beyondthevow_beauty/"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Instagram"
-                            style={{
-                                color: "inherit",
-                                display: "flex",
-                                alignItems: "center",
-                                transition: "opacity 0.25s ease",
-                                textDecoration: "none",
-                            }}
+                            style={{ color: "inherit", display: "flex", alignItems: "center", transition: "opacity 0.25s ease", textDecoration: "none" }}
                             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.55")}
                             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
                         >
@@ -122,13 +119,7 @@ export default function Navigation() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Facebook"
-                            style={{
-                                color: "inherit",
-                                display: "flex",
-                                alignItems: "center",
-                                transition: "opacity 0.25s ease",
-                                textDecoration: "none",
-                            }}
+                            style={{ color: "inherit", display: "flex", alignItems: "center", transition: "opacity 0.25s ease", textDecoration: "none" }}
                             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.55")}
                             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
                         >
@@ -139,13 +130,7 @@ export default function Navigation() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="TikTok"
-                            style={{
-                                color: "inherit",
-                                display: "flex",
-                                alignItems: "center",
-                                transition: "opacity 0.25s ease",
-                                textDecoration: "none",
-                            }}
+                            style={{ color: "inherit", display: "flex", alignItems: "center", transition: "opacity 0.25s ease", textDecoration: "none" }}
                             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.55")}
                             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
                         >
@@ -153,7 +138,7 @@ export default function Navigation() {
                         </a>
                     </div>
 
-                    {/* CENTER: Brand name */}
+                    {/* CENTER: Brand name — absolutely centred on desktop, static on mobile */}
                     <Link
                         href="/"
                         style={{
@@ -162,12 +147,14 @@ export default function Navigation() {
                             flexDirection: "column",
                             alignItems: "center",
                             gap: 3,
+                            /* On desktop the brand is absolutely centred in the bar */
                         }}
+                        className="btv-brand-link"
                     >
                         <span
                             style={{
                                 fontFamily: "var(--font-display)",
-                                fontSize: "clamp(18px, 2vw, 26px)",
+                                fontSize: "clamp(16px, 2vw, 26px)",
                                 fontWeight: 300,
                                 letterSpacing: "0.06em",
                                 color: textColor,
@@ -183,7 +170,7 @@ export default function Navigation() {
                                 fontFamily: "var(--font-body)",
                                 fontSize: 7,
                                 fontWeight: 400,
-                                letterSpacing: "0.3em",
+                                letterSpacing: "0.28em",
                                 textTransform: "uppercase",
                                 color: subtitleColor,
                                 transition: "color 0.45s ease",
@@ -194,8 +181,8 @@ export default function Navigation() {
                         </span>
                     </Link>
 
-                    {/* RIGHT: Book CTA + mobile hamburger */}
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 20 }}>
+                    {/* RIGHT: Book CTA (desktop) + Hamburger (mobile) — always flex-end */}
+                    <div style={{ display: "flex", alignItems: "center", gap: 20, flexShrink: 0 }}>
                         <Link
                             href="/consultation"
                             className="btv-desktop-nav"
@@ -222,39 +209,42 @@ export default function Navigation() {
                             Book a Consultation
                         </Link>
 
-                        {/* Mobile hamburger */}
+                        {/* Hamburger — always in the DOM, shown only on mobile via CSS */}
                         <button
                             id="nav-menu-toggle"
-                            aria-label="Toggle menu"
+                            aria-label={menuOpen ? "Close menu" : "Open menu"}
                             onClick={() => setMenuOpen(!menuOpen)}
-                            className="btv-mobile-nav"
                             style={{
-                                display: "none",
+                                display: "none", /* overridden by btv-mobile-nav CSS */
                                 flexDirection: "column",
+                                justifyContent: "center",
+                                alignItems: "center",
                                 gap: 5,
                                 background: "none",
                                 border: "none",
                                 cursor: "pointer",
-                                padding: 4,
+                                padding: "6px 4px",
+                                zIndex: 1001,
+                                flexShrink: 0,
                             }}
+                            className="btv-mobile-nav"
                         >
                             {[0, 1, 2].map((i) => (
                                 <span
                                     key={i}
                                     style={{
-                                        width: 22,
-                                        height: 1,
-                                        background: textColor,
+                                        width: 24,
+                                        height: 1.5,
+                                        background: menuOpen ? "var(--white)" : textColor,
                                         display: "block",
+                                        borderRadius: 2,
                                         transition: "all 0.3s ease",
-                                        transform:
-                                            menuOpen
-                                                ? i === 0
-                                                    ? "translateY(6px) rotate(45deg)"
-                                                    : i === 2
-                                                        ? "translateY(-6px) rotate(-45deg)"
-                                                        : "scaleX(0)"
-                                                : "none",
+                                        transformOrigin: "center",
+                                        transform: menuOpen
+                                            ? i === 0 ? "translateY(6.5px) rotate(45deg)"
+                                                : i === 2 ? "translateY(-6.5px) rotate(-45deg)"
+                                                : "scaleX(0)"
+                                            : "none",
                                     }}
                                 />
                             ))}
@@ -415,9 +405,21 @@ export default function Navigation() {
         @media (max-width: 900px) {
           .btv-desktop-nav { display: none !important; }
           .btv-mobile-nav { display: flex !important; }
+          /* On mobile: brand stays in normal flow between left/right slots */
+          .btv-brand-link {
+            flex: 1;
+            justify-content: center;
+          }
         }
         @media (min-width: 901px) {
           .btv-mobile-nav { display: none !important; }
+          /* On desktop: brand is absolutely centred in the nav bar */
+          .btv-brand-link {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: auto;
+          }
         }
       `}</style>
         </>

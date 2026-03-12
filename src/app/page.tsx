@@ -251,6 +251,7 @@ export default function HomePage() {
         style={{
           padding: "120px clamp(24px,5vw,100px)",
           background: "var(--pale)",
+          overflowX: "hidden", /* ← prevents horizontal bleed on mobile */
         }}
         aria-label="Bridal Makeup Services"
       >
@@ -265,7 +266,8 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 2 }}>
+          {/* Cards grid — 3 col desktop, 1 col mobile */}
+          <div className="btv-packages-grid">
             {services.map((service, i) => (
               <div
                 key={service.number}
@@ -364,6 +366,21 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+
+        {/* Responsive grid rule — keeps cards in 3 cols on desktop, stacks on mobile */}
+        <style>{`
+          .btv-packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+          }
+          @media (max-width: 768px) {
+            .btv-packages-grid {
+              grid-template-columns: 1fr;
+              gap: 2px;
+            }
+          }
+        `}</style>
       </section>
 
       {/* FINAL CTA */}
