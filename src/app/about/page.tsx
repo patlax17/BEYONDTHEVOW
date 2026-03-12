@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
     title: "About — Our Story",
@@ -36,88 +37,12 @@ const values = [
 
 export default function AboutPage() {
     return (
-        <div style={{ paddingTop: 100 }}>
-            {/* Hero */}
-            <section
-                style={{
-                    padding: "100px clamp(24px,5vw,100px) 0",
-                    background: "var(--black)",
-                    overflow: "hidden",
-                    position: "relative",
-                }}
-            >
-                <div
-                    style={{
-                        position: "absolute",
-                        inset: 0,
-                        background:
-                            "radial-gradient(ellipse at 80% 20%, rgba(180,120,130,0.18) 0%, transparent 60%)",
-                    }}
-                />
-                <div
-                    style={{
-                        maxWidth: 1440,
-                        margin: "0 auto",
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr",
-                        gap: 80,
-                        alignItems: "end",
-                        paddingBottom: 100,
-                        position: "relative",
-                    }}
-                >
-                    <div>
-                        <p
-                            className="eyebrow"
-                            style={{ color: "rgba(255,255,255,0.25)", marginBottom: 24 }}
-                        >
-                            About the Studio
-                        </p>
-                        <h1 className="headline-xl" style={{ color: "var(--white)" }}>
-                            Beauty with<br />
-                            <em>intention,</em><br />
-                            artistry with<br />
-                            <em>heart.</em>
-                        </h1>
-                    </div>
-                    <div>
-                        <p
-                            className="body-lg"
-                            style={{ color: "rgba(255,255,255,0.5)", marginBottom: 48 }}
-                        >
-                            Beyond The Vow was founded on a single belief: that every person who sits
-                            in our chair should leave feeling like the most beautiful version of
-                            themselves — not a painted version of someone else.
-                        </p>
-                        <p
-                            className="body-lg"
-                            style={{ color: "rgba(255,255,255,0.35)" }}
-                        >
-                            We are a boutique bridal beauty studio serving brides who want intimacy,
-                            expertise, and a calm, joyful morning experience on the most important
-                            day of their lives.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Large background text */}
-                <div
-                    aria-hidden
-                    style={{
-                        fontFamily: "var(--font-display)",
-                        fontSize: "20vw",
-                        fontWeight: 300,
-                        color: "rgba(255,255,255,0.02)",
-                        lineHeight: 1,
-                        overflow: "hidden",
-                        whiteSpace: "nowrap",
-                        userSelect: "none",
-                        textAlign: "center",
-                    }}
-                >
-                    BEYOND THE VOW
-                </div>
-            </section>
+        <div>
+            <PageHeader
+                eyebrow="About the Studio"
+                title={<>Beauty with<br /><em>intention,</em><br />artistry with<br /><em>heart.</em></>}
+                subtitle="Beyond The Vow was founded on a single belief: that every person who sits in our chair should leave feeling like the most beautiful version of themselves — not a painted version of someone else. We are a boutique bridal beauty studio serving brides who want intimacy, expertise, and a calm, joyful morning experience on the most important day of their lives."
+            />
 
             {/* The Artist */}
             <section

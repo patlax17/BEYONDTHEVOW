@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
     title: "Bridal Makeup — Services",
@@ -109,78 +110,12 @@ const faqs = [
 
 export default function BridalMakeupPage() {
     return (
-        <div style={{ paddingTop: 100 }}>
-            {/* Hero */}
-            <section
-                style={{
-                    padding: "100px clamp(24px,5vw,100px) 0",
-                    background: "var(--black)",
-                    overflow: "hidden",
-                    position: "relative",
-                }}
-            >
-                <div
-                    style={{
-                        position: "absolute",
-                        inset: 0,
-                        background:
-                            "radial-gradient(ellipse at 20% 80%, rgba(201,169,110,0.12) 0%, transparent 55%)",
-                    }}
-                />
-                <div
-                    style={{
-                        maxWidth: 1440,
-                        margin: "0 auto",
-                        paddingBottom: 100,
-                        position: "relative",
-                    }}
-                >
-                    <p
-                        className="eyebrow"
-                        style={{ color: "rgba(255,255,255,0.25)", marginBottom: 24 }}
-                    >
-                        Bridal Makeup
-                    </p>
-                    <div
-                        style={{
-                            display: "grid",
-                            gridTemplateColumns: "2fr 1fr",
-                            gap: 80,
-                            alignItems: "end",
-                        }}
-                    >
-                        <h1 className="headline-xl" style={{ color: "var(--white)" }}>
-                            Artistry for<br />
-                            <em>the most important</em><br />
-                            morning of your life.
-                        </h1>
-                        <p
-                            className="body-lg"
-                            style={{ color: "rgba(255,255,255,0.45)", alignSelf: "end" }}
-                        >
-                            Every package is tailored to your vision, your skin, and the story
-                            you want to tell on your wedding day.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Large background text */}
-                <div
-                    aria-hidden
-                    style={{
-                        fontFamily: "var(--font-display)",
-                        fontSize: "18vw",
-                        fontWeight: 300,
-                        color: "rgba(255,255,255,0.02)",
-                        lineHeight: 1,
-                        overflow: "hidden",
-                        whiteSpace: "nowrap",
-                        userSelect: "none",
-                    }}
-                >
-                    BRIDAL
-                </div>
-            </section>
+        <div>
+            <PageHeader
+                eyebrow="Bridal Makeup"
+                title={<>Artistry for<br /><em>the most important</em><br />morning of your life.</>}
+                subtitle="Every package is tailored to your vision, your skin, and the story you want to tell on your wedding day."
+            />
 
             {/* Packages */}
             <section

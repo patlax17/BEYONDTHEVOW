@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PageHeader from "@/components/PageHeader";
 
 const services = [
     "Full Bridal Package",
@@ -54,50 +55,12 @@ export default function ConsultationPage() {
     });
 
     return (
-        <div style={{ paddingTop: 100 }}>
-            {/* Hero */}
-            <section
-                style={{
-                    padding: "100px clamp(24px,5vw,100px) 80px",
-                    background: "var(--black)",
-                    position: "relative",
-                    overflow: "hidden",
-                }}
-            >
-                <div
-                    style={{
-                        position: "absolute",
-                        inset: 0,
-                        background:
-                            "radial-gradient(ellipse at 90% 60%, rgba(180,120,130,0.15) 0%, transparent 60%)",
-                    }}
-                />
-                <div style={{ maxWidth: 1440, margin: "0 auto", position: "relative" }}>
-                    <p className="eyebrow" style={{ color: "rgba(255,255,255,0.25)", marginBottom: 24 }}>
-                        How to Book
-                    </p>
-                    <div
-                        style={{
-                            display: "grid",
-                            gridTemplateColumns: "1fr 1fr",
-                            gap: 80,
-                            alignItems: "end",
-                        }}
-                    >
-                        <h1 className="headline-xl" style={{ color: "var(--white)" }}>
-                            Let&apos;s talk<br />
-                            <em>about your day.</em>
-                        </h1>
-                        <p
-                            className="body-lg"
-                            style={{ color: "rgba(255,255,255,0.45)", alignSelf: "end" }}
-                        >
-                            Fill out the form below and we&apos;ll be in touch within 48 hours
-                            to confirm availability and begin building your bespoke bridal look.
-                        </p>
-                    </div>
-                </div>
-            </section>
+        <div>
+            <PageHeader
+                eyebrow="How to Book"
+                title={<>Let&apos;s talk<br /><em>about your day.</em></>}
+                subtitle="Fill out the form below and we'll be in touch within 48 hours to confirm availability and begin building your bespoke bridal look."
+            />
 
             {/* How It Works — brief steps */}
             <section

@@ -52,7 +52,7 @@ export default function HomePage() {
           borderBottom: "1px solid rgba(0,0,0,0.08)",
           background: "var(--white)",
           overflow: "hidden",
-          padding: "16px 0",
+          padding: "18px 0",
         }}
       >
         <div className="marquee-track" aria-hidden="true">

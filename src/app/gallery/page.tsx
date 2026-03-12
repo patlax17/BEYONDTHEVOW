@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
+import PageHeader from "@/components/PageHeader";
+// Metadata not used in client components — kept for reference
 
 const galleryImages = [
     {
@@ -81,62 +82,12 @@ export default function GalleryPage() {
             : galleryImages.filter((img) => img.category === activeCategory);
 
     return (
-        <div style={{ paddingTop: 100 }}>
-            {/* Hero */}
-            <section
-                style={{
-                    padding: "100px clamp(24px,5vw,100px) 80px",
-                    background: "var(--black)",
-                    position: "relative",
-                    overflow: "hidden",
-                }}
-            >
-                <div
-                    style={{
-                        position: "absolute",
-                        inset: 0,
-                        background:
-                            "radial-gradient(ellipse at 75% 30%, rgba(201,169,110,0.1) 0%, transparent 60%)",
-                    }}
-                />
-                <div style={{ maxWidth: 1440, margin: "0 auto", position: "relative" }}>
-                    <p
-                        className="eyebrow"
-                        style={{ color: "rgba(255,255,255,0.25)", marginBottom: 24 }}
-                    >
-                        Gallery
-                    </p>
-                    <h1 className="headline-xl" style={{ color: "var(--white)", marginBottom: 32 }}>
-                        Every look,<br />
-                        <em>a love story.</em>
-                    </h1>
-                    <p
-                        className="body-lg"
-                        style={{ color: "rgba(255,255,255,0.45)", maxWidth: 500 }}
-                    >
-                        Browse our collection of bridal looks — each one crafted to honour the
-                        individual beauty of the person in the chair.
-                    </p>
-                </div>
-
-                {/* Background watermark */}
-                <div
-                    aria-hidden
-                    style={{
-                        fontFamily: "var(--font-display)",
-                        fontSize: "18vw",
-                        fontWeight: 300,
-                        color: "rgba(255,255,255,0.02)",
-                        lineHeight: 1,
-                        overflow: "hidden",
-                        whiteSpace: "nowrap",
-                        userSelect: "none",
-                        textAlign: "right",
-                    }}
-                >
-                    BEAUTY
-                </div>
-            </section>
+        <div>
+            <PageHeader
+                eyebrow="Gallery"
+                title={<>Every look,<br /><em>a love story.</em></>}
+                subtitle="Browse our collection of bridal looks — each one crafted to honour the individual beauty of the person in the chair."
+            />
 
             {/* Category Filter */}
             <section
@@ -145,7 +96,7 @@ export default function GalleryPage() {
                     background: "var(--white)",
                     borderBottom: "1px solid rgba(0,0,0,0.06)",
                     position: "sticky",
-                    top: 72,
+                    top: 130,
                     zIndex: 10,
                 }}
             >
