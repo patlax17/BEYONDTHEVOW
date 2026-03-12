@@ -105,7 +105,7 @@ export default function Navigation() {
                                 whiteSpace: "nowrap",
                             }}
                         >
-                            Bridal Beauty Atelier
+                            Wedding Coordination & Beauty
                         </span>
                     </Link>
 
