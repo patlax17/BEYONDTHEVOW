@@ -14,18 +14,18 @@ const whyUs = [
   {
     icon: "💄",
     title: "Built-in Beauty Support",
-    body: "Your coordinator is also a professional bridal makeup artist. Even if you didn't book makeup services, we're still there to fix lashes, blot shine, touch up lips, calm last-minute beauty emergencies, and make sure you're photo-ready 24/7. Most coordinators can't do that. We can.",
+    body: "Your coordinator is professional bridal makeup artist. Whether or not you book us for makeup, we are always on hand to manage lashes, touch up your look, and ensure you remain camera-ready throughout the day. This level of on-site beauty support is a standard we set, ensuring you never have to worry about the details.",
     link: { label: "See Our Makeup Work", href: "/bridal-makeup" },
   },
   {
     icon: "🎨",
     title: "Design + Decor Expertise",
-    body: "We don't just \"check\" if decor is set up. We have real event design and decoration experience — layouts make sense, florals are placed intentionally, details match your vision, nothing looks rushed or misplaced. If something looks off, we fix it — not the venue.",
+    body: "We do more than oversee setups. With deep experience in event design, we ensure every floral arrangement and layout is intentional and aligned with your vision. If a detail is out of place, we correct it personally to maintain the integrity of your design.",
   },
   {
     icon: "👑",
-    title: "A Full Team — Not One Person",
-    body: "No running back and forth. No missed moments. We arrive with a dedicated team — vendors are managed, timelines stay on track, bridal party is organized, guests are guided, problems are solved quietly. Nothing gets overlooked. Ever.",
+    title: "A Dedicated Production Team",
+    body: "We eliminate the need for running back and forth. Our full team manages vendors, maintains the timeline, and ensures your guests are effortlessly guided. We resolve challenges quietly, so nothing is ever overlooked.",
   },
   {
     icon: "📱",
@@ -34,13 +34,13 @@ const whyUs = [
   },
   {
     icon: "🤍",
-    title: "Stress-Free Bride Guarantee",
-    body: "You will NEVER be answering vendor calls, fixing decor, chasing bridesmaids, or solving problems. If something goes wrong — you won't even know. Because we already handled it. Your only job? Be beautiful. Be present. Enjoy your day.",
+    title: "Your Peace of Mind",
+    body: "You should never have to manage vendors or solve logistical problems on your wedding day. We handle every detail behind the scenes, allowing you to stay present and enjoy every moment with total confidence.",
   },
   {
     icon: "✨",
     title: "Luxury-Level Experience",
-    body: "We specialize in high-end weddings, destination events, large bridal parties, fast timelines, and detail-heavy designs. We bring calm energy, professionalism, and white-glove service to every single wedding.",
+    body: "We specialize in high-end celebrations and destination events. We bring calm, professional energy and white-glove service to every wedding we produce, regardless of complexity or scale.",
   },
 ];
 
@@ -108,7 +108,7 @@ export default function HomePage() {
           >
             <div>
               <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 24, letterSpacing: "0.25em" }}>
-                01 — About Us
+                01 / About Us
               </p>
               <div style={{ width: 1, height: 100, background: "var(--black)", opacity: 0.1, marginBottom: 24 }} />
               <p className="section-number" style={{ color: "var(--light-grey)" }}>Est. 2017</p>
@@ -129,7 +129,7 @@ export default function HomePage() {
                 <em>Your Bridal Dream Team.</em>
               </h2>
               <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
-                Beyond the Vow was created from years of being behind the scenes of weddings and realizing one thing — brides deserve <strong>MORE</strong> than just someone holding a clipboard.
+                Beyond the Vow was founded from a realization that modern brides deserve more than traditional coordination.
               </p>
               <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
                 They deserve <em>a team.</em>
@@ -151,10 +151,10 @@ export default function HomePage() {
                   lineHeight: 1.3,
                 }}
               >
-                We don&apos;t just manage weddings.<br />We elevate them.
+                We elevate every wedding we manage.
               </p>
               <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
-                When you hire Beyond the Vow, you&apos;re not getting one person. You&apos;re getting a full production team dedicated to protecting your peace and perfecting every detail.
+                When you partner with Beyond the Vow, you are gaining a dedicated production team focused on protecting your peace and perfecting every design detail.
               </p>
               <Link href="/about" className="btn-outline">
                 <span>Meet the Team</span>
@@ -177,7 +177,7 @@ export default function HomePage() {
         <div style={{ maxWidth: 1440, margin: "0 auto" }}>
           <div style={{ marginBottom: 80, textAlign: "center" }}>
             <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 16 }}>
-              02 — Our Difference
+              02 / Our Difference
             </p>
             <h2
               style={{
@@ -301,7 +301,7 @@ export default function HomePage() {
           }}
         >
           <div>
-            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 12 }}>03 — Our Work</p>
+            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 12 }}>03 / Portfolio</p>
             <h2 className="headline-lg" style={{ color: "var(--black)" }}>
               A glimpse into<br />
               <em>the magic we create.</em>
@@ -364,12 +364,12 @@ export default function HomePage() {
             className="btv-promise-grid"
           >
             <div>
-              <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 20 }}>04 — Our Promise</p>
+              <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 20 }}>04 / Our Promise</p>
               <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 40 }}>
                 Our Promise<br /><em>To You.</em>
               </h2>
               <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 40 }}>
-                From the moment you book us, you gain more than coordinators — you gain peace of mind.
+                From the moment you book us, you gain more than coordination; you gain complete peace of mind.
               </p>
               <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 16, marginBottom: 48 }}>
                 {promiseItems.map((p) => (
@@ -427,8 +427,7 @@ export default function HomePage() {
                   marginBottom: 40,
                 }}
               >
-                We&apos;re not just vendors.<br />
-                <em>We become<br />your people.</em>
+                We are more than vendors; we become your dedicated support system.
               </p>
               <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 48 }}>
                 Your support system. Your problem solvers. Your behind-the-scenes protectors. So you can be fully present on the most important day of your life.
@@ -456,7 +455,7 @@ export default function HomePage() {
             className="btv-services-quick-grid"
           >
             <div>
-              <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>05 — Services</p>
+              <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>05 / Collections</p>
               <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 32 }}>
                 Everything you<br /><em>need for your day.</em>
               </h2>

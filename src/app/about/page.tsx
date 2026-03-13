@@ -4,8 +4,8 @@ import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
-    title: "About — Meet the Team | Beyond the Vow",
-    description: "Meet Maryleen and Natalie — the co-founders behind Beyond the Vow. A professional bridal makeup artist and event design specialist who together create the ultimate wedding day experience.",
+    title: "About / Meet the Team | Beyond the Vow",
+    description: "Meet Maryleen and Natalie, the co-founders of Beyond the Vow—a professional bridal makeup artist and event design specialist who together curate the ultimate wedding day experience.",
 };
 
 export default function AboutPage() {
@@ -39,7 +39,7 @@ export default function AboutPage() {
                                 Our Story
                             </p>
                             <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 28 }}>
-                                Beyond the Vow was created from years of being behind the scenes of weddings and realizing one thing — brides deserve <strong>MORE</strong> than just someone holding a clipboard.
+                                Beyond the Vow was founded upon a core belief: that modern brides deserve more than traditional coordination.
                             </p>
                             <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 28 }}>
                                 They deserve <em>a team.</em>
@@ -143,7 +143,7 @@ export default function AboutPage() {
                         >
                             <Image
                                 src="/maryleen-profile.png"
-                                alt="Maryleen — Founder, Beyond the Vow"
+                                alt="Maryleen, Founder of Beyond the Vow"
                                 fill
                                 style={{ objectFit: "cover", objectPosition: "center top" }}
                                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -182,16 +182,13 @@ export default function AboutPage() {
                                 Lead Coordinator · Bridal Beauty Expert
                             </p>
                             <p className="body-lg" style={{ color: "rgba(255,255,255,0.6)", marginBottom: 24, fontStyle: "italic" }}>
-                                &ldquo;Hi love, I&apos;m Maryleen — but most of my brides know me as their calm in the chaos.&rdquo;
+                                &ldquo;I&apos;m Maryleen. To many of my brides, I am the calm in the chaos.&rdquo;
                             </p>
                             <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 20, lineHeight: 1.9 }}>
                                 I&apos;ve spent over 10 years in the wedding industry as a professional bridal makeup artist, working with hundreds of brides, celebrity clients, and even television productions.
                             </p>
                             <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 20, lineHeight: 1.9 }}>
-                                But somewhere along the way… I realized something. I wasn&apos;t just doing makeup. I was fixing timelines, calming nerves, adjusting dresses, organizing bridesmaids, managing vendors, and solving problems before anyone noticed. Basically… coordinating the whole morning.
-                            </p>
-                            <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 32, lineHeight: 1.9 }}>
-                                So Beyond the Vow was born. Now I bring my beauty background, attention to detail, and luxury client experience into coordination — making sure every bride not only looks flawless but feels completely taken care of. Because <em style={{ color: "rgba(255,255,255,0.75)" }}>you deserve both.</em>
+                                Beyond the Vow was established to bring my beauty background and attention to detail into the world of coordination, ensuring every bride feels completely supported. Because you deserve both beauty and peace.
                             </p>
                         </div>
                     </div>

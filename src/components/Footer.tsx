@@ -62,7 +62,7 @@ export default function Footer() {
                             <em>to feel taken care of.</em>
                         </h2>
                         <p className="body-sm" style={{ color: "var(--light-grey)", maxWidth: 420 }}>
-                            From the morning prep to the last dance — we are your calm, your glam, and your behind-the-scenes magic.
+                            From the initial preparations to the final dance, we provide the calm, the detail, and the behind-the-scenes magic that makes your day effortless.
                         </p>
                     </div>
                     <Link href="/consultation" className="btn-primary" style={{ whiteSpace: "nowrap" }}>

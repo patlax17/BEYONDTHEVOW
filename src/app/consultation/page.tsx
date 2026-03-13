@@ -174,7 +174,7 @@ export default function ConsultationPage() {
                                     Availability
                                 </p>
                                 <p className="body-sm" style={{ color: "var(--midnight-grey)" }}>
-                                    Weekends fill quickly — reach out early to secure your date.
+                                    Weekends frequently reach capacity. We recommend reaching out as early as possible to secure your preferred date.
                                 </p>
                             </div>
                             <div>
@@ -328,7 +328,7 @@ export default function ConsultationPage() {
                                         id="phone"
                                         name="phone"
                                         type="tel"
-                                        placeholder="+1 (000) 000-0000"
+                                        placeholder="+1 (000) 000 0000"
                                         value={formState.phone}
                                         onChange={handleChange}
                                         onFocus={() => setFocused("phone")}

@@ -10,7 +10,7 @@ const portfolioItems = [
         category: "Destination Wedding",
         year: "2025",
         description:
-            "A three-day clifftop soirée across three Amalfi villages — orchestrated with a 40-piece ensemble and helicopter floristry.",
+            "A three-day celebration across three Amalfi villages, featuring a 40-piece ensemble and bespoke helicopter-transported florals.",
         image: "/wedding-01.jpg",
     },
     {
@@ -20,7 +20,7 @@ const portfolioItems = [
         category: "Full Planning & Design",
         year: "2025",
         description:
-            "A 17th-century château reimagined with sculptural modern florals, black-tie formality, and 180 guests from six countries.",
+            "A 17th-century château venue featuring sculptural florals and black-tie formality for 180 international guests.",
         image: "/wedding-02.jpg",
     },
     {
@@ -30,7 +30,7 @@ const portfolioItems = [
         category: "Cultural Fusion",
         year: "2024",
         description:
-            "Yoruba tradition and London couture woven into a single, coherent visual narrative across two continents and 240 guests.",
+            "A seamless integration of Yoruba tradition and London couture, creating a coherent visual narrative across two continents.",
         image: "/wedding-03.jpg",
     },
     {
@@ -40,7 +40,7 @@ const portfolioItems = [
         category: "Intimate Celebration",
         year: "2024",
         description:
-            "24 guests. A Cycladic clifftop altar. Sustainable local decor that let the Aegean do the speaking.",
+            "An intimate clifftop ceremony for 24 guests, featuring sustainable local decor that complemented the natural Aegean landscape.",
         image: "/wedding-04.jpg",
     },
     {
@@ -96,7 +96,7 @@ export default function Portfolio() {
             >
                 <div>
                     <p className="eyebrow" style={{ color: "rgba(255,255,255,0.25)", marginBottom: 12 }}>
-                        03 — Portfolio
+                        03 / Portfolio
                     </p>
                     <h2 className="headline-lg" style={{ color: "var(--white)" }}>
                         Stories we&apos;ve<br />

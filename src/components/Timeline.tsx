@@ -17,16 +17,16 @@ const steps = [
         number: "02",
         phase: "Concepting",
         title: "The Blueprint",
-        duration: "Weeks 2–4",
+        duration: "Second to Fourth Week",
         description:
-            "We translate your story into a comprehensive aesthetic and logistical blueprint — covering everything from the invitation suite to the final farewell.",
+            "We translate your story into a comprehensive aesthetic and logistical blueprint, covering everything from the invitation suite to the final farewell.",
         deliverables: ["Full design concept deck", "Vendor shortlist", "Budget architecture"],
     },
     {
         number: "03",
         phase: "Curation",
         title: "The Ensemble",
-        duration: "Months 2–8",
+        duration: "Months Two to Eight",
         description:
             "Our global network of artisan photographers, florists, chefs, and musicians are curated and contracted. Every vendor is a creative collaborator, not just a supplier.",
         deliverables: ["Signed vendor contracts", "Design specification sheets", "Culinary direction brief"],
@@ -35,9 +35,9 @@ const steps = [
         number: "04",
         phase: "Production",
         title: "The Build",
-        duration: "Months 9–11",
+        duration: "Final Preparation",
         description:
-            "Over 500 hours of meticulous production work — logistics architecture, venue transformation plans, guest experience design, and the complete operational playbook.",
+            "Over 500 hours of meticulous production work including logistics architecture, venue transformation plans, guest experience design, and the complete operational playbook.",
         deliverables: ["Day-of timeline", "Venue installation plan", "Guest journey map"],
     },
     {
@@ -46,7 +46,7 @@ const steps = [
         title: "Your Day",
         duration: "The Celebration",
         description:
-            "We are present, invisible, and omniscient. Our team manages every logistical thread so you experience only the joy of your celebration — nothing else.",
+            "We are present and effective while remaining discreet. Our team manages every logistical thread so you experience only the joy of your celebration with absolute clarity.",
         deliverables: ["Full on-site team", "Vendor coordination", "24/7 emergency cover"],
     },
     {
@@ -55,7 +55,7 @@ const steps = [
         title: "The Afterglow",
         duration: "Post-Event",
         description:
-            "Final vendor settlements, custom digital album, editorial-quality memory book, and a private gallery for your guests — your story preserved with intention.",
+            "Final vendor settlements, custom digital albums, editorial-quality memory books, and a private gallery for your guests. We ensure your story is preserved with intention.",
         deliverables: ["Curated memory book", "Guest highlight reel", "Private digital gallery"],
     },
 ];
@@ -86,7 +86,7 @@ export default function Timeline() {
                 >
                     <div>
                         <p className="eyebrow" style={{ color: "rgba(255,255,255,0.35)", marginBottom: 16 }}>
-                            04 — The Experience
+                            04 / The Experience
                         </p>
                         <h2 className="headline-lg" style={{ color: "var(--white)" }}>
                             The Story<br />
@@ -95,10 +95,7 @@ export default function Timeline() {
                         </h2>
                     </div>
                     <div>
-                        <p className="body-lg" style={{ color: "rgba(255,255,255,0.55)", marginBottom: 32 }}>
-                            From your first inquiry to your farewell dance — over 500 meticulously
-                            orchestrated hours, every one of them in service of your singular vision.
-                        </p>
+                            From your first inquiry to your farewell dance, we dedicate over 500 meticulously orchestrated hours to ensure every detail serves your singular vision.
                         <Link href="/experience" className="btn-outline-white">
                             <span>Explore the Full Process</span>
                         </Link>

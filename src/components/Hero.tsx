@@ -162,7 +162,7 @@ export default function Hero() {
                                 lineHeight: 1.45,
                             }}
                         >
-                            More than coordinators — we are your calm, your glam, and your behind-the-scenes magic.
+                            We provide more than coordination; we are the calm, the detail, and the behind-the-scenes magic of your wedding day.
                         </p>
                         <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
                             <Link

@@ -13,7 +13,7 @@ const packages = [
         tier: "The Signature",
         subtitle: "Day-Of Coordination",
         tagline: "For the couple who planned everything but wants a flawless execution.",
-        price: "Starting at $1,800 – $2,500",
+        price: "From $1,800 to $2,500",
         accent: false,
         features: [
             "Final timeline creation",
@@ -25,7 +25,7 @@ const packages = [
             "Emergency kit access",
             "Built-in makeup touch-ups",
             "Wedding day content capture",
-            "2–3 coordinators on site",
+            "Full coordination team on site",
         ],
         highlight: "You planned it. We perfect it.",
         cta: "Inquire About This Package",
@@ -35,11 +35,11 @@ const packages = [
         tier: "The Luxe",
         subtitle: "Month-Of Coordination",
         tagline: "For the couple who wants guidance + hands-on support leading up to the big day.",
-        price: "Starting at $3,000 – $4,500",
+        price: "From $3,000 to $4,500",
         accent: true,
         features: [
             "Everything in The Signature, PLUS:",
-            "4–6 weeks of planning support",
+            "Full management leading up to the event",
             "Vendor communication & management",
             "Layout + decor planning assistance",
             "Final walkthrough",
@@ -55,7 +55,7 @@ const packages = [
         badge: "👑",
         tier: "The Beyond Experience",
         subtitle: "Full Planning + Design",
-        tagline: "Our signature white-glove, all-inclusive experience.",
+        tagline: "Our premier white-glove experience, providing all-inclusive management from concept to completion.",
         price: "Custom pricing from $6,000+",
         accent: false,
         features: [
@@ -79,7 +79,7 @@ const packages = [
 
 const addOns = [
     { name: "Bridal Makeup Services", desc: "Professional bridal glam by our co-founder." },
-    { name: "Content Creation Only", desc: "Behind-the-scenes coverage & same-day Reels/TikToks." },
+    { name: "Content Creation Only", desc: "Behind-the-scenes coverage and same-day digital assets for social media." },
     { name: "Destination Weddings", desc: "White-glove coordination anywhere in the world." },
     { name: "Bridal Shower / Engagement Coordination", desc: "Full coordination for pre-wedding celebrations." },
     { name: "Extra Assistants", desc: "Additional team members for larger events." },
@@ -92,7 +92,7 @@ export default function ServicesPage() {
             <PageHeader
                 eyebrow="Services + Pricing"
                 title={<>Our Services</>}
-                subtitle="Luxury coordination, intentional design, and unmatched peace of mind. Whether you need someone to run the day or curate the entire experience, we step in so you can simply show up and enjoy being the bride."
+                subtitle="Luxury coordination and intentional design for the discerning couple. We manage every detail so you can remain fully present throughout your celebration."
             />
 
             {/* PACKAGES */}
