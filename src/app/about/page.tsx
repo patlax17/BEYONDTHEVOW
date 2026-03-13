@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
@@ -132,37 +133,23 @@ export default function AboutPage() {
                         }}
                         className="btv-founder-grid"
                     >
-                        {/* Photo placeholder */}
+                        {/* Maryleen — real profile photo */}
                         <div
                             style={{
-                                background: "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)",
-                                minHeight: 600,
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
                                 position: "relative",
+                                minHeight: 600,
                                 overflow: "hidden",
                             }}
                         >
-                            <div style={{ textAlign: "center", padding: 40 }}>
-                                <div
-                                    style={{
-                                        width: 120,
-                                        height: 120,
-                                        borderRadius: "50%",
-                                        background: "rgba(255,255,255,0.06)",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        margin: "0 auto 24px",
-                                        fontSize: 48,
-                                    }}
-                                >
-                                    💄
-                                </div>
-                                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)" }}>Photo Coming Soon</p>
-                            </div>
-                            {/* Decorative element */}
+                            <Image
+                                src="/maryleen-profile.png"
+                                alt="Maryleen — Founder, Beyond the Vow"
+                                fill
+                                style={{ objectFit: "cover", objectPosition: "center top" }}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                priority
+                            />
+                            {/* Gradient overlay */}
                             <div
                                 aria-hidden
                                 style={{
@@ -170,8 +157,8 @@ export default function AboutPage() {
                                     bottom: 0,
                                     left: 0,
                                     right: 0,
-                                    height: "30%",
-                                    background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)",
+                                    height: "35%",
+                                    background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)",
                                 }}
                             />
                         </div>

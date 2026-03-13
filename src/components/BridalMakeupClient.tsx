@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 
 const makeupServices = [
@@ -118,42 +119,36 @@ export default function BridalMakeupClient() {
             <section style={{ padding: "120px clamp(24px,5vw,100px)", background: "var(--white)" }}>
                 <div style={{ maxWidth: 1440, margin: "0 auto" }}>
                     <div
-                        style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "center" }}
+                        style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}
                         className="btv-bio-grid"
                     >
-                        {/* Video / photo placeholder */}
+                        {/* Maryleen action photo — working at wedding */}
                         <div
                             style={{
-                                background: "#0f0f0f",
-                                aspectRatio: "4/5",
                                 position: "relative",
+                                aspectRatio: "4/5",
                                 overflow: "hidden",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                flexDirection: "column",
-                                gap: 20,
+                                minHeight: 480,
+                                background: "#0f0f0f",
                             }}
                         >
-                            <div style={{ textAlign: "center", padding: 40 }}>
-                                <div
-                                    style={{
-                                        width: 80, height: 80, borderRadius: "50%",
-                                        border: "1px solid rgba(255,255,255,0.15)",
-                                        display: "flex", alignItems: "center", justifyContent: "center",
-                                        margin: "0 auto 24px", fontSize: 28,
-                                    }}
-                                >
-                                    ▶
-                                </div>
-                                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 8 }}>Video Coming Soon</p>
-                                <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.15)", letterSpacing: "0.1em" }}>
-                                    Artist reel uploading shortly
-                                </p>
-                            </div>
+                            <Image
+                                src="/maryleen-action.png"
+                                alt="Maryleen coordinating a luxury wedding — Beyond the Vow"
+                                fill
+                                style={{ objectFit: "cover", objectPosition: "center" }}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                priority
+                            />
+                            {/* Gold accent bar */}
                             <div
+                                aria-hidden
                                 style={{
-                                    position: "absolute", bottom: 0, left: 0, right: 0, height: 3,
+                                    position: "absolute",
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    height: 3,
                                     background: "linear-gradient(to right, transparent, rgba(201,169,110,0.6), transparent)",
                                 }}
                             />
@@ -161,7 +156,9 @@ export default function BridalMakeupClient() {
 
                         {/* Bio text */}
                         <div>
-                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 20 }}>Meet the Artist</p>
+                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 20 }}>
+                                Meet the Artist
+                            </p>
                             <h2
                                 style={{
                                     fontFamily: "var(--font-display)",
@@ -175,7 +172,7 @@ export default function BridalMakeupClient() {
                             >
                                 Maryleen
                                 <br />
-                                <em style={{ fontSize: "0.65em", color: "var(--light-grey)" }}>Lead Bridal Artist</em>
+                                <em style={{ fontSize: "0.65em", color: "var(--light-grey)" }}>Founder · Lead Bridal Artist</em>
                             </h2>
                             <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
                                 With over 10 years in the wedding industry, Maryleen has worked with hundreds of brides, celebrity clients, and television productions — building a reputation for making every person feel like the most beautiful version of themselves.
@@ -231,13 +228,7 @@ export default function BridalMakeupClient() {
                         }}
                     >
                         {/* Left quote — decorative, desktop only */}
-                        <div
-                            className="btv-video-quote"
-                            style={{
-                                maxWidth: 240,
-                                textAlign: "right",
-                            }}
-                        >
+                        <div className="btv-video-quote" style={{ maxWidth: 240, textAlign: "right" }}>
                             <p
                                 style={{
                                     fontFamily: "var(--font-display)",
@@ -264,7 +255,6 @@ export default function BridalMakeupClient() {
                                 overflow: "hidden",
                                 background: "#0a0a0a",
                                 flexShrink: 0,
-                                /* Thin gold border for that premium frame feel */
                                 boxShadow: "0 0 0 1px rgba(201,169,110,0.25), 0 40px 80px rgba(0,0,0,0.6)",
                             }}
                         >
@@ -299,15 +289,7 @@ export default function BridalMakeupClient() {
                             />
 
                             {/* Label */}
-                            <div
-                                style={{
-                                    position: "absolute",
-                                    bottom: 24,
-                                    left: 0,
-                                    right: 0,
-                                    textAlign: "center",
-                                }}
-                            >
+                            <div style={{ position: "absolute", bottom: 24, left: 0, right: 0, textAlign: "center" }}>
                                 <p className="eyebrow" style={{ color: "rgba(255,255,255,0.6)", letterSpacing: "0.22em" }}>
                                     Bridal Glam · Beyond the Vow
                                 </p>
@@ -315,13 +297,7 @@ export default function BridalMakeupClient() {
                         </div>
 
                         {/* Right quote — decorative, desktop only */}
-                        <div
-                            className="btv-video-quote"
-                            style={{
-                                maxWidth: 240,
-                                textAlign: "left",
-                            }}
-                        >
+                        <div className="btv-video-quote" style={{ maxWidth: 240, textAlign: "left" }}>
                             <p
                                 style={{
                                     fontFamily: "var(--font-display)",
@@ -423,8 +399,10 @@ export default function BridalMakeupClient() {
                         ))}
                     </div>
                 </div>
-                <style>{`@media(max-width:768px){.btv-beauty-services-grid{grid-template-columns:1fr!important;}}
-                    .btv-beauty-services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}`}</style>
+                <style>{`
+                    .btv-beauty-services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; }
+                    @media(max-width:768px){ .btv-beauty-services-grid { grid-template-columns: 1fr !important; } }
+                `}</style>
             </section>
 
             {/* BUILT-IN BEAUTY NOTE */}
