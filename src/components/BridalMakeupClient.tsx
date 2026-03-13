@@ -203,7 +203,8 @@ export default function BridalMakeupClient() {
             {/* VIDEO WORK SECTION */}
             <section style={{ background: "var(--black)", padding: "100px clamp(24px,5vw,100px)", overflow: "hidden" }}>
                 <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-                    <div style={{ marginBottom: 64 }}>
+                    {/* Header */}
+                    <div style={{ marginBottom: 72, textAlign: "center" }}>
                         <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 16 }}>The Work</p>
                         <h2
                             style={{
@@ -219,118 +220,143 @@ export default function BridalMakeupClient() {
                         </h2>
                     </div>
 
-                    {/* ── FEATURED VIDEO (real footage) ── */}
+                    {/* ── CENTERED PORTRAIT VIDEO ── */}
                     <div
                         style={{
-                            position: "relative",
-                            width: "100%",
-                            aspectRatio: "9/16",
-                            maxHeight: "85vh",
-                            overflow: "hidden",
-                            marginBottom: 3,
-                            background: "#0a0a0a",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: "clamp(32px, 5vw, 80px)",
+                            flexWrap: "wrap",
                         }}
                     >
-                        <video
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
+                        {/* Left quote — decorative, desktop only */}
+                        <div
+                            className="btv-video-quote"
                             style={{
+                                maxWidth: 240,
+                                textAlign: "right",
+                            }}
+                        >
+                            <p
+                                style={{
+                                    fontFamily: "var(--font-display)",
+                                    fontSize: "clamp(20px, 2vw, 28px)",
+                                    fontWeight: 300,
+                                    fontStyle: "italic",
+                                    color: "rgba(255,255,255,0.3)",
+                                    lineHeight: 1.5,
+                                }}
+                            >
+                                &ldquo;Every look
+                                <br />is crafted for
+                                <br /><em style={{ color: "rgba(201,169,110,0.7)" }}>you.</em>&rdquo;
+                            </p>
+                        </div>
+
+                        {/* Portrait video frame */}
+                        <div
+                            style={{
+                                position: "relative",
                                 width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                                objectPosition: "center",
-                                display: "block",
+                                maxWidth: 420,
+                                aspectRatio: "9/16",
+                                overflow: "hidden",
+                                background: "#0a0a0a",
+                                flexShrink: 0,
+                                /* Thin gold border for that premium frame feel */
+                                boxShadow: "0 0 0 1px rgba(201,169,110,0.25), 0 40px 80px rgba(0,0,0,0.6)",
                             }}
                         >
-                            <source src="/makeup-video-1.mp4" type="video/mp4" />
-                        </video>
-                        {/* Subtle bottom gradient so it blends into the next row */}
+                            <video
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                    objectPosition: "center top",
+                                    display: "block",
+                                }}
+                            >
+                                <source src="/makeup-video-1.mp4" type="video/mp4" />
+                            </video>
+
+                            {/* Bottom gradient overlay */}
+                            <div
+                                aria-hidden
+                                style={{
+                                    position: "absolute",
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    height: "35%",
+                                    background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)",
+                                    pointerEvents: "none",
+                                }}
+                            />
+
+                            {/* Label */}
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    bottom: 24,
+                                    left: 0,
+                                    right: 0,
+                                    textAlign: "center",
+                                }}
+                            >
+                                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.6)", letterSpacing: "0.22em" }}>
+                                    Bridal Glam · Beyond the Vow
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Right quote — decorative, desktop only */}
                         <div
-                            aria-hidden
+                            className="btv-video-quote"
                             style={{
-                                position: "absolute",
-                                bottom: 0,
-                                left: 0,
-                                right: 0,
-                                height: "30%",
-                                background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)",
-                                pointerEvents: "none",
-                            }}
-                        />
-                        {/* Label */}
-                        <div
-                            style={{
-                                position: "absolute",
-                                bottom: 24,
-                                left: 28,
+                                maxWidth: 240,
+                                textAlign: "left",
                             }}
                         >
-                            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.55)" }}>
-                                Bridal Glam · Beyond the Vow
+                            <p
+                                style={{
+                                    fontFamily: "var(--font-display)",
+                                    fontSize: "clamp(20px, 2vw, 28px)",
+                                    fontWeight: 300,
+                                    fontStyle: "italic",
+                                    color: "rgba(255,255,255,0.3)",
+                                    lineHeight: 1.5,
+                                }}
+                            >
+                                Flawless
+                                <br />from the
+                                <br /><em style={{ color: "rgba(201,169,110,0.7)" }}>first touch.</em>
                             </p>
                         </div>
                     </div>
 
-                    {/* ── COMING SOON slots (5 placeholders) ── */}
-                    <div className="btv-video-grid">
-                        {[2, 3, 4, 5, 6].map((i) => (
-                            <div
-                                key={i}
-                                style={{
-                                    background: "rgba(255,255,255,0.02)",
-                                    border: "1px solid rgba(255,255,255,0.05)",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    flexDirection: "column",
-                                    gap: 12,
-                                    position: "relative",
-                                    overflow: "hidden",
-                                    minHeight: 200,
-                                }}
-                            >
-                                {/*
-                                  ── TO ADD A VIDEO: replace this div's contents with ──
-                                  <video autoPlay muted loop playsInline
-                                    style={{ width:"100%", height:"100%", objectFit:"cover", position:"absolute", inset:0 }}>
-                                    <source src="/makeup-video-{i}.mp4" type="video/mp4" />
-                                  </video>
-                                */}
-                                <div
-                                    style={{
-                                        width: 44, height: 44, borderRadius: "50%",
-                                        border: "1px solid rgba(255,255,255,0.1)",
-                                        display: "flex", alignItems: "center", justifyContent: "center",
-                                        fontSize: 14, color: "rgba(255,255,255,0.2)",
-                                    }}
-                                >
-                                    ▶
-                                </div>
-                                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.12)", textAlign: "center", padding: "0 20px" }}>
-                                    Coming Soon
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.15)", textAlign: "center", marginTop: 32, letterSpacing: "0.14em", textTransform: "uppercase" }}>
-                        More content uploading shortly
+                    <p
+                        style={{
+                            fontFamily: "var(--font-body)",
+                            fontSize: 11,
+                            color: "rgba(255,255,255,0.18)",
+                            textAlign: "center",
+                            marginTop: 48,
+                            letterSpacing: "0.16em",
+                            textTransform: "uppercase",
+                        }}
+                    >
+                        More work coming soon
                     </p>
                 </div>
+
                 <style>{`
-                    .btv-video-grid {
-                        display: grid;
-                        grid-template-columns: repeat(5, 1fr);
-                        gap: 3px;
-                        margin-top: 3px;
-                    }
-                    @media(max-width:900px){
-                        .btv-video-grid{grid-template-columns:repeat(3,1fr)!important;}
-                    }
-                    @media(max-width:480px){
-                        .btv-video-grid{grid-template-columns:repeat(2,1fr)!important;}
+                    @media (max-width: 768px) {
+                        .btv-video-quote { display: none !important; }
                     }
                 `}</style>
             </section>
