@@ -53,13 +53,6 @@ const makeupServices = [
     },
 ];
 
-const stats = [
-    { number: "10+", label: "Years Experience" },
-    { number: "500+", label: "Brides Served" },
-    { number: "3", label: "TV Productions" },
-    { number: "100%", label: "Customized Looks" },
-];
-
 const builtInBeauty = [
     "Emergency lash application",
     "Blotting + shine control",
@@ -77,43 +70,6 @@ export default function BridalMakeupClient() {
                 title={<>Where artistry<br /><em>meets your skin.</em></>}
                 subtitle="Professional bridal makeup by Maryleen — 10+ years of experience with brides, celebrities, and television productions. Every look is crafted for you, by you."
             />
-
-            {/* STATS */}
-            <section
-                style={{
-                    background: "var(--black)",
-                    padding: "0 clamp(24px,5vw,100px)",
-                    borderBottom: "1px solid rgba(255,255,255,0.06)",
-                }}
-            >
-                <div
-                    style={{ maxWidth: 1440, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 2 }}
-                    className="btv-stats-grid"
-                >
-                    {stats.map((s) => (
-                        <div
-                            key={s.label}
-                            style={{ padding: "52px 40px", textAlign: "center", borderRight: "1px solid rgba(255,255,255,0.05)" }}
-                        >
-                            <p
-                                style={{
-                                    fontFamily: "var(--font-display)",
-                                    fontSize: "clamp(40px, 5vw, 72px)",
-                                    fontWeight: 300,
-                                    color: "var(--white)",
-                                    lineHeight: 1,
-                                    marginBottom: 8,
-                                    letterSpacing: "-0.02em",
-                                }}
-                            >
-                                {s.number}
-                            </p>
-                            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)" }}>{s.label}</p>
-                        </div>
-                    ))}
-                </div>
-                <style>{`@media(max-width:768px){.btv-stats-grid{grid-template-columns:repeat(2,1fr)!important;}}`}</style>
-            </section>
 
             {/* ARTIST BIO */}
             <section style={{ padding: "120px clamp(24px,5vw,100px)", background: "var(--white)" }}>
