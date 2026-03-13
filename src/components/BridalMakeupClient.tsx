@@ -219,14 +219,68 @@ export default function BridalMakeupClient() {
                         </h2>
                     </div>
 
-                    {/* Video grid — replace placeholders with real videos */}
+                    {/* ── FEATURED VIDEO (real footage) ── */}
+                    <div
+                        style={{
+                            position: "relative",
+                            width: "100%",
+                            aspectRatio: "9/16",
+                            maxHeight: "85vh",
+                            overflow: "hidden",
+                            marginBottom: 3,
+                            background: "#0a0a0a",
+                        }}
+                    >
+                        <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",
+                                objectPosition: "center",
+                                display: "block",
+                            }}
+                        >
+                            <source src="/makeup-video-1.mp4" type="video/mp4" />
+                        </video>
+                        {/* Subtle bottom gradient so it blends into the next row */}
+                        <div
+                            aria-hidden
+                            style={{
+                                position: "absolute",
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                height: "30%",
+                                background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)",
+                                pointerEvents: "none",
+                            }}
+                        />
+                        {/* Label */}
+                        <div
+                            style={{
+                                position: "absolute",
+                                bottom: 24,
+                                left: 28,
+                            }}
+                        >
+                            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.55)" }}>
+                                Bridal Glam · Beyond the Vow
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* ── COMING SOON slots (5 placeholders) ── */}
                     <div className="btv-video-grid">
-                        {[1, 2, 3, 4, 5, 6].map((i) => (
+                        {[2, 3, 4, 5, 6].map((i) => (
                             <div
                                 key={i}
                                 style={{
-                                    background: "rgba(255,255,255,0.03)",
-                                    border: "1px solid rgba(255,255,255,0.06)",
+                                    background: "rgba(255,255,255,0.02)",
+                                    border: "1px solid rgba(255,255,255,0.05)",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
@@ -234,49 +288,49 @@ export default function BridalMakeupClient() {
                                     gap: 12,
                                     position: "relative",
                                     overflow: "hidden",
-                                    cursor: "pointer",
+                                    minHeight: 200,
                                 }}
                             >
                                 {/*
                                   ── TO ADD A VIDEO: replace this div's contents with ──
                                   <video autoPlay muted loop playsInline
-                                    style={{ width:"100%", height:"100%", objectFit:"cover" }}>
+                                    style={{ width:"100%", height:"100%", objectFit:"cover", position:"absolute", inset:0 }}>
                                     <source src="/makeup-video-{i}.mp4" type="video/mp4" />
                                   </video>
                                 */}
                                 <div
                                     style={{
-                                        width: 52, height: 52, borderRadius: "50%",
-                                        border: "1px solid rgba(255,255,255,0.12)",
+                                        width: 44, height: 44, borderRadius: "50%",
+                                        border: "1px solid rgba(255,255,255,0.1)",
                                         display: "flex", alignItems: "center", justifyContent: "center",
-                                        fontSize: 18, color: "rgba(255,255,255,0.25)",
+                                        fontSize: 14, color: "rgba(255,255,255,0.2)",
                                     }}
                                 >
                                     ▶
                                 </div>
-                                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.15)", textAlign: "center", padding: "0 20px" }}>
-                                    Video {i} — Coming Soon
+                                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.12)", textAlign: "center", padding: "0 20px" }}>
+                                    Coming Soon
                                 </p>
                             </div>
                         ))}
                     </div>
 
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: "rgba(255,255,255,0.18)", textAlign: "center", marginTop: 40, letterSpacing: "0.12em" }}>
-                        Videos uploading shortly — check back soon
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.15)", textAlign: "center", marginTop: 32, letterSpacing: "0.14em", textTransform: "uppercase" }}>
+                        More content uploading shortly
                     </p>
                 </div>
                 <style>{`
                     .btv-video-grid {
                         display: grid;
-                        grid-template-columns: repeat(3, 1fr);
-                        grid-auto-rows: 280px;
+                        grid-template-columns: repeat(5, 1fr);
                         gap: 3px;
+                        margin-top: 3px;
                     }
                     @media(max-width:900px){
-                        .btv-video-grid{grid-template-columns:repeat(2,1fr)!important;}
+                        .btv-video-grid{grid-template-columns:repeat(3,1fr)!important;}
                     }
                     @media(max-width:480px){
-                        .btv-video-grid{grid-template-columns:1fr!important;}
+                        .btv-video-grid{grid-template-columns:repeat(2,1fr)!important;}
                     }
                 `}</style>
             </section>
