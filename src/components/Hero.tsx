@@ -220,38 +220,46 @@ export default function Hero() {
                                 View Our Work
                             </Link>
                         </div>
+
+                        {/* Scroll indicator - placed directly below buttons */}
+                        <div
+                            style={{
+                                marginTop: 32,
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "flex-start",
+                                animation: "fadeIn 1s ease 1.2s both",
+                            }}
+                        >
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="rgba(255,255,255,0.35)"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                style={{
+                                    animation: "bounce 2s infinite",
+                                }}
+                            >
+                                <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                            </svg>
+                        </div>
                     </div>
-
-
                 </div>
             </div>
 
-            {/* Scroll indicator */}
-            <div
-                style={{
-                    position: "absolute",
-                    bottom: 32,
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    zIndex: 3,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 8,
-                    animation: "fadeIn 1s ease 1.6s both",
-                }}
-            >
-                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.25)" }}>
-                    Scroll
-                </p>
-                <div
-                    style={{
-                        width: 1,
-                        height: 40,
-                        background: "linear-gradient(to bottom, rgba(255,255,255,0.35), transparent)",
-                    }}
-                />
-            </div>
+            <style>{`
+                @keyframes bounce {
+                    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                    40% { transform: translateY(-6px); }
+                    60% { transform: translateY(-3px); }
+                }
+            `}</style>
+
+
         </section>
     );
 }
