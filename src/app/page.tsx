@@ -15,6 +15,7 @@ const whyUs = [
     icon: "💄",
     title: "Built-in Beauty Support",
     body: "Your coordinator is also a professional bridal makeup artist. Even if you didn't book makeup services, we're still there to fix lashes, blot shine, touch up lips, calm last-minute beauty emergencies, and make sure you're photo-ready 24/7. Most coordinators can't do that. We can.",
+    link: { label: "See Our Makeup Work", href: "/bridal-makeup" },
   },
   {
     icon: "🎨",
@@ -62,7 +63,7 @@ const servicesList = [
   { name: "Day-of Coordination", href: "/services" },
   { name: "Month-of Coordination", href: "/services" },
   { name: "Full Planning + Design", href: "/services" },
-  { name: "Bridal Beauty + Coordination Bundle", href: "/services" },
+  { name: "Bridal Makeup Services", href: "/bridal-makeup" },
   { name: "Content Creation Add-On", href: "/services" },
   { name: "Destination Weddings", href: "/services" },
 ];
@@ -230,6 +231,39 @@ export default function HomePage() {
                 <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
                   {item.body}
                 </p>
+                {"link" in item && item.link && (
+                  <Link
+                    href={(item.link as { label: string; href: string }).href}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                      fontFamily: "var(--font-body)",
+                      fontSize: 10,
+                      fontWeight: 500,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "rgba(201,169,110,0.85)",
+                      textDecoration: "none",
+                      marginTop: 20,
+                      borderBottom: "1px solid rgba(201,169,110,0.3)",
+                      paddingBottom: 4,
+                      transition: "color 0.25s ease, border-color 0.25s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const el = e.currentTarget as HTMLElement;
+                      el.style.color = "#fff";
+                      el.style.borderColor = "rgba(255,255,255,0.4)";
+                    }}
+                    onMouseLeave={(e) => {
+                      const el = e.currentTarget as HTMLElement;
+                      el.style.color = "rgba(201,169,110,0.85)";
+                      el.style.borderColor = "rgba(201,169,110,0.3)";
+                    }}
+                  >
+                    {(item.link as { label: string; href: string }).label} →
+                  </Link>
+                )}
               </div>
             ))}
           </div>

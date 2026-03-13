@@ -3,484 +3,649 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
-    title: "Bridal Makeup — Services",
-    description:
-        "Explore our full range of bridal beauty services — from full bridal packages and bridesmaids glam to airbrush finishes and editorial looks. Crafted for every bride.",
+    title: "Bridal Makeup & Beauty | Beyond the Vow",
+    description: "Professional bridal makeup by Maryleen — 10+ years of experience with brides, celebrities, and television. Soft glam, airbrush, editorial, and full bridal party services.",
 };
 
-const packages = [
+const makeupServices = [
     {
-        id: "01",
-        name: "The Bridal Package",
-        tagline: "Complete wedding day artistry",
-        price: "Starting from $XXX",
-        description:
-            "Our signature offering, designed for the bride who wants nothing left to chance. Includes a pre-wedding trial, full-day application, and an on-site touch-up kit to carry you through to midnight.",
+        name: "Full Bridal Glam",
+        desc: "Your complete wedding day look — from skin prep to the final lash. Customized to your vision, your skin tone, and the vibe of your day.",
         includes: [
-            "90-minute bridal makeup trial",
-            "Wedding day application (3 hrs)",
-            "Long-wear setting service",
-            "Touch-up kit to keep",
-            "Custom look build based on your vision",
-            "Available for on-site or studio sessions",
+            "In-depth pre-wedding consultation",
+            "Skin prep + primer application",
+            "Full foundation + concealer",
+            "Eye artistry (shadow, liner, lashes)",
+            "Contour, highlight, blush",
+            "Long-wear lip",
+            "Setting spray for all-day wear",
         ],
-        highlight: true,
     },
     {
-        id: "02",
-        name: "Trial Only",
-        tagline: "Perfect for planning ahead",
-        price: "Starting from $XXX",
-        description:
-            "Not ready to commit to the full package yet? Book a standalone trial to explore your vision, test skin compatibility, and see exactly how you'll look on the day.",
+        name: "Bridal Trial Session",
+        desc: "A dedicated session before your big day to perfect your look, test products on your skin, and arrive at the altar with complete confidence.",
         includes: [
-            "90-minute consultation & trial",
-            "Full look build & wear test",
-            "Style guidance & mood boarding",
-            "Photo reference provided",
+            "Full makeup application",
+            "Product customization to your skin",
+            "Longevity and photography test",
+            "Look refinement based on feedback",
+            "Style saves for wedding day reference",
         ],
-        highlight: false,
     },
     {
-        id: "03",
-        name: "Bridesmaids & Party",
-        tagline: "Coordinated glam for your whole crew",
-        price: "Starting from $XXX per person",
-        description:
-            "Elevate your bridal party with a cohesive, polished look. Group bookings include dedicated scheduling to ensure everyone is camera-ready before the ceremony.",
+        name: "Bridesmaids & Bridal Party",
+        desc: "Cohesive, glowing looks for your entire squad. We coordinate the aesthetic so everyone looks stunning — together.",
         includes: [
-            "Minimum 2 people",
-            "Coordinated aesthetic across the group",
-            "Flexible morning scheduling",
-            "Long-wear, all-day formula",
-            "Group discount applied",
+            "Group pricing available",
+            "Coordinated color palette",
+            "Flexible scheduling & timing",
+            "Dedicated artist per 4-5 clients",
+            "Flawless all-day wear formula",
         ],
-        highlight: false,
     },
     {
-        id: "04",
-        name: "Airbrush Upgrade",
-        tagline: "Ultra-smooth, camera-ready finish",
-        price: "Add-on to any package",
-        description:
-            "Available as an upgrade to any booking, airbrush application delivers an impossibly smooth, photograph-perfect finish that wears beautifully all day.",
+        name: "Airbrush Finish",
+        desc: "Ultra-smooth, camera-ready perfection. Airbrush makeup is our most requested upgrade — and once you feel it, you'll understand why.",
         includes: [
-            "Professional airbrush system",
-            "Customised to your skin tone",
-            "HD photo & video ready",
-            "Buildable coverage",
-            "Long-lasting formula",
+            "HD airbrush foundation",
+            "Buildable, weightless coverage",
+            "Custom-matched to your skin",
+            "Photo and video proof finish",
+            "12+ hour wear guarantee",
         ],
-        highlight: false,
     },
 ];
 
-const faqs = [
-    {
-        question: "When should I book my trial?",
-        answer:
-            "We recommend booking your trial 2–4 months before the wedding. This gives us time to refine the look and make any adjustments before the big day.",
-    },
-    {
-        question: "How long will my makeup last?",
-        answer:
-            "With our long-wear setting technique, your look is designed to last 12–14 hours. Airbrush applications typically last even longer.",
-    },
-    {
-        question: "Do you travel to the venue?",
-        answer:
-            "Yes — we offer on-location services throughout the area. Travel fees may apply depending on the distance. Ask us when you book.",
-    },
-    {
-        question: "What should I bring to my trial?",
-        answer:
-            "Bring any inspiration images, a top you can easily remove, and come with a clean, moisturised face. If you have your veil or accessories, bring those too!",
-    },
-    {
-        question: "Do you work on all skin tones?",
-        answer:
-            "Absolutely. We are trained across the full spectrum of complexions and carry a comprehensive range of foundations, concealers, and products suited for all tones.",
-    },
-    {
-        question: "How far in advance should I book?",
-        answer:
-            "Bridal dates fill up fast — especially on peak wedding weekends. We recommend securing your date as soon as possible, ideally 6–12 months ahead.",
-    },
+const stats = [
+    { number: "10+", label: "Years Experience" },
+    { number: "500+", label: "Brides Served" },
+    { number: "3", label: "TV Productions" },
+    { number: "100%", label: "Customized Looks" },
 ];
 
 export default function BridalMakeupPage() {
     return (
         <div>
             <PageHeader
-                eyebrow="Bridal Makeup"
-                title={<>Artistry for<br /><em>the most important</em><br />morning of your life.</>}
-                subtitle="Every package is tailored to your vision, your skin, and the story you want to tell on your wedding day."
+                eyebrow="Bridal Beauty"
+                title={<>Where artistry<br /><em>meets your skin.</em></>}
+                subtitle="Professional bridal makeup by Maryleen — 10+ years of experience with brides, celebrities, and television productions. Every look is crafted for you, by you."
             />
 
-            {/* Packages */}
+            {/* STATS */}
             <section
                 style={{
-                    padding: "120px clamp(24px,5vw,100px)",
-                    background: "var(--pale)",
+                    background: "var(--black)",
+                    padding: "0 clamp(24px,5vw,100px)",
+                    borderBottom: "1px solid rgba(255,255,255,0.06)",
                 }}
-                aria-label="Bridal Packages"
             >
-                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-                    <div style={{ marginBottom: 80 }}>
-                        <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 12 }}>
-                            Our Packages
-                        </p>
-                        <h2 className="headline-lg" style={{ color: "var(--black)" }}>
-                            Choose your<br />
-                            <em>perfect package.</em>
-                        </h2>
-                    </div>
-
-                    <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
-                        {packages.map((pkg, i) => (
-                            <div
-                                key={pkg.id}
+                <div
+                    style={{
+                        maxWidth: 1440,
+                        margin: "0 auto",
+                        display: "grid",
+                        gridTemplateColumns: "repeat(4, 1fr)",
+                        gap: 2,
+                    }}
+                    className="btv-stats-grid"
+                >
+                    {stats.map((s) => (
+                        <div
+                            key={s.label}
+                            style={{
+                                padding: "52px 40px",
+                                textAlign: "center",
+                                borderRight: "1px solid rgba(255,255,255,0.05)",
+                            }}
+                        >
+                            <p
                                 style={{
-                                    background: pkg.highlight ? "var(--black)" : "var(--white)",
-                                    padding: "60px clamp(32px,4vw,80px)",
-                                    display: "grid",
-                                    gridTemplateColumns: "1fr 2fr 1fr",
-                                    gap: 60,
-                                    alignItems: "start",
-                                    position: "relative",
+                                    fontFamily: "var(--font-display)",
+                                    fontSize: "clamp(40px, 5vw, 72px)",
+                                    fontWeight: 300,
+                                    color: "var(--white)",
+                                    lineHeight: 1,
+                                    marginBottom: 8,
+                                    letterSpacing: "-0.02em",
                                 }}
                             >
-                                {/* Package number watermark */}
-                                <span
-                                    aria-hidden
-                                    style={{
-                                        position: "absolute",
-                                        top: 20,
-                                        right: 40,
-                                        fontFamily: "var(--font-display)",
-                                        fontSize: 100,
-                                        fontWeight: 300,
-                                        color: pkg.highlight ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.04)",
-                                        lineHeight: 1,
-                                        userSelect: "none",
-                                    }}
-                                >
-                                    {pkg.id}
-                                </span>
-
-                                {/* Left: Name & Tagline */}
-                                <div>
-                                    <p
-                                        className="eyebrow"
-                                        style={{
-                                            color: pkg.highlight ? "var(--vogue-red)" : "var(--light-grey)",
-                                            marginBottom: 16,
-                                        }}
-                                    >
-                                        {pkg.id}
-                                    </p>
-                                    <h3
-                                        style={{
-                                            fontFamily: "var(--font-display)",
-                                            fontSize: "clamp(24px, 2.5vw, 40px)",
-                                            fontWeight: 400,
-                                            color: pkg.highlight ? "var(--white)" : "var(--black)",
-                                            lineHeight: 1.1,
-                                            marginBottom: 12,
-                                        }}
-                                    >
-                                        {pkg.name}
-                                    </h3>
-                                    <p
-                                        className="eyebrow"
-                                        style={{
-                                            color: pkg.highlight ? "rgba(255,255,255,0.35)" : "var(--light-grey)",
-                                        }}
-                                    >
-                                        {pkg.tagline}
-                                    </p>
-                                </div>
-
-                                {/* Centre: Description + Includes */}
-                                <div>
-                                    <p
-                                        className="body-lg"
-                                        style={{
-                                            color: pkg.highlight ? "rgba(255,255,255,0.6)" : "var(--midnight-grey)",
-                                            marginBottom: 32,
-                                        }}
-                                    >
-                                        {pkg.description}
-                                    </p>
-                                    <ul
-                                        style={{
-                                            listStyle: "none",
-                                            display: "flex",
-                                            flexDirection: "column",
-                                            gap: 10,
-                                        }}
-                                    >
-                                        {pkg.includes.map((item) => (
-                                            <li
-                                                key={item}
-                                                style={{
-                                                    fontFamily: "var(--font-body)",
-                                                    fontSize: 13,
-                                                    fontWeight: 300,
-                                                    color: pkg.highlight
-                                                        ? "rgba(255,255,255,0.45)"
-                                                        : "var(--midnight-grey)",
-                                                    display: "flex",
-                                                    alignItems: "center",
-                                                    gap: 12,
-                                                }}
-                                            >
-                                                <span
-                                                    style={{
-                                                        width: 4,
-                                                        height: 4,
-                                                        borderRadius: "50%",
-                                                        background: pkg.highlight
-                                                            ? "var(--vogue-red)"
-                                                            : "var(--light-grey)",
-                                                        display: "inline-block",
-                                                        flexShrink: 0,
-                                                    }}
-                                                />
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Right: Price & CTA */}
-                                <div style={{ textAlign: "right" }}>
-                                    <p
-                                        className="eyebrow"
-                                        style={{
-                                            color: pkg.highlight ? "rgba(255,255,255,0.3)" : "var(--light-grey)",
-                                            marginBottom: 8,
-                                        }}
-                                    >
-                                        Pricing
-                                    </p>
-                                    <p
-                                        style={{
-                                            fontFamily: "var(--font-display)",
-                                            fontSize: "clamp(20px,2vw,32px)",
-                                            fontWeight: 300,
-                                            color: pkg.highlight ? "var(--white)" : "var(--black)",
-                                            marginBottom: 32,
-                                            lineHeight: 1.2,
-                                        }}
-                                    >
-                                        {pkg.price}
-                                    </p>
-                                    <Link
-                                        href="/consultation"
-                                        className={pkg.highlight ? "btn-primary" : "btn-outline"}
-                                        style={{ display: "inline-flex", padding: "12px 28px", fontSize: 10 }}
-                                    >
-                                        <span>Book Now</span>
-                                    </Link>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                                {s.number}
+                            </p>
+                            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)" }}>{s.label}</p>
+                        </div>
+                    ))}
                 </div>
+                <style>{`
+                    @media (max-width: 768px) {
+                        .btv-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+                    }
+                `}</style>
             </section>
 
-            {/* Process Strip */}
+            {/* ARTIST BIO */}
             <section
                 style={{
                     padding: "120px clamp(24px,5vw,100px)",
                     background: "var(--white)",
                 }}
-                aria-label="Our Process"
-            >
-                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-                    <div style={{ marginBottom: 80, textAlign: "center" }}>
-                        <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 12 }}>
-                            How It Works
-                        </p>
-                        <h2 className="headline-lg" style={{ color: "var(--black)" }}>
-                            Simple from<br />
-                            <em>start to &ldquo;I do.&rdquo;</em>
-                        </h2>
-                    </div>
-
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 3 }}>
-                        {[
-                            {
-                                step: "01",
-                                title: "Inquiry",
-                                desc: "Reach out via our consultation form with your date, vision, and party size.",
-                            },
-                            {
-                                step: "02",
-                                title: "Consultation",
-                                desc: "We connect to discuss your vision, skin type, and inspirations in depth.",
-                            },
-                            {
-                                step: "03",
-                                title: "Trial",
-                                desc: "Your trial session — we build and refine the look together until it's perfect.",
-                            },
-                            {
-                                step: "04",
-                                title: "Wedding Day",
-                                desc: "We arrive, we create, we make you radiant. You enjoy every moment.",
-                            },
-                        ].map((s, i) => (
-                            <div
-                                key={s.step}
-                                style={{
-                                    padding: "48px 36px",
-                                    background: i === 2 ? "var(--black)" : "var(--pale)",
-                                    position: "relative",
-                                }}
-                            >
-                                <p
-                                    style={{
-                                        fontFamily: "var(--font-display)",
-                                        fontSize: 80,
-                                        fontWeight: 300,
-                                        color: i === 2 ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
-                                        position: "absolute",
-                                        top: 16,
-                                        right: 20,
-                                        lineHeight: 1,
-                                        userSelect: "none",
-                                    }}
-                                >
-                                    {s.step}
-                                </p>
-                                <p
-                                    className="eyebrow"
-                                    style={{
-                                        color: i === 2 ? "var(--vogue-red)" : "var(--light-grey)",
-                                        marginBottom: 16,
-                                    }}
-                                >
-                                    {s.step}
-                                </p>
-                                <h3
-                                    style={{
-                                        fontFamily: "var(--font-display)",
-                                        fontSize: 28,
-                                        fontWeight: 400,
-                                        color: i === 2 ? "var(--white)" : "var(--black)",
-                                        marginBottom: 12,
-                                    }}
-                                >
-                                    {s.title}
-                                </h3>
-                                <p
-                                    className="body-sm"
-                                    style={{
-                                        color: i === 2 ? "rgba(255,255,255,0.45)" : "var(--midnight-grey)",
-                                    }}
-                                >
-                                    {s.desc}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ */}
-            <section
-                style={{
-                    padding: "120px clamp(24px,5vw,100px)",
-                    background: "var(--pale)",
-                }}
-                aria-label="Frequently Asked Questions"
             >
                 <div style={{ maxWidth: 1440, margin: "0 auto" }}>
                     <div
                         style={{
                             display: "grid",
-                            gridTemplateColumns: "1fr 2fr",
+                            gridTemplateColumns: "1fr 1fr",
                             gap: 100,
+                            alignItems: "center",
                         }}
+                        className="btv-bio-grid"
                     >
-                        <div>
-                            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>
-                                FAQ
-                            </p>
-                            <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 40 }}>
-                                Questions,<br />
-                                <em>answered.</em>
-                            </h2>
-                            <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
-                                <span>Still have questions?</span>
-                            </Link>
-                        </div>
-
-                        <div style={{ display: "flex", flexDirection: "column" }}>
-                            {faqs.map((faq, i) => (
+                        {/* Photo / video placeholder */}
+                        <div
+                            style={{
+                                background: "#0f0f0f",
+                                aspectRatio: "4/5",
+                                position: "relative",
+                                overflow: "hidden",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                flexDirection: "column",
+                                gap: 20,
+                            }}
+                        >
+                            {/* Video will be placed here */}
+                            <div
+                                style={{
+                                    textAlign: "center",
+                                    padding: "40px",
+                                }}
+                            >
                                 <div
-                                    key={faq.question}
                                     style={{
-                                        borderBottom: "1px solid rgba(0,0,0,0.08)",
-                                        padding: "32px 0",
+                                        width: 80,
+                                        height: 80,
+                                        borderRadius: "50%",
+                                        border: "1px solid rgba(255,255,255,0.15)",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        margin: "0 auto 24px",
+                                        fontSize: 28,
                                     }}
                                 >
+                                    ▶
+                                </div>
+                                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 8 }}>
+                                    Video Coming Soon
+                                </p>
+                                <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "rgba(255,255,255,0.15)", letterSpacing: "0.1em" }}>
+                                    Artist reel uploading shortly
+                                </p>
+                            </div>
+                            {/* Gold accent bottom bar */}
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    height: 3,
+                                    background: "linear-gradient(to right, transparent, rgba(201,169,110,0.6), transparent)",
+                                }}
+                            />
+                        </div>
+
+                        {/* Bio */}
+                        <div>
+                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 20 }}>
+                                Meet the Artist
+                            </p>
+                            <h2
+                                style={{
+                                    fontFamily: "var(--font-display)",
+                                    fontSize: "clamp(36px, 4.5vw, 68px)",
+                                    fontWeight: 300,
+                                    color: "var(--black)",
+                                    letterSpacing: "-0.02em",
+                                    lineHeight: 1.05,
+                                    marginBottom: 32,
+                                }}
+                            >
+                                Maryleen
+                                <br />
+                                <em style={{ fontSize: "0.65em", color: "var(--light-grey)" }}>Lead Bridal Artist</em>
+                            </h2>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
+                                With over 10 years in the wedding industry, Maryleen has worked with hundreds of brides, celebrity clients, and television productions — building a reputation for making every person feel like the most beautiful version of themselves.
+                            </p>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
+                                Her artistry isn&apos;t about a look you saw on Pinterest. It&apos;s about <em>you</em> — your skin, your features, and the feeling you want to carry into one of the most photographed moments of your life.
+                            </p>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
+                                What makes her truly rare? She&apos;s also your coordinator. Which means beauty runs through every part of your day — not just the morning.
+                            </p>
+
+                            <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+                                <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
+                                    <span>Book Your Bridal Makeup</span>
+                                </Link>
+                                <Link href="/gallery" className="btn-outline" style={{ display: "inline-flex" }}>
+                                    <span>View Gallery</span>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style>{`
+                    @media (max-width: 768px) {
+                        .btv-bio-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+                    }
+                `}</style>
+            </section>
+
+            {/* VIDEO WORK SECTION */}
+            <section
+                style={{
+                    background: "var(--black)",
+                    padding: "100px clamp(24px,5vw,100px)",
+                    overflow: "hidden",
+                }}
+            >
+                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+                    <div style={{ marginBottom: 64 }}>
+                        <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 16 }}>
+                            The Work
+                        </p>
+                        <h2
+                            style={{
+                                fontFamily: "var(--font-display)",
+                                fontSize: "clamp(36px, 5vw, 80px)",
+                                fontWeight: 300,
+                                color: "var(--white)",
+                                letterSpacing: "-0.02em",
+                                lineHeight: 1.0,
+                            }}
+                        >
+                            See the artistry<br />
+                            <em>in motion.</em>
+                        </h2>
+                    </div>
+
+                    {/* Video grid — ready for real videos */}
+                    <div className="btv-video-grid">
+                        {[1, 2, 3, 4, 5, 6].map((i) => (
+                            <div
+                                key={i}
+                                style={{
+                                    background: "rgba(255,255,255,0.03)",
+                                    border: "1px solid rgba(255,255,255,0.06)",
+                                    aspectRatio: i <= 2 ? "9/16" : "4/5",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    flexDirection: "column",
+                                    gap: 12,
+                                    position: "relative",
+                                    overflow: "hidden",
+                                    gridColumn: i <= 2 ? "span 1" : "span 1",
+                                    gridRow: i <= 2 ? "span 2" : "span 1",
+                                    cursor: "pointer",
+                                    transition: "border-color 0.3s ease",
+                                }}
+                                onMouseEnter={(e) => {
+                                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,169,110,0.35)";
+                                }}
+                                onMouseLeave={(e) => {
+                                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.06)";
+                                }}
+                            >
+                                {/*
+                                  ─────────────────────────────────────────────
+                                  TO ADD VIDEO: Replace the contents of this div
+                                  with a <video> element like this:
+
+                                  <video
+                                    autoPlay muted loop playsInline
+                                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                                  >
+                                    <source src="/makeup-video-{i}.mp4" type="video/mp4" />
+                                  </video>
+
+                                  OR for a thumbnail + overlay:
+                                  <img src="/makeup-thumb-{i}.jpg" style={{ width:"100%", height:"100%", objectFit:"cover" }} />
+                                  ─────────────────────────────────────────────
+                                */}
+                                <div
+                                    style={{
+                                        width: 52,
+                                        height: 52,
+                                        borderRadius: "50%",
+                                        border: "1px solid rgba(255,255,255,0.12)",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        fontSize: 18,
+                                        color: "rgba(255,255,255,0.25)",
+                                        transition: "all 0.3s ease",
+                                    }}
+                                >
+                                    ▶
+                                </div>
+                                <p
+                                    className="eyebrow"
+                                    style={{
+                                        color: "rgba(255,255,255,0.15)",
+                                        textAlign: "center",
+                                        padding: "0 20px",
+                                    }}
+                                >
+                                    Video {i} — Coming Soon
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <p
+                        style={{
+                            fontFamily: "var(--font-body)",
+                            fontSize: 12,
+                            color: "rgba(255,255,255,0.18)",
+                            textAlign: "center",
+                            marginTop: 40,
+                            letterSpacing: "0.12em",
+                        }}
+                    >
+                        Videos uploading shortly — check back soon
+                    </p>
+                </div>
+
+                <style>{`
+                    .btv-video-grid {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        grid-auto-rows: 220px;
+                        gap: 3px;
+                    }
+                    @media (max-width: 900px) {
+                        .btv-video-grid {
+                            grid-template-columns: repeat(2, 1fr) !important;
+                            grid-auto-rows: 240px !important;
+                        }
+                        .btv-video-grid > div {
+                            grid-column: span 1 !important;
+                            grid-row: span 1 !important;
+                        }
+                    }
+                    @media (max-width: 480px) {
+                        .btv-video-grid { grid-template-columns: 1fr !important; }
+                    }
+                `}</style>
+            </section>
+
+            {/* SERVICES */}
+            <section
+                style={{
+                    padding: "100px clamp(24px,5vw,100px)",
+                    background: "var(--pale)",
+                    overflowX: "hidden",
+                }}
+            >
+                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+                    <div style={{ marginBottom: 64 }}>
+                        <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 16 }}>
+                            What We Offer
+                        </p>
+                        <h2
+                            style={{
+                                fontFamily: "var(--font-display)",
+                                fontSize: "clamp(32px, 4.5vw, 72px)",
+                                fontWeight: 300,
+                                color: "var(--black)",
+                                letterSpacing: "-0.02em",
+                                lineHeight: 1.0,
+                            }}
+                        >
+                            Bridal Beauty<br />
+                            <em>Services</em>
+                        </h2>
+                    </div>
+
+                    <div className="btv-beauty-services-grid">
+                        {makeupServices.map((svc, i) => (
+                            <div
+                                key={svc.name}
+                                style={{
+                                    background: i % 2 === 1 ? "var(--black)" : "var(--white)",
+                                    padding: "52px 44px",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                }}
+                            >
+                                <p
+                                    className="eyebrow"
+                                    style={{
+                                        color: i % 2 === 1 ? "var(--vogue-red)" : "var(--light-grey)",
+                                        marginBottom: 16,
+                                    }}
+                                >
+                                    0{i + 1}
+                                </p>
+                                <h3
+                                    style={{
+                                        fontFamily: "var(--font-display)",
+                                        fontSize: "clamp(22px, 2.5vw, 36px)",
+                                        fontWeight: 400,
+                                        color: i % 2 === 1 ? "var(--white)" : "var(--black)",
+                                        marginBottom: 20,
+                                        lineHeight: 1.15,
+                                    }}
+                                >
+                                    {svc.name}
+                                </h3>
+                                <p
+                                    className="body-sm"
+                                    style={{
+                                        color: i % 2 === 1 ? "rgba(255,255,255,0.5)" : "var(--midnight-grey)",
+                                        marginBottom: 36,
+                                        lineHeight: 1.8,
+                                        flexGrow: 1,
+                                    }}
+                                >
+                                    {svc.desc}
+                                </p>
+                                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10, marginBottom: 40 }}>
+                                    {svc.includes.map((item) => (
+                                        <li
+                                            key={item}
+                                            style={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                gap: 12,
+                                                fontFamily: "var(--font-body)",
+                                                fontSize: 12,
+                                                fontWeight: 300,
+                                                color: i % 2 === 1 ? "rgba(255,255,255,0.45)" : "var(--midnight-grey)",
+                                            }}
+                                        >
+                                            <span
+                                                style={{
+                                                    width: 4,
+                                                    height: 4,
+                                                    borderRadius: "50%",
+                                                    background: i % 2 === 1 ? "var(--vogue-red)" : "var(--light-grey)",
+                                                    display: "inline-block",
+                                                    flexShrink: 0,
+                                                }}
+                                            />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <Link
+                                    href="/consultation"
+                                    className={i % 2 === 1 ? "btn-primary" : "btn-outline"}
+                                    style={{ display: "inline-flex", fontSize: 10, alignSelf: "flex-start" }}
+                                >
+                                    <span>Book This Service</span>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <style>{`
+                    .btv-beauty-services-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 2px;
+                    }
+                    @media (max-width: 768px) {
+                        .btv-beauty-services-grid { grid-template-columns: 1fr !important; }
+                    }
+                `}</style>
+            </section>
+
+            {/* BUILT-IN BEAUTY NOTE */}
+            <section
+                style={{
+                    background: "var(--white)",
+                    padding: "100px clamp(24px,5vw,100px)",
+                }}
+            >
+                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+                    <div
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns: "1fr 1fr",
+                            gap: 80,
+                            alignItems: "center",
+                        }}
+                        className="btv-beauty-note-grid"
+                    >
+                        <div>
+                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 20 }}>
+                                The Beyond the Vow Difference
+                            </p>
+                            <h2
+                                style={{
+                                    fontFamily: "var(--font-display)",
+                                    fontSize: "clamp(28px, 4vw, 60px)",
+                                    fontWeight: 300,
+                                    color: "var(--black)",
+                                    lineHeight: 1.1,
+                                    letterSpacing: "-0.01em",
+                                    marginBottom: 32,
+                                }}
+                            >
+                                Beauty is built<br />
+                                <em>into everything we do.</em>
+                            </h2>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
+                                Even if you don&apos;t book a full beauty package, our makeup expertise never leaves the room. Every coordination package includes built-in beauty support — touch-ups, lash fixes, shine control, and emergency prep — because looking perfect is part of the day we&apos;re managing.
+                            </p>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
+                                Most coordinators can&apos;t say that. We can.
+                            </p>
+                            <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+                                <Link href="/services" className="btn-primary" style={{ display: "inline-flex" }}>
+                                    <span>View Coordination Packages</span>
+                                </Link>
+                                <Link href="/consultation" className="btn-outline" style={{ display: "inline-flex" }}>
+                                    <span>Book a Consultation</span>
+                                </Link>
+                            </div>
+                        </div>
+                        <div
+                            style={{
+                                background: "var(--black)",
+                                padding: "56px 48px",
+                                position: "relative",
+                                overflow: "hidden",
+                            }}
+                        >
+                            <div
+                                aria-hidden
+                                style={{
+                                    position: "absolute",
+                                    inset: 0,
+                                    background: "radial-gradient(ellipse at 80% 0%, rgba(201,169,110,0.12) 0%, transparent 60%)",
+                                    pointerEvents: "none",
+                                }}
+                            />
+                            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 32 }}>
+                                Every package includes:
+                            </p>
+                            {[
+                                "Emergency lash application",
+                                "Blotting + shine control",
+                                "Lip touch-up throughout the day",
+                                "Photo-readiness checks",
+                                "Beauty emergency kit on-site",
+                                "Calm, expert hands when you need them",
+                            ].map((item) => (
+                                <div
+                                    key={item}
+                                    style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: 16,
+                                        marginBottom: 20,
+                                        paddingBottom: 20,
+                                        borderBottom: "1px solid rgba(255,255,255,0.06)",
+                                    }}
+                                >
+                                    <span style={{ fontSize: 10, color: "var(--vogue-red)", flexShrink: 0 }}>✦</span>
                                     <p
                                         style={{
-                                            fontFamily: "var(--font-display)",
-                                            fontSize: "clamp(18px, 1.8vw, 26px)",
-                                            fontWeight: 400,
-                                            color: "var(--black)",
-                                            marginBottom: 12,
+                                            fontFamily: "var(--font-body)",
+                                            fontSize: 13,
+                                            fontWeight: 300,
+                                            color: "rgba(255,255,255,0.6)",
+                                            lineHeight: 1.5,
                                         }}
                                     >
-                                        {faq.question}
-                                    </p>
-                                    <p className="body-sm" style={{ color: "var(--midnight-grey)" }}>
-                                        {faq.answer}
+                                        {item}
                                     </p>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </div>
+                <style>{`
+                    @media (max-width: 768px) {
+                        .btv-beauty-note-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+                    }
+                `}</style>
             </section>
 
             {/* CTA */}
             <section
                 style={{
                     background: "var(--black)",
-                    padding: "160px clamp(24px,5vw,100px)",
+                    padding: "120px clamp(24px,5vw,100px)",
                     textAlign: "center",
                 }}
             >
-                <div style={{ maxWidth: 800, margin: "0 auto" }}>
-                    <p className="eyebrow" style={{ color: "rgba(255,255,255,0.25)", marginBottom: 32 }}>
-                        Your Day Awaits
+                <div style={{ maxWidth: 680, margin: "0 auto" }}>
+                    <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 32 }}>
+                        Ready for your look?
                     </p>
-                    <h2 className="headline-xl" style={{ color: "var(--white)", marginBottom: 32 }}>
-                        Secure your date<br />
-                        <em>before it&apos;s gone.</em>
-                    </h2>
-                    <p
-                        className="body-lg"
+                    <h2
                         style={{
-                            color: "rgba(255,255,255,0.45)",
-                            maxWidth: 480,
-                            margin: "0 auto 60px",
+                            fontFamily: "var(--font-display)",
+                            fontSize: "clamp(36px, 5vw, 76px)",
+                            fontWeight: 300,
+                            color: "var(--white)",
+                            lineHeight: 1.05,
+                            letterSpacing: "-0.02em",
+                            marginBottom: 48,
                         }}
                     >
-                        Peak wedding dates book up fast. Start your consultation today to
-                        reserve your spot.
-                    </p>
-                    <Link
-                        href="/consultation"
-                        className="btn-primary"
-                        style={{ display: "inline-flex" }}
-                    >
-                        <span>Book a Consultation</span>
+                        Artistry for<br />
+                        <em>the most important<br />morning of your life.</em>
+                    </h2>
+                    <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
+                        <span>Book Your Bridal Makeup</span>
                         <span style={{ fontSize: 18 }}>→</span>
                     </Link>
                 </div>

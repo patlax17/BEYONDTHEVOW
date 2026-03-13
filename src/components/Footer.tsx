@@ -11,10 +11,11 @@ const footerLinks = {
         { label: "Day-Of Coordination", href: "/services" },
         { label: "Month-Of Coordination", href: "/services" },
         { label: "Full Planning + Design", href: "/services" },
-        { label: "Bridal Beauty + Bundle", href: "/services" },
+        { label: "Bridal Makeup Services", href: "/bridal-makeup" },
     ],
     Explore: [
         { label: "Gallery", href: "/gallery" },
+        { label: "Bridal Beauty", href: "/bridal-makeup" },
         { label: "Book a Consultation", href: "/consultation" },
     ],
     Connect: [
