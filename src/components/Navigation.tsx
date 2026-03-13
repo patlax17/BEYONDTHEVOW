@@ -164,7 +164,7 @@ export default function Navigation() {
                                 whiteSpace: "nowrap",
                             }}
                         >
-                            Beyond The Vow
+                            Beyond the Vow
                         </span>
                         <span
                             style={{
@@ -178,7 +178,7 @@ export default function Navigation() {
                                 whiteSpace: "nowrap",
                             }}
                         >
-                            Wedding Coordination &amp; Beauty
+                            Wedding Coordination &amp; Bridal Experience
                         </span>
                     </Link>
 
