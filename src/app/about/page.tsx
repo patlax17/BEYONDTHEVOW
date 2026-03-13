@@ -177,7 +177,7 @@ export default function AboutPage() {
                         </div>
                         {/* Bio */}
                         <div style={{ padding: "64px 56px", background: "var(--black)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 12 }}>Co-Founder</p>
+                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 12 }}>Founder</p>
                             <h3
                                 style={{
                                     fontFamily: "var(--font-display)",
