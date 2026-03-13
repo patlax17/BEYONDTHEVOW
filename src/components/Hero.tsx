@@ -118,7 +118,7 @@ export default function Hero() {
                         animation: "fadeIn 1s ease 0.3s both",
                     }}
                 >
-                    Bridal Beauty Atelier — Beyond The Vow
+                    Luxury Wedding Coordination &amp; Bridal Experience
                 </p>
 
                 {/* Main headline */}
@@ -134,11 +134,9 @@ export default function Hero() {
                         animation: "fadeUp 0.9s cubic-bezier(0.25,0.46,0.45,0.94) 0.4s both",
                     }}
                 >
-                    Your Most
-                    <br />
-                    <em style={{ fontStyle: "italic", color: "rgba(255,255,255,0.55)" }}>Beautiful</em>
-                    <br />
-                    Day.
+                    Beyond<br />
+                    <em style={{ fontStyle: "italic", color: "rgba(255,255,255,0.55)" }}>the</em><br />
+                    Vow.
                 </h1>
 
                 {/* Sub + CTA row */}
@@ -164,8 +162,7 @@ export default function Hero() {
                                 lineHeight: 1.45,
                             }}
                         >
-                            Flawless bridal artistry crafted for every complexion —
-                            because you deserve to feel as radiant as you look.
+                            More than coordinators — we are your calm, your glam, and your behind-the-scenes magic.
                         </p>
                         <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
                             <Link
@@ -188,7 +185,7 @@ export default function Hero() {
                                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#A80000")}
                                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--vogue-red)")}
                             >
-                                Book a Consultation →
+                                Inquire Now →
                             </Link>
                             <Link
                                 href="/gallery"
@@ -220,7 +217,7 @@ export default function Hero() {
                                     el.style.borderColor = "rgba(255,255,255,0.35)";
                                 }}
                             >
-                                View Gallery
+                                View Our Work
                             </Link>
                         </div>
                     </div>

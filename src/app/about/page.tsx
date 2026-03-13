@@ -3,48 +3,20 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
-    title: "About — Our Story",
-    description:
-        "Meet the artist behind Beyond The Vow — a bridal beauty studio dedicated to making every bride feel radiant, confident, and undeniably herself on her wedding day.",
+    title: "About — Meet the Team | Beyond the Vow",
+    description: "Meet Maryleen and Natalie — the co-founders behind Beyond the Vow. A professional bridal makeup artist and event design specialist who together create the ultimate wedding day experience.",
 };
-
-const values = [
-    {
-        number: "01",
-        title: "Authenticity",
-        description:
-            "We create looks that honour who you truly are. Makeup should enhance your natural beauty — not mask it.",
-    },
-    {
-        number: "02",
-        title: "Precision",
-        description:
-            "Every brush stroke is intentional. We take the time to perfect every detail, from liner to highlight.",
-    },
-    {
-        number: "03",
-        title: "Inclusivity",
-        description:
-            "We are trained across all skin tones and textures. Every complexion is celebrated, not accommodated.",
-    },
-    {
-        number: "04",
-        title: "Calm Presence",
-        description:
-            "Wedding mornings are sacred. We bring a calm, professional energy so you can breathe, enjoy, and glow.",
-    },
-];
 
 export default function AboutPage() {
     return (
         <div>
             <PageHeader
-                eyebrow="About the Studio"
-                title={<>Beauty with<br /><em>intention,</em><br />artistry with<br /><em>heart.</em></>}
-                subtitle="Beyond The Vow was founded on a single belief: that every person who sits in our chair should leave feeling like the most beautiful version of themselves — not a painted version of someone else. We are a boutique bridal beauty studio serving brides who want intimacy, expertise, and a calm, joyful morning experience on the most important day of their lives."
+                eyebrow="About Us"
+                title={<>Not Just Coordinators.<br /><em>Your Bridal Dream Team.</em></>}
+                subtitle="We bring a rare combination of artistry, organization, and luxury service that most coordinators simply cannot offer."
             />
 
-            {/* The Artist */}
+            {/* INTRO */}
             <section
                 style={{
                     padding: "120px clamp(24px,5vw,100px)",
@@ -59,244 +31,294 @@ export default function AboutPage() {
                             gap: 100,
                             alignItems: "center",
                         }}
+                        className="btv-about-intro-grid"
                     >
-                        {/* Artist photo placeholder */}
+                        <div>
+                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 32, letterSpacing: "0.25em" }}>
+                                Our Story
+                            </p>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 28 }}>
+                                Beyond the Vow was created from years of being behind the scenes of weddings and realizing one thing — brides deserve <strong>MORE</strong> than just someone holding a clipboard.
+                            </p>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 28 }}>
+                                They deserve <em>a team.</em>
+                            </p>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 28 }}>
+                                A team that understands timelines, beauty, details, decor, energy, and the emotions of the day.
+                            </p>
+                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 28 }}>
+                                Founded by a professional bridal makeup artist with over 10 years of experience in weddings, television production, and celebrity glam, and partnered with an expert in event planning and design, we bring a rare combination of artistry, organization, and luxury service that most coordinators simply cannot offer.
+                            </p>
+                        </div>
                         <div
                             style={{
-                                aspectRatio: "3/4",
-                                background: "#1A0E12",
+                                background: "var(--black)",
+                                padding: "64px 52px",
                                 position: "relative",
                                 overflow: "hidden",
                             }}
                         >
                             <div
+                                aria-hidden
                                 style={{
                                     position: "absolute",
                                     inset: 0,
-                                    background:
-                                        "radial-gradient(ellipse at 30% 80%, rgba(180,120,130,0.2), transparent 60%)",
+                                    background: "radial-gradient(ellipse at 80% 20%, rgba(201,169,110,0.12) 0%, transparent 60%)",
+                                    pointerEvents: "none",
                                 }}
                             />
-                            <div
-                                style={{
-                                    position: "absolute",
-                                    bottom: 32,
-                                    left: 32,
-                                }}
-                            >
-                                <p
-                                    style={{
-                                        fontFamily: "var(--font-display)",
-                                        fontSize: "clamp(24px, 3vw, 40px)",
-                                        fontWeight: 300,
-                                        color: "var(--white)",
-                                        lineHeight: 1.1,
-                                    }}
-                                >
-                                    The Artist
-                                    <br />
-                                    <em style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.65em" }}>
-                                        Beyond The Vow
-                                    </em>
-                                </p>
-                            </div>
-                            {/* Artist photo will go here */}
+                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 32 }}>The difference</p>
                             <p
                                 style={{
-                                    position: "absolute",
-                                    top: "50%",
-                                    left: "50%",
-                                    transform: "translate(-50%, -50%)",
-                                    fontFamily: "var(--font-body)",
-                                    fontSize: 10,
-                                    letterSpacing: "0.2em",
-                                    textTransform: "uppercase",
-                                    color: "rgba(255,255,255,0.1)",
-                                    textAlign: "center",
-                                    pointerEvents: "none",
-                                    userSelect: "none",
+                                    fontFamily: "var(--font-display)",
+                                    fontSize: "clamp(28px, 3.5vw, 52px)",
+                                    fontWeight: 300,
+                                    color: "var(--white)",
+                                    lineHeight: 1.15,
+                                    letterSpacing: "-0.01em",
+                                    marginBottom: 40,
                                 }}
                             >
-                                Artist photo<br />coming soon
+                                We don&apos;t just<br />
+                                manage weddings.<br />
+                                <em>We elevate them.</em>
                             </p>
-                        </div>
-
-                        <div>
-                            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>
-                                The Artist
+                            <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)" }}>
+                                When you hire Beyond the Vow, you&apos;re not getting one person. You&apos;re getting a full production team dedicated to protecting your peace and perfecting every detail.
                             </p>
-                            <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 32 }}>
-                                A vision built<br />
-                                <em>on your story.</em>
-                            </h2>
-                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
-                                With over 7 years of experience in bridal, editorial, and special occasion
-                                makeup, our lead artist has had the privilege of working with hundreds of
-                                brides across a wide range of skin tones, cultures, and wedding styles.
-                            </p>
-                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
-                                Trained in airbrush technique, colour theory, and long-wear application,
-                                every look is built to last from the first look to the last dance — without
-                                ever feeling heavy on the skin.
-                            </p>
-                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
-                                Beyond The Vow was born from a commitment to intimacy and excellence:
-                                a studio small enough to care deeply, skilled enough to deliver
-                                flawlessly.
-                            </p>
-                            <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
-                                <span>Book Your Consultation</span>
-                            </Link>
                         </div>
                     </div>
                 </div>
+                <style>{`
+                    @media (max-width: 768px) {
+                        .btv-about-intro-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+                    }
+                `}</style>
             </section>
 
-            {/* Values */}
+            {/* MEET THE FOUNDERS */}
             <section
-                id="philosophy"
                 style={{
                     padding: "120px clamp(24px,5vw,100px)",
                     background: "var(--pale)",
+                    overflow: "hidden",
                 }}
             >
                 <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+                    <div style={{ marginBottom: 80, textAlign: "center" }}>
+                        <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 16 }}>The People Behind the Magic</p>
+                        <h2
+                            style={{
+                                fontFamily: "var(--font-display)",
+                                fontSize: "clamp(36px, 5vw, 80px)",
+                                fontWeight: 300,
+                                color: "var(--black)",
+                                letterSpacing: "-0.02em",
+                                lineHeight: 1.0,
+                            }}
+                        >
+                            Meet Your Bridal<br /><em>Dream Team</em>
+                        </h2>
+                    </div>
+
+                    {/* MARYLEEN */}
                     <div
                         style={{
                             display: "grid",
                             gridTemplateColumns: "1fr 1fr",
-                            gap: 100,
-                            alignItems: "start",
-                            marginBottom: 100,
+                            gap: 2,
+                            marginBottom: 2,
+                            background: "var(--black)",
                         }}
+                        className="btv-founder-grid"
                     >
-                        <div>
-                            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>
-                                Our Philosophy
-                            </p>
-                            <h2 className="headline-lg" style={{ color: "var(--black)" }}>
-                                Face to<br />Flawless.
-                            </h2>
-                        </div>
-                        <div>
-                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 28 }}>
-                                Great bridal makeup starts before a brush is ever picked up. We begin
-                                every relationship with a consultation — understanding your skin, your
-                                vision, and how you want to feel on your day.
-                            </p>
-                            <p className="body-lg" style={{ color: "var(--midnight-grey)" }}>
-                                We don&apos;t apply the same look to every bride. We listen, we observe,
-                                and we craft. The result is always uniquely, unmistakably <em>you</em>.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Values grid */}
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
-                        {values.map((v, i) => (
-                            <div
-                                key={v.number}
-                                style={{
-                                    padding: "40px 32px",
-                                    background: i === 1 ? "var(--black)" : "var(--white)",
-                                    border: i !== 1 ? "1px solid rgba(0,0,0,0.06)" : "none",
-                                }}
-                            >
-                                <p
-                                    className="eyebrow"
+                        {/* Photo placeholder */}
+                        <div
+                            style={{
+                                background: "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)",
+                                minHeight: 600,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                position: "relative",
+                                overflow: "hidden",
+                            }}
+                        >
+                            <div style={{ textAlign: "center", padding: 40 }}>
+                                <div
                                     style={{
-                                        color: i === 1 ? "var(--vogue-red)" : "var(--light-grey)",
-                                        marginBottom: 20,
+                                        width: 120,
+                                        height: 120,
+                                        borderRadius: "50%",
+                                        background: "rgba(255,255,255,0.06)",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        margin: "0 auto 24px",
+                                        fontSize: 48,
                                     }}
                                 >
-                                    {v.number}
-                                </p>
-                                <h3
-                                    style={{
-                                        fontFamily: "var(--font-display)",
-                                        fontSize: 24,
-                                        fontWeight: 400,
-                                        color: i === 1 ? "var(--white)" : "var(--black)",
-                                        marginBottom: 12,
-                                    }}
-                                >
-                                    {v.title}
-                                </h3>
-                                <p
-                                    className="body-sm"
-                                    style={{
-                                        color: i === 1 ? "rgba(255,255,255,0.45)" : "var(--midnight-grey)",
-                                    }}
-                                >
-                                    {v.description}
-                                </p>
+                                    💄
+                                </div>
+                                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)" }}>Photo Coming Soon</p>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Credentials strip */}
-            <section
-                style={{
-                    padding: "80px clamp(24px,5vw,100px)",
-                    background: "var(--black)",
-                }}
-            >
-                <div
-                    style={{
-                        maxWidth: 1440,
-                        margin: "0 auto",
-                        display: "grid",
-                        gridTemplateColumns: "repeat(4, 1fr)",
-                        gap: 40,
-                    }}
-                >
-                    {[
-                        { value: "100+", label: "Brides Served" },
-                        { value: "7+", label: "Years Experience" },
-                        { value: "All", label: "Skin Tones" },
-                        { value: "100%", label: "Bespoke Looks" },
-                    ].map((stat) => (
-                        <div key={stat.label} style={{ textAlign: "center" }}>
-                            <p
+                            {/* Decorative element */}
+                            <div
+                                aria-hidden
+                                style={{
+                                    position: "absolute",
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    height: "30%",
+                                    background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)",
+                                }}
+                            />
+                        </div>
+                        {/* Bio */}
+                        <div style={{ padding: "64px 56px", background: "var(--black)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 12 }}>Co-Founder</p>
+                            <h3
                                 style={{
                                     fontFamily: "var(--font-display)",
-                                    fontSize: "clamp(48px, 5vw, 80px)",
+                                    fontSize: "clamp(32px, 4vw, 56px)",
                                     fontWeight: 300,
                                     color: "var(--white)",
-                                    lineHeight: 1,
+                                    letterSpacing: "-0.01em",
                                     marginBottom: 8,
+                                    lineHeight: 1.1,
                                 }}
                             >
-                                {stat.value}
+                                Maryleen
+                            </h3>
+                            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 40, letterSpacing: "0.2em" }}>
+                                Lead Coordinator · Bridal Beauty Expert
                             </p>
-                            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.25)" }}>
-                                {stat.label}
+                            <p className="body-lg" style={{ color: "rgba(255,255,255,0.6)", marginBottom: 24, fontStyle: "italic" }}>
+                                &ldquo;Hi love, I&apos;m Maryleen — but most of my brides know me as their calm in the chaos.&rdquo;
+                            </p>
+                            <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 20, lineHeight: 1.9 }}>
+                                I&apos;ve spent over 10 years in the wedding industry as a professional bridal makeup artist, working with hundreds of brides, celebrity clients, and even television productions.
+                            </p>
+                            <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 20, lineHeight: 1.9 }}>
+                                But somewhere along the way… I realized something. I wasn&apos;t just doing makeup. I was fixing timelines, calming nerves, adjusting dresses, organizing bridesmaids, managing vendors, and solving problems before anyone noticed. Basically… coordinating the whole morning.
+                            </p>
+                            <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 32, lineHeight: 1.9 }}>
+                                So Beyond the Vow was born. Now I bring my beauty background, attention to detail, and luxury client experience into coordination — making sure every bride not only looks flawless but feels completely taken care of. Because <em style={{ color: "rgba(255,255,255,0.75)" }}>you deserve both.</em>
                             </p>
                         </div>
-                    ))}
+                    </div>
+
+                    {/* NATALIE */}
+                    <div
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns: "1fr 1fr",
+                            gap: 2,
+                            background: "var(--pale)",
+                        }}
+                        className="btv-founder-grid"
+                    >
+                        {/* Bio — reversed */}
+                        <div style={{ padding: "64px 56px", background: "var(--white)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 12 }}>Co-Founder</p>
+                            <h3
+                                style={{
+                                    fontFamily: "var(--font-display)",
+                                    fontSize: "clamp(32px, 4vw, 56px)",
+                                    fontWeight: 300,
+                                    color: "var(--black)",
+                                    letterSpacing: "-0.01em",
+                                    marginBottom: 8,
+                                    lineHeight: 1.1,
+                                }}
+                            >
+                                Natalie
+                            </h3>
+                            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 40, letterSpacing: "0.2em" }}>
+                                Chevalier · Planning &amp; Design Specialist
+                            </p>
+                            <p className="body-sm" style={{ color: "var(--midnight-grey)", marginBottom: 20, lineHeight: 1.9 }}>
+                                With years of experience in event planning and decoration, Natalie is the design brain behind the magic.
+                            </p>
+                            <p className="body-sm" style={{ color: "var(--midnight-grey)", marginBottom: 20, lineHeight: 1.9 }}>
+                                From layouts to florals to the smallest styling details, she has an eye for creating spaces that feel intentional, elevated, and unforgettable.
+                            </p>
+                            <p className="body-sm" style={{ color: "var(--midnight-grey)", marginBottom: 32, lineHeight: 1.9 }}>
+                                She&apos;s the reason nothing looks misplaced, every table feels curated, and every setup feels luxurious. While Maryleen handles beauty + flow, Natalie ensures the entire aesthetic vision comes to life flawlessly. <em>Together, they&apos;re the perfect balance of glam and logistics.</em>
+                            </p>
+                        </div>
+                        {/* Photo placeholder */}
+                        <div
+                            style={{
+                                background: "linear-gradient(135deg, #f5f0eb 0%, #ede8e3 100%)",
+                                minHeight: 600,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                            }}
+                        >
+                            <div style={{ textAlign: "center", padding: 40 }}>
+                                <div
+                                    style={{
+                                        width: 120,
+                                        height: 120,
+                                        borderRadius: "50%",
+                                        background: "rgba(0,0,0,0.06)",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        margin: "0 auto 24px",
+                                        fontSize: 48,
+                                    }}
+                                >
+                                    🎀
+                                </div>
+                                <p className="eyebrow" style={{ color: "rgba(0,0,0,0.25)" }}>Photo Coming Soon</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <style>{`
+                    @media (max-width: 768px) {
+                        .btv-founder-grid { grid-template-columns: 1fr !important; }
+                    }
+                `}</style>
             </section>
 
-            {/* CTA */}
+            {/* OUR PROMISE */}
             <section
                 style={{
+                    background: "var(--black)",
                     padding: "120px clamp(24px,5vw,100px)",
-                    background: "var(--white)",
                     textAlign: "center",
                 }}
             >
-                <div style={{ maxWidth: 640, margin: "0 auto" }}>
-                    <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 24 }}>
-                        Let us celebrate<br />
-                        <em>your beauty.</em>
+                <div style={{ maxWidth: 740, margin: "0 auto" }}>
+                    <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 32 }}>Our Promise</p>
+                    <h2
+                        style={{
+                            fontFamily: "var(--font-display)",
+                            fontSize: "clamp(36px, 5vw, 80px)",
+                            fontWeight: 300,
+                            color: "var(--white)",
+                            lineHeight: 1.0,
+                            letterSpacing: "-0.02em",
+                            marginBottom: 48,
+                        }}
+                    >
+                        We&apos;re not just vendors.<br />
+                        <em>We become your people.</em>
                     </h2>
-                    <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
-                        Every bride deserves to feel extraordinary. Let&apos;s talk about your vision.
+                    <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 24, maxWidth: 560, margin: "0 auto 24px" }}>
+                        Your support system. Your problem solvers. Your behind-the-scenes protectors.
+                    </p>
+                    <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 60, maxWidth: 560, margin: "0 auto 60px" }}>
+                        So you can be fully present on the most important day of your life.
                     </p>
                     <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
-                        <span>Book a Consultation</span>
+                        <span>Book Your Consultation</span>
+                        <span style={{ fontSize: 18 }}>→</span>
                     </Link>
                 </div>
             </section>

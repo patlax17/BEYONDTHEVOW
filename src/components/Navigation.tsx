@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
     { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
     { label: "Gallery", href: "/gallery" },
-    { label: "Bridal Makeup", href: "/bridal-makeup" },
-    { label: "How to Book", href: "/consultation" },
+    { label: "Inquire", href: "/consultation" },
 ];
 
 // SVG Icons

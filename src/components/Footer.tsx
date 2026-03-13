@@ -4,23 +4,24 @@ import Link from "next/link";
 
 const footerLinks = {
     Studio: [
-        { label: "About", href: "/about" },
-        { label: "Our Philosophy", href: "/about#philosophy" },
+        { label: "About Us", href: "/about" },
+        { label: "Meet the Team", href: "/about#founders" },
     ],
     Services: [
-        { label: "Bridal Makeup", href: "/bridal-makeup" },
-        { label: "Full Bridal Package", href: "/bridal-makeup#full-bridal" },
-        { label: "Bridesmaids & Party", href: "/bridal-makeup#party" },
-        { label: "Airbrush Upgrade", href: "/bridal-makeup#airbrush" },
+        { label: "Day-Of Coordination", href: "/services" },
+        { label: "Month-Of Coordination", href: "/services" },
+        { label: "Full Planning + Design", href: "/services" },
+        { label: "Bridal Beauty + Bundle", href: "/services" },
     ],
     Explore: [
         { label: "Gallery", href: "/gallery" },
-        { label: "How to Book", href: "/consultation" },
+        { label: "Book a Consultation", href: "/consultation" },
     ],
     Connect: [
-        { label: "Book a Consultation", href: "/consultation" },
+        { label: "Inquire Now", href: "/consultation" },
         { label: "Email Us", href: "mailto:hello@beyondthevow.com" },
-        { label: "Instagram", href: "https://instagram.com", target: "_blank" },
+        { label: "Instagram", href: "https://www.instagram.com/beyondthevow_beauty/", target: "_blank" },
+        { label: "TikTok", href: "https://www.tiktok.com/@beyondthevow", target: "_blank" },
     ],
 };
 
@@ -57,11 +58,10 @@ export default function Footer() {
                             }}
                         >
                             Every bride deserves<br />
-                            <em>to feel radiant.</em>
+                            <em>to feel taken care of.</em>
                         </h2>
                         <p className="body-sm" style={{ color: "var(--light-grey)", maxWidth: 420 }}>
-                            We create looks that are not just beautiful — they are unmistakably{" "}
-                            <em style={{ color: "var(--white)" }}>you</em>.
+                            From the morning prep to the last dance — we are your calm, your glam, and your behind-the-scenes magic.
                         </p>
                     </div>
                     <Link href="/consultation" className="btn-primary" style={{ whiteSpace: "nowrap" }}>

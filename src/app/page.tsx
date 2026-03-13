@@ -2,50 +2,78 @@
 
 import Hero from "@/components/Hero";
 import Link from "next/link";
-import Image from "next/image";
 
 const marqueeItems = [
-  "Bridal Makeup", "Wedding Day Glam", "Trial Sessions",
-  "Group Packages", "Editorial Looks", "Airbrush Artistry",
-  "Bridal Makeup", "Wedding Day Glam", "Trial Sessions",
-  "Group Packages", "Editorial Looks", "Airbrush Artistry",
+  "Luxury Wedding Coordination", "Bridal Beauty Support", "Content Creation",
+  "Day-Of Coordination", "Full Planning & Design", "Stress-Free Brides",
+  "Luxury Wedding Coordination", "Bridal Beauty Support", "Content Creation",
+  "Day-Of Coordination", "Full Planning & Design", "Stress-Free Brides",
 ];
 
-const services = [
+const whyUs = [
   {
-    number: "01",
-    title: "Full Bridal Package",
-    description: "Complete wedding day glam from morning prep to ceremony — including a pre-wedding trial, hair styling coordination, and on-site touch-up kit.",
-    features: ["Bridal makeup trial", "Wedding day application", "Touch-up kit included", "On-site artist available"],
+    icon: "💄",
+    title: "Built-in Beauty Support",
+    body: "Your coordinator is also a professional bridal makeup artist. Even if you didn't book makeup services, we're still there to fix lashes, blot shine, touch up lips, calm last-minute beauty emergencies, and make sure you're photo-ready 24/7. Most coordinators can't do that. We can.",
   },
   {
-    number: "02",
-    title: "Bridesmaids & Party",
-    description: "Elevate your entire party with a cohesive look that keeps everyone glowing from the aisle to the dance floor.",
-    features: ["Group pricing available", "Coordinated aesthetic", "Flexible timing", "Flawless all-day wear"],
+    icon: "🎨",
+    title: "Design + Decor Expertise",
+    body: "We don't just \"check\" if decor is set up. We have real event design and decoration experience — layouts make sense, florals are placed intentionally, details match your vision, nothing looks rushed or misplaced. If something looks off, we fix it — not the venue.",
   },
   {
-    number: "03",
-    title: "Airbrush & Editorial",
-    description: "Camera-ready, ultra-smooth finish for brides who want their photographs to last as long as their memories.",
-    features: ["HD airbrush technique", "Long-wear formula", "Photo-ready finish", "Custom to your skin tone"],
+    icon: "👑",
+    title: "A Full Team — Not One Person",
+    body: "No running back and forth. No missed moments. We arrive with a dedicated team — vendors are managed, timelines stay on track, bridal party is organized, guests are guided, problems are solved quietly. Nothing gets overlooked. Ever.",
+  },
+  {
+    icon: "📱",
+    title: "Wedding Day Content Creation",
+    body: "While everyone else waits weeks for professional photos, you'll have real-time, behind-the-scenes memories instantly. We capture getting ready moments, emotional first looks, bridal party fun, candid laughs, detail shots, TikToks/Reels, and aesthetic iPhone footage — perfect for sharing the same day.",
+  },
+  {
+    icon: "🤍",
+    title: "Stress-Free Bride Guarantee",
+    body: "You will NEVER be answering vendor calls, fixing decor, chasing bridesmaids, or solving problems. If something goes wrong — you won't even know. Because we already handled it. Your only job? Be beautiful. Be present. Enjoy your day.",
+  },
+  {
+    icon: "✨",
+    title: "Luxury-Level Experience",
+    body: "We specialize in high-end weddings, destination events, large bridal parties, fast timelines, and detail-heavy designs. We bring calm energy, professionalism, and white-glove service to every single wedding.",
   },
 ];
 
 const galleryPreview = [
-  { src: "/wedding-01.jpg", caption: "Soft Glam" },
-  { src: "/wedding-02.jpg", caption: "Classic Bridal" },
-  { src: "/wedding-03.jpg", caption: "Bold & Radiant" },
-  { src: "/wedding-04.jpg", caption: "Airbrush Finish" },
+  { src: "/wedding-01.jpg", caption: "Getting Ready" },
+  { src: "/wedding-02.jpg", caption: "First Look" },
+  { src: "/wedding-03.jpg", caption: "Bridal Party" },
+  { src: "/wedding-04.jpg", caption: "The Details" },
+];
+
+const promiseItems = [
+  "Clear communication",
+  "Flawless organization",
+  "Calm energy",
+  "Attention to every tiny detail",
+  "A wedding day that feels effortless",
+];
+
+const servicesList = [
+  { name: "Day-of Coordination", href: "/services" },
+  { name: "Month-of Coordination", href: "/services" },
+  { name: "Full Planning + Design", href: "/services" },
+  { name: "Bridal Beauty + Coordination Bundle", href: "/services" },
+  { name: "Content Creation Add-On", href: "/services" },
+  { name: "Destination Weddings", href: "/services" },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
+      {/* ── HERO ── */}
       <Hero />
 
-      {/* MARQUEE STRIP */}
+      {/* ── MARQUEE STRIP ── */}
       <div
         style={{
           borderTop: "1px solid rgba(0,0,0,0.08)",
@@ -59,96 +87,171 @@ export default function HomePage() {
           {marqueeItems.map((item, i) => (
             <div
               key={i}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 40,
-                paddingInline: 20,
-                flexShrink: 0,
-              }}
+              style={{ display: "flex", alignItems: "center", gap: 40, paddingInline: 20, flexShrink: 0 }}
             >
-              <span className="eyebrow" style={{ color: "var(--midnight-grey)" }}>
-                {item}
-              </span>
+              <span className="eyebrow" style={{ color: "var(--midnight-grey)" }}>{item}</span>
               <span style={{ color: "var(--vogue-red)", fontSize: 6 }}>◆</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* PHILOSOPHY / INTRO */}
+      {/* ── ABOUT / INTRO ── */}
       <section
-        style={{
-          padding: "160px clamp(24px,5vw,100px)",
-          background: "var(--white)",
-        }}
-        aria-label="Philosophy"
+        style={{ padding: "140px clamp(24px,5vw,100px)", background: "var(--white)" }}
+        aria-label="About Beyond the Vow"
       >
         <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 2fr",
-              gap: 100,
-              alignItems: "center",
-            }}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: 100, alignItems: "center" }}
+            className="btv-about-grid"
           >
             <div>
-              <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 24 }}>
-                01 — The Philosophy
+              <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 24, letterSpacing: "0.25em" }}>
+                01 — About Us
               </p>
-              <div
-                style={{
-                  width: 1,
-                  height: 120,
-                  background: "var(--black)",
-                  opacity: 0.12,
-                  marginBottom: 24,
-                }}
-              />
-              <p className="section-number">Est. 2017</p>
+              <div style={{ width: 1, height: 100, background: "var(--black)", opacity: 0.1, marginBottom: 24 }} />
+              <p className="section-number" style={{ color: "var(--light-grey)" }}>Est. 2017</p>
             </div>
             <div>
-              <blockquote
+              <h2
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(32px, 4.5vw, 72px)",
+                  fontSize: "clamp(32px, 4vw, 60px)",
                   fontWeight: 300,
-                  lineHeight: 1.15,
-                  color: "var(--black)",
+                  lineHeight: 1.1,
                   letterSpacing: "-0.01em",
-                  marginBottom: 48,
-                  borderLeft: "none",
-                  padding: 0,
+                  color: "var(--black)",
+                  marginBottom: 40,
                 }}
               >
-                &ldquo;We don't just do makeup.
-                <br />
-                <em style={{ fontStyle: "italic" }}>We reveal your light.&rdquo;</em>
-              </blockquote>
+                Not Just Coordinators.<br />
+                <em>Your Bridal Dream Team.</em>
+              </h2>
+              <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
+                Beyond the Vow was created from years of being behind the scenes of weddings and realizing one thing — brides deserve <strong>MORE</strong> than just someone holding a clipboard.
+              </p>
+              <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
+                They deserve <em>a team.</em>
+              </p>
+              <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
+                A team that understands timelines, beauty, details, decor, energy, and the emotions of the day.
+              </p>
+              <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
+                Founded by a professional bridal makeup artist with over 10 years of experience in weddings, television production, and celebrity glam, and partnered with an expert in event planning and design, we bring a rare combination of artistry, organization, and luxury service that most coordinators simply cannot offer.
+              </p>
               <p
-                className="body-lg"
-                style={{ color: "var(--midnight-grey)", maxWidth: 560, marginBottom: 40 }}
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(22px, 2.5vw, 36px)",
+                  fontWeight: 400,
+                  fontStyle: "italic",
+                  color: "var(--black)",
+                  marginBottom: 24,
+                  lineHeight: 1.3,
+                }}
               >
-                Every bride is unique — her skin, her story, her vision. Our craft begins
-                with listening before we ever open a brush. We build looks that feel
-                like you on your best day, not a costume.
+                We don&apos;t just manage weddings.<br />We elevate them.
+              </p>
+              <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
+                When you hire Beyond the Vow, you&apos;re not getting one person. You&apos;re getting a full production team dedicated to protecting your peace and perfecting every detail.
               </p>
               <Link href="/about" className="btn-outline">
-                <span>Our Story</span>
+                <span>Meet the Team</span>
               </Link>
             </div>
           </div>
         </div>
+        <style>{`
+          @media (max-width: 768px) {
+            .btv-about-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+          }
+        `}</style>
       </section>
 
-      {/* GALLERY PREVIEW */}
+      {/* ── WHY CHOOSE US ── */}
       <section
-        style={{
-          background: "var(--black)",
-          padding: "100px 0 0",
-          overflow: "hidden",
-        }}
+        style={{ background: "var(--black)", padding: "120px clamp(24px,5vw,100px)" }}
+        aria-label="Why Choose Beyond the Vow"
+      >
+        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+          <div style={{ marginBottom: 80, textAlign: "center" }}>
+            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 16 }}>
+              02 — Our Difference
+            </p>
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(36px, 5vw, 80px)",
+                fontWeight: 300,
+                color: "var(--white)",
+                lineHeight: 1.0,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Why Couples Choose<br />
+              <em>Beyond the Vow</em>
+            </h2>
+          </div>
+
+          <div className="btv-why-grid">
+            {whyUs.map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: "48px 40px",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  background: i === 3 ? "rgba(201,169,110,0.06)" : "transparent",
+                  transition: "border-color 0.3s ease, background 0.3s ease",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,169,110,0.35)";
+                  (e.currentTarget as HTMLElement).style.background = "rgba(201,169,110,0.05)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.07)";
+                  (e.currentTarget as HTMLElement).style.background = i === 3 ? "rgba(201,169,110,0.06)" : "transparent";
+                }}
+              >
+                <div style={{ fontSize: 32, marginBottom: 20, lineHeight: 1 }}>{item.icon}</div>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "clamp(20px, 2vw, 28px)",
+                    fontWeight: 400,
+                    color: "var(--white)",
+                    marginBottom: 16,
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {item.title}
+                </h3>
+                <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <style>{`
+          .btv-why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+          }
+          @media (max-width: 900px) {
+            .btv-why-grid { grid-template-columns: 1fr !important; }
+          }
+          @media (min-width: 601px) and (max-width: 900px) {
+            .btv-why-grid { grid-template-columns: repeat(2,1fr) !important; }
+          }
+        `}</style>
+      </section>
+
+      {/* ── GALLERY PREVIEW ── */}
+      <section
+        style={{ background: "var(--pale)", padding: "120px 0 0", overflowX: "hidden" }}
         aria-label="Gallery Preview"
       >
         <div
@@ -159,264 +262,241 @@ export default function HomePage() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-end",
+            flexWrap: "wrap",
+            gap: 24,
           }}
         >
           <div>
-            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.25)", marginBottom: 12 }}>
-              02 — The Gallery
-            </p>
-            <h2 className="headline-lg" style={{ color: "var(--white)" }}>
-              Looks we&apos;ve had<br />
-              <em>the honour to create.</em>
+            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 12 }}>03 — Our Work</p>
+            <h2 className="headline-lg" style={{ color: "var(--black)" }}>
+              A glimpse into<br />
+              <em>the magic we create.</em>
             </h2>
           </div>
           <Link
             href="/gallery"
             style={{
-              fontFamily: "var(--font-body)",
-              fontSize: 10,
-              fontWeight: 500,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.4)",
-              textDecoration: "none",
-              border: "1px solid rgba(255,255,255,0.2)",
-              padding: "12px 28px",
-              transition: "all 0.3s ease",
+              fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 500, letterSpacing: "0.2em",
+              textTransform: "uppercase", color: "var(--midnight-grey)", textDecoration: "none",
+              border: "1px solid rgba(0,0,0,0.2)", padding: "12px 28px", transition: "all 0.3s ease",
               whiteSpace: "nowrap",
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLElement;
-              el.style.color = "#fff";
-              el.style.borderColor = "rgba(255,255,255,0.6)";
+              el.style.background = "var(--black)"; el.style.color = "#fff"; el.style.borderColor = "var(--black)";
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget as HTMLElement;
-              el.style.color = "rgba(255,255,255,0.4)";
-              el.style.borderColor = "rgba(255,255,255,0.2)";
+              el.style.background = "transparent"; el.style.color = "var(--midnight-grey)"; el.style.borderColor = "rgba(0,0,0,0.2)";
             }}
           >
             View Full Gallery
           </Link>
         </div>
-
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 3,
-            paddingBottom: 3,
-          }}
+          style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 3, paddingBottom: 3 }}
+          className="btv-gallery-grid"
         >
           {galleryPreview.map((item, i) => (
-            <div
-              key={i}
-              style={{ position: "relative", aspectRatio: "3/4", overflow: "hidden" }}
-            >
+            <div key={i} style={{ position: "relative", aspectRatio: "3/4", overflow: "hidden" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={item.src}
                 alt={item.caption}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                  transition: "transform 0.7s ease",
-                }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.7s ease" }}
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.transform = "scale(1.04)")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.transform = "scale(1)")}
               />
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  padding: "40px 20px 20px",
-                  background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%)",
-                }}
-              >
-                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.7)" }}>
-                  {item.caption}
-                </p>
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "40px 20px 20px", background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%)" }}>
+                <p className="eyebrow" style={{ color: "rgba(255,255,255,0.8)" }}>{item.caption}</p>
               </div>
             </div>
           ))}
         </div>
-      </section>
-
-      {/* SERVICES / BRIDAL PACKAGES */}
-      <section
-        style={{
-          padding: "120px clamp(24px,5vw,100px)",
-          background: "var(--pale)",
-          overflowX: "hidden", /* ← prevents horizontal bleed on mobile */
-        }}
-        aria-label="Bridal Makeup Services"
-      >
-        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-          <div style={{ marginBottom: 80 }}>
-            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 12 }}>
-              03 — Bridal Packages
-            </p>
-            <h2 className="headline-lg" style={{ color: "var(--black)" }}>
-              Choose your path<br />
-              <em>to radiance.</em>
-            </h2>
-          </div>
-
-          {/* Cards grid — 3 col desktop, 1 col mobile */}
-          <div className="btv-packages-grid">
-            {services.map((service, i) => (
-              <div
-                key={service.number}
-                style={{
-                  background: i === 1 ? "var(--black)" : "var(--white)",
-                  padding: "52px 40px",
-                  position: "relative",
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: 80,
-                    fontWeight: 300,
-                    color: i === 1 ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.05)",
-                    position: "absolute",
-                    top: 20,
-                    right: 24,
-                    lineHeight: 1,
-                    userSelect: "none",
-                  }}
-                >
-                  {service.number}
-                </p>
-                <p
-                  className="eyebrow"
-                  style={{
-                    color: i === 1 ? "var(--vogue-red)" : "var(--light-grey)",
-                    marginBottom: 20,
-                  }}
-                >
-                  {service.number}
-                </p>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "clamp(22px, 2.5vw, 36px)",
-                    fontWeight: 400,
-                    color: i === 1 ? "var(--white)" : "var(--black)",
-                    marginBottom: 20,
-                    lineHeight: 1.15,
-                  }}
-                >
-                  {service.title}
-                </h3>
-                <p
-                  className="body-sm"
-                  style={{
-                    color: i === 1 ? "rgba(255,255,255,0.5)" : "var(--midnight-grey)",
-                    marginBottom: 36,
-                  }}
-                >
-                  {service.description}
-                </p>
-                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
-                  {service.features.map((f) => (
-                    <li
-                      key={f}
-                      style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: 12,
-                        fontWeight: 300,
-                        color: i === 1 ? "rgba(255,255,255,0.45)" : "var(--midnight-grey)",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 12,
-                      }}
-                    >
-                      <span
-                        style={{
-                          width: 4,
-                          height: 4,
-                          borderRadius: "50%",
-                          background: i === 1 ? "var(--vogue-red)" : "var(--light-grey)",
-                          display: "inline-block",
-                          flexShrink: 0,
-                        }}
-                      />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/bridal-makeup"
-                  className={i === 1 ? "btn-primary" : "btn-outline"}
-                  style={{
-                    marginTop: 40,
-                    display: "inline-flex",
-                    padding: "12px 28px",
-                    fontSize: 10,
-                  }}
-                >
-                  <span>Learn More</span>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Responsive grid rule — keeps cards in 3 cols on desktop, stacks on mobile */}
         <style>{`
-          .btv-packages-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-          }
           @media (max-width: 768px) {
-            .btv-packages-grid {
-              grid-template-columns: 1fr;
-              gap: 2px;
-            }
+            .btv-gallery-grid { grid-template-columns: repeat(2,1fr) !important; }
           }
         `}</style>
       </section>
 
-      {/* FINAL CTA */}
+      {/* ── OUR PROMISE ── */}
       <section
-        style={{
-          background: "var(--black)",
-          padding: "160px clamp(24px,5vw,100px)",
-          textAlign: "center",
-        }}
+        style={{ padding: "140px clamp(24px,5vw,100px)", background: "var(--white)" }}
+        aria-label="Our Promise"
+      >
+        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "center" }}
+            className="btv-promise-grid"
+          >
+            <div>
+              <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 20 }}>04 — Our Promise</p>
+              <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 40 }}>
+                Our Promise<br /><em>To You.</em>
+              </h2>
+              <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 40 }}>
+                From the moment you book us, you gain more than coordinators — you gain peace of mind.
+              </p>
+              <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 16, marginBottom: 48 }}>
+                {promiseItems.map((p) => (
+                  <li key={p} style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--vogue-red)", flexShrink: 0, display: "inline-block" }} />
+                    <span className="body-lg" style={{ color: "var(--midnight-grey)" }}>{p}</span>
+                  </li>
+                ))}
+              </ul>
+              <p
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(18px, 2vw, 28px)",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  color: "var(--black)",
+                  lineHeight: 1.4,
+                }}
+              >
+                Because luxury isn&apos;t just how things look.<br />
+                It&apos;s how you feel.
+              </p>
+            </div>
+            {/* Right: black card */}
+            <div
+              style={{
+                background: "var(--black)",
+                padding: "64px 52px",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                aria-hidden
+                style={{
+                  position: "absolute",
+                  top: -40,
+                  right: -40,
+                  width: 220,
+                  height: 220,
+                  borderRadius: "50%",
+                  background: "radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%)",
+                  pointerEvents: "none",
+                }}
+              />
+              <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 32 }}>You deserve to feel taken care of.</p>
+              <p
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(28px, 3.5vw, 52px)",
+                  fontWeight: 300,
+                  color: "var(--white)",
+                  lineHeight: 1.15,
+                  letterSpacing: "-0.01em",
+                  marginBottom: 40,
+                }}
+              >
+                We&apos;re not just vendors.<br />
+                <em>We become<br />your people.</em>
+              </p>
+              <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 48 }}>
+                Your support system. Your problem solvers. Your behind-the-scenes protectors. So you can be fully present on the most important day of your life.
+              </p>
+              <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
+                <span>Book Your Consultation</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <style>{`
+          @media (max-width: 768px) {
+            .btv-promise-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+          }
+        `}</style>
+      </section>
+
+      {/* ── SERVICES QUICK VIEW ── */}
+      <section
+        style={{ background: "var(--pale)", padding: "120px clamp(24px,5vw,100px)", overflowX: "hidden" }}
+        aria-label="Services"
+      >
+        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}
+            className="btv-services-quick-grid"
+          >
+            <div>
+              <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>05 — Services</p>
+              <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 32 }}>
+                Everything you<br /><em>need for your day.</em>
+              </h2>
+              <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
+                Whether you need someone to run the day or curate the entire experience, we step in so you can simply show up and enjoy being the bride.
+              </p>
+              <Link href="/services" className="btn-primary" style={{ display: "inline-flex" }}>
+                <span>View All Packages</span>
+              </Link>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              {servicesList.map((s, i) => (
+                <Link
+                  key={s.name}
+                  href={s.href}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "24px 32px",
+                    background: i % 2 === 0 ? "var(--white)" : "var(--black)",
+                    borderBottom: "1px solid rgba(0,0,0,0.06)",
+                    textDecoration: "none",
+                    transition: "opacity 0.25s ease",
+                    gap: 16,
+                  }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.75")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
+                >
+                  <span
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "clamp(16px, 1.5vw, 22px)",
+                      fontWeight: 400,
+                      color: i % 2 === 0 ? "var(--black)" : "var(--white)",
+                    }}
+                  >
+                    {s.name}
+                  </span>
+                  <span style={{ color: i % 2 === 0 ? "var(--black)" : "var(--white)", fontSize: 18, flexShrink: 0 }}>→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+        <style>{`
+          @media (max-width: 768px) {
+            .btv-services-quick-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+          }
+        `}</style>
+      </section>
+
+      {/* ── FINAL CTA ── */}
+      <section
+        style={{ background: "var(--black)", padding: "160px clamp(24px,5vw,100px)", textAlign: "center" }}
         aria-label="Call to Action"
       >
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <p className="eyebrow" style={{ color: "rgba(255,255,255,0.25)", marginBottom: 32 }}>
-            Begin Here
-          </p>
+          <p className="eyebrow" style={{ color: "rgba(255,255,255,0.25)", marginBottom: 32 }}>Begin Here</p>
           <h2
             className="headline-xl"
             style={{ color: "var(--white)", marginBottom: 32 }}
           >
-            Your wedding deserves
-            <br />
-            <em>flawless beauty.</em>
+            Ready to enjoy your wedding<br />
+            <em>instead of managing it?</em>
           </h2>
           <p
             className="body-lg"
-            style={{
-              color: "rgba(255,255,255,0.45)",
-              maxWidth: 480,
-              margin: "0 auto 60px",
-            }}
+            style={{ color: "rgba(255,255,255,0.45)", maxWidth: 520, margin: "0 auto 60px" }}
           >
-            Every great look starts with a conversation.
-            Let us begin yours.
+            Let us handle the logistics, timelines, and details while you live fully in the moment.
           </p>
           <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
-            <span>Book a Consultation</span>
+            <span>Book Your Consultation</span>
             <span style={{ fontSize: 18 }}>→</span>
           </Link>
         </div>

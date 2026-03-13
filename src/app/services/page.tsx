@@ -1,266 +1,373 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Timeline from "@/components/Timeline";
-import StyleQuiz from "@/components/StyleQuiz";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
-    title: "Services — The Bespoke Journey",
-    description:
-        "Full Wedding Planning, Design Direction, and International Destination services. Every engagement is bespoke, every detail intentional.",
+    title: "Services + Packages | Beyond the Vow",
+    description: "Luxury wedding coordination packages from Beyond the Vow. Day-Of Coordination from $1,800, Month-Of from $3,000, and Full Planning + Design from $6,000. Built-in beauty support and content creation included.",
 };
 
-const services = [
+const packages = [
     {
-        id: "full-planning",
-        number: "01",
-        title: "Full Planning & Design",
-        tagline: "The Complete Vision",
-        description:
-            "Our most comprehensive offering. We partner with you from the very first concept to the final farewell — managing every detail, every vendor, every logistical variable so that you never have to.",
-        scope: [
-            "12–18 month engagement",
-            "Comprehensive budget architecture",
-            "Global vendor curation & negotiation",
-            "Full design concept & art direction",
-            "Guest experience design",
-            "On-site team (full wedding weekend)",
-            "Post-wedding follow-up & settlements",
-            "Digital guest hub access",
+        badge: "💍",
+        tier: "The Signature",
+        subtitle: "Day-Of Coordination",
+        tagline: "For the couple who planned everything but wants a flawless execution.",
+        price: "Starting at $1,800 – $2,500",
+        accent: false,
+        features: [
+            "Final timeline creation",
+            "Vendor confirmations",
+            "Wedding day management",
+            "Bridal party organization",
+            "Setup supervision",
+            "Decor oversight",
+            "Emergency kit access",
+            "Built-in makeup touch-ups",
+            "Wedding day content capture",
+            "2–3 coordinators on site",
         ],
-        starting: "From $75,000",
-        availability: "Limited to 6 weddings per year",
-        bg: "#0A0A0A",
+        highlight: "You planned it. We perfect it.",
+        cta: "Inquire About This Package",
     },
     {
-        id: "design",
-        number: "02",
-        title: "Design Direction",
-        tagline: "The Aesthetic Vision",
-        description:
-            "You have a planner. You need a visionary. We step in as your creative director — concepting your wedding's entire aesthetic language with precision and intentionality.",
-        scope: [
-            "Full aesthetic concept development",
-            "Visual direction presentation",
-            "Detailed design specification documents",
-            "Vendor art direction briefs",
-            "Stationery & collateral direction",
-            "Day-of visual oversight",
+        badge: "💐",
+        tier: "The Luxe",
+        subtitle: "Month-Of Coordination",
+        tagline: "For the couple who wants guidance + hands-on support leading up to the big day.",
+        price: "Starting at $3,000 – $4,500",
+        accent: true,
+        features: [
+            "Everything in The Signature, PLUS:",
+            "4–6 weeks of planning support",
+            "Vendor communication & management",
+            "Layout + decor planning assistance",
+            "Final walkthrough",
+            "Design + styling guidance",
+            "Rehearsal coordination",
+            "Expanded content creation",
+            "Full coordination team",
         ],
-        starting: "From $35,000",
-        availability: "12 engagements per year",
-        bg: "#111111",
+        highlight: "Luxury support. Zero stress. Total confidence.",
+        cta: "Inquire About This Package",
     },
     {
-        id: "destination",
-        number: "03",
-        title: "Destination & International",
-        tagline: "The Global Vision",
-        description:
-            "We are native to complexity. Whether Capri or Cartagena — we navigate foreign venues, cultures, logistics, and languages so your wedding feels effortlessly local.",
-        scope: [
-            "Multi-country coordination",
-            "Local vendor partnerships (12+ countries)",
-            "Guest travel & hotel block management",
-            "Cultural ceremony integration",
-            "Legal requirements & documentation",
-            "Emergency contingency protocols",
+        badge: "👑",
+        tier: "The Beyond Experience",
+        subtitle: "Full Planning + Design",
+        tagline: "Our signature white-glove, all-inclusive experience.",
+        price: "Custom pricing from $6,000+",
+        accent: false,
+        features: [
+            "Full planning from start to finish",
+            "Vendor sourcing & booking assistance",
+            "Budget management",
+            "Design + decor styling",
+            "Timeline creation",
+            "Venue walkthroughs",
+            "Complete wedding day production team",
+            "Content creation coverage",
+            "Bridal makeup included",
+            "Touch-up support",
+            "Unlimited communication",
+            "Wedding Day Content Creation",
         ],
-        starting: "From $95,000",
-        availability: "8 destination engagements per year",
-        bg: "#0D0D0D",
+        highlight: "This is the 'show up and glow' package.",
+        cta: "Book a Custom Consultation",
     },
+];
+
+const addOns = [
+    { name: "Bridal Makeup Services", desc: "Professional bridal glam by our co-founder." },
+    { name: "Content Creation Only", desc: "Behind-the-scenes coverage & same-day Reels/TikToks." },
+    { name: "Destination Weddings", desc: "White-glove coordination anywhere in the world." },
+    { name: "Bridal Shower / Engagement Coordination", desc: "Full coordination for pre-wedding celebrations." },
+    { name: "Extra Assistants", desc: "Additional team members for larger events." },
+    { name: "Extended Hours", desc: "Coverage beyond your standard event window." },
 ];
 
 export default function ServicesPage() {
     return (
-        <div style={{ paddingTop: 100 }}>
-            {/* Header */}
+        <div>
+            <PageHeader
+                eyebrow="Services + Pricing"
+                title={<>Our Services</>}
+                subtitle="Luxury coordination, intentional design, and unmatched peace of mind. Whether you need someone to run the day or curate the entire experience, we step in so you can simply show up and enjoy being the bride."
+            />
+
+            {/* PACKAGES */}
             <section
                 style={{
-                    padding: "80px clamp(24px,5vw,100px) 100px",
+                    padding: "100px clamp(24px,5vw,100px)",
+                    background: "var(--pale)",
+                    overflowX: "hidden",
+                }}
+            >
+                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+                    <div className="btv-packages-3col">
+                        {packages.map((pkg) => (
+                            <div
+                                key={pkg.tier}
+                                style={{
+                                    background: pkg.accent ? "var(--black)" : "var(--white)",
+                                    padding: "56px 44px",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    position: "relative",
+                                    overflow: "hidden",
+                                }}
+                            >
+                                {/* Glow for accent card */}
+                                {pkg.accent && (
+                                    <div
+                                        aria-hidden
+                                        style={{
+                                            position: "absolute",
+                                            top: -60,
+                                            right: -60,
+                                            width: 240,
+                                            height: 240,
+                                            borderRadius: "50%",
+                                            background: "radial-gradient(circle, rgba(201,169,110,0.18) 0%, transparent 70%)",
+                                            pointerEvents: "none",
+                                        }}
+                                    />
+                                )}
+
+                                <div style={{ marginBottom: 32 }}>
+                                    <span style={{ fontSize: 32, display: "block", marginBottom: 20 }}>{pkg.badge}</span>
+                                    <p
+                                        className="eyebrow"
+                                        style={{
+                                            color: pkg.accent ? "var(--vogue-red)" : "var(--light-grey)",
+                                            marginBottom: 8,
+                                        }}
+                                    >
+                                        {pkg.subtitle}
+                                    </p>
+                                    <h2
+                                        style={{
+                                            fontFamily: "var(--font-display)",
+                                            fontSize: "clamp(26px, 3vw, 40px)",
+                                            fontWeight: 400,
+                                            color: pkg.accent ? "var(--white)" : "var(--black)",
+                                            lineHeight: 1.1,
+                                            marginBottom: 16,
+                                        }}
+                                    >
+                                        {pkg.tier}
+                                    </h2>
+                                    <p
+                                        className="body-sm"
+                                        style={{
+                                            color: pkg.accent ? "rgba(255,255,255,0.5)" : "var(--midnight-grey)",
+                                            marginBottom: 20,
+                                            lineHeight: 1.7,
+                                        }}
+                                    >
+                                        {pkg.tagline}
+                                    </p>
+                                    <p
+                                        style={{
+                                            fontFamily: "var(--font-display)",
+                                            fontSize: "clamp(18px, 1.8vw, 26px)",
+                                            fontWeight: 400,
+                                            color: pkg.accent ? "rgba(201,169,110,0.9)" : "var(--black)",
+                                        }}
+                                    >
+                                        {pkg.price}
+                                    </p>
+                                </div>
+
+                                {/* Divider */}
+                                <div
+                                    style={{
+                                        height: 1,
+                                        background: pkg.accent ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.08)",
+                                        marginBottom: 32,
+                                    }}
+                                />
+
+                                {/* Features */}
+                                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12, flexGrow: 1 }}>
+                                    {pkg.features.map((f) => (
+                                        <li
+                                            key={f}
+                                            style={{
+                                                display: "flex",
+                                                alignItems: "flex-start",
+                                                gap: 12,
+                                                fontFamily: "var(--font-body)",
+                                                fontSize: 13,
+                                                fontWeight: 300,
+                                                color: pkg.accent ? "rgba(255,255,255,0.6)" : "var(--midnight-grey)",
+                                                lineHeight: 1.5,
+                                            }}
+                                        >
+                                            <span
+                                                style={{
+                                                    width: 5,
+                                                    height: 5,
+                                                    borderRadius: "50%",
+                                                    background: pkg.accent ? "var(--vogue-red)" : "var(--light-grey)",
+                                                    display: "inline-block",
+                                                    flexShrink: 0,
+                                                    marginTop: 6,
+                                                }}
+                                            />
+                                            {f}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                {/* Highlight */}
+                                <p
+                                    style={{
+                                        fontFamily: "var(--font-display)",
+                                        fontSize: 16,
+                                        fontStyle: "italic",
+                                        color: pkg.accent ? "rgba(255,255,255,0.4)" : "var(--light-grey)",
+                                        margin: "32px 0",
+                                        lineHeight: 1.4,
+                                    }}
+                                >
+                                    ✨ {pkg.highlight}
+                                </p>
+
+                                <Link
+                                    href="/consultation"
+                                    className={pkg.accent ? "btn-primary" : "btn-outline"}
+                                    style={{ display: "inline-flex", fontSize: 10 }}
+                                >
+                                    <span>{pkg.cta}</span>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <style>{`
+                    .btv-packages-3col {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 2px;
+                    }
+                    @media (max-width: 900px) {
+                        .btv-packages-3col { grid-template-columns: 1fr !important; }
+                    }
+                `}</style>
+            </section>
+
+            {/* ADD-ONS */}
+            <section
+                style={{
+                    padding: "100px clamp(24px,5vw,100px)",
                     background: "var(--white)",
                 }}
             >
                 <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end" }}>
-                        <div>
-                            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>
-                                02 — Services
-                            </p>
-                            <h1 className="headline-xl" style={{ color: "var(--black)" }}>
-                                The Bespoke<br />
-                                <em>Journey.</em>
-                            </h1>
-                        </div>
-                        <div>
-                            <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 32 }}>
-                                We offer three distinct paths — each designed to meet you exactly where your vision
-                                lives. Every engagement is fully bespoke. Every detail, intentional.
-                            </p>
-                            <Link href="/inquiry" className="btn-primary">
-                                <span>Begin Your Inquiry</span>
-                            </Link>
-                        </div>
+                    <div style={{ marginBottom: 64 }}>
+                        <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 16 }}>Customize Your Experience</p>
+                        <h2
+                            style={{
+                                fontFamily: "var(--font-display)",
+                                fontSize: "clamp(32px, 4vw, 64px)",
+                                fontWeight: 300,
+                                color: "var(--black)",
+                                letterSpacing: "-0.02em",
+                                lineHeight: 1.05,
+                            }}
+                        >
+                            ✨ Add-Ons
+                        </h2>
                     </div>
-                </div>
-            </section>
 
-            {/* Services */}
-            {services.map((service, i) => (
-                <section
-                    key={service.id}
-                    id={service.id}
-                    style={{
-                        padding: "100px clamp(24px,5vw,100px)",
-                        background: i % 2 === 0 ? "var(--black)" : "var(--pale)",
-                        color: i % 2 === 0 ? "var(--white)" : "var(--black)",
-                    }}
-                >
-                    <div
-                        style={{
-                            maxWidth: 1440,
-                            margin: "0 auto",
-                            display: "grid",
-                            gridTemplateColumns: "1fr 1.5fr",
-                            gap: 100,
-                            alignItems: "center",
-                        }}
-                    >
-                        <div>
-                            <p
-                                className="eyebrow"
+                    <div className="btv-addons-grid">
+                        {addOns.map((a, i) => (
+                            <div
+                                key={a.name}
                                 style={{
-                                    color: i % 2 === 0 ? "var(--vogue-red)" : "var(--light-grey)",
-                                    marginBottom: 16,
+                                    padding: "36px 32px",
+                                    background: i % 2 === 0 ? "var(--pale)" : "var(--white)",
+                                    borderTop: "1px solid rgba(0,0,0,0.07)",
                                 }}
                             >
-                                {service.number} — {service.tagline}
-                            </p>
-                            <h2
-                                style={{
-                                    fontFamily: "var(--font-display)",
-                                    fontSize: "clamp(36px, 4vw, 64px)",
-                                    fontWeight: 300,
-                                    color: i % 2 === 0 ? "var(--white)" : "var(--black)",
-                                    lineHeight: 1.05,
-                                    marginBottom: 24,
-                                }}
-                            >
-                                {service.title}
-                            </h2>
-                            <p
-                                className="body-lg"
-                                style={{
-                                    color: i % 2 === 0 ? "rgba(255,255,255,0.5)" : "var(--midnight-grey)",
-                                    marginBottom: 40,
-                                }}
-                            >
-                                {service.description}
-                            </p>
-                            <div style={{ marginBottom: 40 }}>
-                                <p
+                                <h3
                                     style={{
                                         fontFamily: "var(--font-display)",
-                                        fontSize: "clamp(24px, 2.5vw, 40px)",
-                                        fontWeight: 300,
-                                        color: i % 2 === 0 ? "var(--white)" : "var(--black)",
-                                        marginBottom: 4,
+                                        fontSize: "clamp(18px, 2vw, 26px)",
+                                        fontWeight: 400,
+                                        color: "var(--black)",
+                                        marginBottom: 10,
                                     }}
                                 >
-                                    {service.starting}
-                                </p>
-                                <p
-                                    className="eyebrow"
-                                    style={{ color: i % 2 === 0 ? "rgba(255,255,255,0.25)" : "var(--light-grey)" }}
-                                >
-                                    {service.availability}
-                                </p>
+                                    {a.name}
+                                </h3>
+                                <p className="body-sm" style={{ color: "var(--midnight-grey)" }}>{a.desc}</p>
                             </div>
-                            <Link
-                                href="/inquiry"
-                                className={i % 2 === 0 ? "btn-primary" : "btn-outline"}
-                            >
-                                <span>Inquire About This</span>
-                            </Link>
-                        </div>
-                        <div>
-                            <p
-                                className="eyebrow"
-                                style={{
-                                    color: i % 2 === 0 ? "rgba(255,255,255,0.25)" : "var(--light-grey)",
-                                    marginBottom: 28,
-                                }}
-                            >
-                                What&apos;s Included
-                            </p>
-                            <ul
-                                style={{
-                                    listStyle: "none",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    gap: 0,
-                                }}
-                            >
-                                {service.scope.map((item, si) => (
-                                    <li
-                                        key={item}
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            gap: 20,
-                                            padding: "18px 0",
-                                            borderBottom: `1px solid ${i % 2 === 0 ? "rgba(255,255,255,0.07)" : "rgba(0,0,0,0.08)"}`,
-                                        }}
-                                    >
-                                        <span
-                                            style={{
-                                                fontFamily: "var(--font-display)",
-                                                fontSize: 11,
-                                                color: i % 2 === 0 ? "rgba(255,255,255,0.15)" : "var(--light-grey)",
-                                                minWidth: 28,
-                                            }}
-                                        >
-                                            {String(si + 1).padStart(2, "0")}
-                                        </span>
-                                        <span
-                                            style={{
-                                                fontFamily: "var(--font-body)",
-                                                fontSize: 14,
-                                                fontWeight: 300,
-                                                color: i % 2 === 0 ? "rgba(255,255,255,0.65)" : "var(--midnight-grey)",
-                                            }}
-                                        >
-                                            {item}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        ))}
                     </div>
-                </section>
-            ))}
+                </div>
+                <style>{`
+                    .btv-addons-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 2px;
+                    }
+                    @media (max-width: 768px) {
+                        .btv-addons-grid { grid-template-columns: 1fr !important; }
+                    }
+                `}</style>
+            </section>
 
-            {/* Timeline */}
-            <Timeline />
+            {/* NOTE */}
+            <section
+                style={{
+                    padding: "80px clamp(24px,5vw,100px)",
+                    background: "var(--pale)",
+                    textAlign: "center",
+                }}
+            >
+                <div style={{ maxWidth: 640, margin: "0 auto" }}>
+                    <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 16 }}>
+                        Not sure which package is right for you?
+                    </p>
+                    <p className="body-sm" style={{ color: "var(--light-grey)", marginBottom: 48 }}>
+                        Every wedding is different. Book a free consultation and we&apos;ll guide you to the perfect package for your day, your vision, and your budget.
+                    </p>
+                    <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
+                        <span>Book a Free Consultation</span>
+                        <span style={{ fontSize: 18 }}>→</span>
+                    </Link>
+                </div>
+            </section>
 
             {/* CTA */}
             <section
                 style={{
+                    background: "var(--black)",
                     padding: "120px clamp(24px,5vw,100px)",
-                    background: "var(--white)",
                     textAlign: "center",
                 }}
             >
                 <div style={{ maxWidth: 700, margin: "0 auto" }}>
-                    <h2 className="headline-lg" style={{ color: "var(--black)", marginBottom: 24 }}>
-                        Not sure which path is right?
+                    <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 32 }}>Ready?</p>
+                    <h2
+                        style={{
+                            fontFamily: "var(--font-display)",
+                            fontSize: "clamp(36px, 5vw, 76px)",
+                            fontWeight: 300,
+                            color: "var(--white)",
+                            lineHeight: 1.05,
+                            letterSpacing: "-0.02em",
+                            marginBottom: 48,
+                        }}
+                    >
+                        Ready to enjoy your wedding<br />
+                        <em>instead of managing it?</em>
                     </h2>
-                    <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
-                        Every inquiry begins with a consultation, not a commitment.
-                        Let&apos;s talk about your vision first.
-                    </p>
-                    <Link href="/inquiry" className="btn-primary" style={{ display: "inline-flex" }}>
-                        <span>Schedule a Discovery Call</span>
+                    <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
+                        <span>Book Your Consultation</span>
+                        <span style={{ fontSize: 18 }}>→</span>
                     </Link>
                 </div>
             </section>
