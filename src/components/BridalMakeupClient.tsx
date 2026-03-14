@@ -7,7 +7,7 @@ import PageHeader from "@/components/PageHeader";
 const makeupServices = [
     {
         name: "Full Bridal Glam",
-        desc: "Your complete wedding day look — from skin prep to the final lash. Customized to your vision, your skin tone, and the vibe of your day.",
+        desc: "Your complete wedding day look, from skin prep to the final lash. Customized to your vision, your skin tone, and the vibe of your day.",
         includes: [
             "In-depth pre-wedding consultation",
             "Skin prep + primer application",
@@ -16,6 +16,7 @@ const makeupServices = [
             "Contour, highlight, blush",
             "Long-wear lip",
             "Setting spray for all-day wear",
+            "Customize touch up kit",
         ],
     },
     {
@@ -31,7 +32,7 @@ const makeupServices = [
     },
     {
         name: "Bridesmaids & Bridal Party",
-        desc: "Cohesive, glowing looks for your entire squad. We coordinate the aesthetic so everyone looks stunning — together.",
+        desc: "Cohesive, glowing looks for your entire squad. We coordinate the aesthetic so everyone looks stunning together.",
         includes: [
             "Group pricing available",
             "Coordinated color palette",
@@ -42,7 +43,7 @@ const makeupServices = [
     },
     {
         name: "Airbrush Finish",
-        desc: "Ultra-smooth, camera-ready perfection. Airbrush makeup is our most requested upgrade — and once you feel it, you'll understand why.",
+        desc: "Ultra-smooth, camera-ready perfection. Airbrush makeup is our most requested upgrade, and once you feel it, you'll understand why.",
         includes: [
             "HD airbrush foundation",
             "Buildable, weightless coverage",
@@ -68,7 +69,7 @@ export default function BridalMakeupClient() {
             <PageHeader
                 eyebrow="Bridal Beauty"
                 title={<>Where artistry<br /><em>meets your skin.</em></>}
-                subtitle="Professional bridal makeup by Maryleen — 10+ years of experience with brides, celebrities, and television productions. Every look is crafted for you, by you."
+                subtitle="Professional bridal makeup by Maryleen. Over 10 years of experience with brides, celebrities, and television productions. Every look is crafted for you, by you."
             />
 
             {/* ARTIST BIO */}
@@ -128,16 +129,16 @@ export default function BridalMakeupClient() {
                             >
                                 Maryleen
                                 <br />
-                                <em style={{ fontSize: "0.65em", color: "var(--light-grey)" }}>Founder · Lead Bridal Artist</em>
+                                <em style={{ fontSize: "0.65em", color: "var(--light-grey)" }}>Founder &middot; Bridal Makeup Artist</em>
                             </h2>
                             <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
-                                With over 10 years in the wedding industry, Maryleen has worked with hundreds of brides, celebrity clients, and television productions — building a reputation for making every person feel like the most beautiful version of themselves.
+                                With over 10 years in the wedding industry, Maryleen has worked with hundreds of brides, celebrity clients, and television productions, building a reputation for making every person feel like the most beautiful version of themselves.
                             </p>
                             <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
                                 Her artistry isn&apos;t about a look you saw on Pinterest. It&apos;s about <em>you</em> — your skin, your features, and the feeling you want to carry into one of the most photographed moments of your life.
                             </p>
                             <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
-                                What makes her truly rare? She&apos;s also your coordinator. Which means beauty runs through every part of your day — not just the morning.
+                                What makes her truly rare? She&apos;s also your coordinator. This means beauty runs through every part of your day, not just the morning.
                             </p>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
                                 <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
@@ -381,7 +382,7 @@ export default function BridalMakeupClient() {
                                 Beauty is built<br /><em>into everything we do.</em>
                             </h2>
                             <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 24 }}>
-                                Even if you don&apos;t book a full beauty package, our makeup expertise never leaves the room. Every coordination package includes built-in beauty support — touch-ups, lash fixes, shine control, and emergency prep — because looking perfect is part of the day we&apos;re managing.
+                                Even if you don&apos;t book a full beauty package, our makeup expertise never leaves the room. Every coordination package includes built-in beauty support: touch-ups, lash fixes, shine control, and emergency prep, because looking perfect is part of the day we&apos;re managing.
                             </p>
                             <p className="body-lg" style={{ color: "var(--midnight-grey)", marginBottom: 48 }}>
                                 Most coordinators can&apos;t say that. We can.
