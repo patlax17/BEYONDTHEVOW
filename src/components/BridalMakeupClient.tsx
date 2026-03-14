@@ -375,8 +375,8 @@ export default function BridalMakeupClient() {
                         className="btv-beauty-vids"
                     >
                         {[
-                            { src: "/beauty-videos/beauty-07.mp4" }, /* IMG_4029 */
                             { src: "/beauty-videos/beauty-03.mp4" }, /* IMG_4183 */
+                            { src: "/beauty-videos/beauty-07.mp4" }, /* IMG_4029 */
                             { src: "/beauty-videos/beauty-14.mp4" }, /* IMG_4184 */
                         ].map((v, i) => (
                             <div key={i} style={{ overflow: "hidden", aspectRatio: "9/16" }}>
