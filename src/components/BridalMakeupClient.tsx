@@ -323,7 +323,6 @@ export default function BridalMakeupClient() {
                         columnGap: 6,
                     }} className="btv-makeup-gallery">
                         {[
-                            { src: "/makeup/makeup-01.png", alt: "Bridal glam look" },
                             { src: "/makeup/makeup-02.png", alt: "Bridal makeup close up" },
                             { src: "/makeup/makeup-03.jpg", alt: "Wedding day makeup" },
                             { src: "/makeup/makeup-04.png", alt: "Bridal beauty" },
