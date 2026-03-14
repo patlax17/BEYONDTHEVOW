@@ -294,116 +294,6 @@ export default function BridalMakeupClient() {
                 `}</style>
             </section>
 
-            {/* VIDEO CAROUSEL */}
-            <section style={{ background: "var(--black)", padding: "100px clamp(24px,5vw,100px)" }}>
-                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-                    <div style={{ marginBottom: 56, textAlign: "center" }}>
-                        <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 16 }}>Behind the Magic</p>
-                        <h2 style={{
-                            fontFamily: "var(--font-display)",
-                            fontSize: "clamp(32px, 4.5vw, 68px)",
-                            fontWeight: 300,
-                            color: "var(--white)",
-                            letterSpacing: "-0.02em",
-                            lineHeight: 1.05,
-                        }}>
-                            Moments in<br /><em>motion.</em>
-                        </h2>
-                    </div>
-
-                    {/* Carousel wrapper */}
-                    <div className="btv-vid-carousel" style={{ position: "relative", maxWidth: 780, margin: "0 auto" }}>
-                        {[
-                            "/beauty-videos/beauty-07.mp4",
-                            "/beauty-videos/beauty-08.mp4",
-                            "/beauty-videos/beauty-10.mp4",
-                            "/beauty-videos/beauty-12.mp4",
-                            "/beauty-videos/beauty-05.mp4",
-                            "/beauty-videos/beauty-04.mp4",
-                        ].map((src, i) => (
-                            <div
-                                key={i}
-                                className={`btv-vid-slide btv-vid-slide-${i}`}
-                                style={{
-                                    display: i === 0 ? "block" : "none",
-                                    aspectRatio: "9/16",
-                                    maxHeight: 680,
-                                    overflow: "hidden",
-                                    background: "#000",
-                                    boxShadow: "0 0 0 1px rgba(201,169,110,0.2), 0 40px 80px rgba(0,0,0,0.6)",
-                                }}
-                            >
-                                <video
-                                    autoPlay={i === 0}
-                                    muted
-                                    loop
-                                    playsInline
-                                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                                >
-                                    <source src={src} type="video/mp4" />
-                                </video>
-                            </div>
-                        ))}
-
-                        {/* Prev / Next controls */}
-                        <button
-                            id="btv-vid-prev"
-                            aria-label="Previous video"
-                            onClick={() => {
-                                const slides = document.querySelectorAll(".btv-vid-slide");
-                                let active = 0;
-                                slides.forEach((s, i) => { if ((s as HTMLElement).style.display !== "none") active = i; });
-                                const prev = (active - 1 + slides.length) % slides.length;
-                                slides.forEach((s, i) => {
-                                    (s as HTMLElement).style.display = i === prev ? "block" : "none";
-                                    const vid = s.querySelector("video") as HTMLVideoElement;
-                                    if (i === prev) { vid?.play(); } else { vid?.pause(); }
-                                });
-                                document.querySelectorAll(".btv-vid-dot").forEach((d, i) => {
-                                    (d as HTMLElement).style.opacity = i === prev ? "1" : "0.3";
-                                });
-                            }}
-                            style={{ position: "absolute", left: -52, top: "50%", transform: "translateY(-50%)", background: "none", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", width: 40, height: 40, cursor: "pointer", fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center" }}
-                        >‹</button>
-                        <button
-                            id="btv-vid-next"
-                            aria-label="Next video"
-                            onClick={() => {
-                                const slides = document.querySelectorAll(".btv-vid-slide");
-                                let active = 0;
-                                slides.forEach((s, i) => { if ((s as HTMLElement).style.display !== "none") active = i; });
-                                const next = (active + 1) % slides.length;
-                                slides.forEach((s, i) => {
-                                    (s as HTMLElement).style.display = i === next ? "block" : "none";
-                                    const vid = s.querySelector("video") as HTMLVideoElement;
-                                    if (i === next) { vid?.play(); } else { vid?.pause(); }
-                                });
-                                document.querySelectorAll(".btv-vid-dot").forEach((d, i) => {
-                                    (d as HTMLElement).style.opacity = i === next ? "1" : "0.3";
-                                });
-                            }}
-                            style={{ position: "absolute", right: -52, top: "50%", transform: "translateY(-50%)", background: "none", border: "1px solid rgba(255,255,255,0.2)", color: "#fff", width: 40, height: 40, cursor: "pointer", fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center" }}
-                        >›</button>
-
-                        {/* Dot indicators */}
-                        <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 24 }}>
-                            {[0,1,2,3,4,5].map(i => (
-                                <span
-                                    key={i}
-                                    className="btv-vid-dot"
-                                    style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--vogue-red)", opacity: i === 0 ? 1 : 0.3, display: "inline-block", transition: "opacity 0.3s" }}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <style>{`
-                    @media (max-width: 640px) {
-                        #btv-vid-prev, #btv-vid-next { display: none !important; }
-                    }
-                `}</style>
-            </section>
-
             {/* MAKEUP PHOTO GALLERY */}
 
             <section style={{ background: "var(--white)", padding: "100px clamp(24px,5vw,100px)" }}>
@@ -477,6 +367,38 @@ export default function BridalMakeupClient() {
                 `}</style>
             </section>
 
+            {/* BEAUTY VIDEOS — 3 chosen clips */}
+            <section style={{ background: "var(--black)", padding: "80px clamp(24px,5vw,100px)" }}>
+                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+                    <div
+                        style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 4 }}
+                        className="btv-beauty-vids"
+                    >
+                        {[
+                            { src: "/beauty-videos/beauty-07.mp4" }, /* IMG_4029 */
+                            { src: "/beauty-videos/beauty-03.mp4" }, /* IMG_4183 */
+                            { src: "/beauty-videos/beauty-14.mp4" }, /* IMG_4184 */
+                        ].map((v, i) => (
+                            <div key={i} style={{ overflow: "hidden", aspectRatio: "9/16" }}>
+                                <video
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                                >
+                                    <source src={v.src} type="video/mp4" />
+                                </video>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <style>{`
+                    @media (max-width: 640px) {
+                        .btv-beauty-vids { grid-template-columns: 1fr !important; }
+                    }
+                `}</style>
+            </section>
 
             <section style={{ padding: "100px clamp(24px,5vw,100px)", background: "var(--pale)", overflowX: "hidden" }}>
                 <div style={{ maxWidth: 1440, margin: "0 auto" }}>
