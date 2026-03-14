@@ -46,7 +46,7 @@ const whyUs = [
 
 const galleryPreview = [
   { src: "/portfolio-01.jpg", caption: "Cultural Wedding" },
-  { src: "/portfolio-02.jpg", caption: "Garden Romance" },
+  { src: "/portfolio-02.jpg", caption: "The First Look" },
   { src: "/portfolio-03.jpg", caption: "Bridal Beauty" },
   { src: "/portfolio-04.jpg", caption: "Bridal Party" },
 ];
