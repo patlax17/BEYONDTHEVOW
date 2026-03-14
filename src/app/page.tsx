@@ -45,10 +45,10 @@ const whyUs = [
 ];
 
 const galleryPreview = [
-  { src: "/wedding-01.jpg", caption: "Getting Ready" },
-  { src: "/wedding-02.jpg", caption: "First Look" },
-  { src: "/wedding-03.jpg", caption: "Bridal Party" },
-  { src: "/wedding-04.jpg", caption: "The Details" },
+  { src: "/portfolio-01.jpg", caption: "Cultural Wedding" },
+  { src: "/portfolio-02.jpg", caption: "Garden Romance" },
+  { src: "/portfolio-03.jpg", caption: "Bridal Beauty" },
+  { src: "/portfolio-04.jpg", caption: "Bridal Party" },
 ];
 
 const promiseItems = [
