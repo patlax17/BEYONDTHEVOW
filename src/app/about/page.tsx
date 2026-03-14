@@ -137,7 +137,7 @@ export default function AboutPage() {
                         <div
                             style={{
                                 position: "relative",
-                                minHeight: 600,
+                                minHeight: 700,
                                 overflow: "hidden",
                             }}
                         >
@@ -145,7 +145,7 @@ export default function AboutPage() {
                                 src="/maryleen-profile.png"
                                 alt="Maryleen, Founder of Beyond the Vow"
                                 fill
-                                style={{ objectFit: "cover", objectPosition: "center top" }}
+                                style={{ objectFit: "cover", objectPosition: "center center" }}
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 priority
                             />
