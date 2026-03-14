@@ -145,7 +145,7 @@ export default function AboutPage() {
                                 src="/maryleen-profile.png"
                                 alt="Maryleen, Founder of Beyond the Vow"
                                 fill
-                                style={{ objectFit: "cover", objectPosition: "25% top" }}
+                                style={{ objectFit: "cover", objectPosition: "center top" }}
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 priority
                             />
