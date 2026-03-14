@@ -294,7 +294,81 @@ export default function BridalMakeupClient() {
                 `}</style>
             </section>
 
-            {/* SERVICES */}
+            {/* MAKEUP PHOTO GALLERY */}
+            <section style={{ background: "var(--white)", padding: "100px clamp(24px,5vw,100px)" }}>
+                <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+                    {/* Header */}
+                    <div style={{ marginBottom: 64, display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 24 }}>
+                        <div>
+                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 16 }}>The Portfolio</p>
+                            <h2 style={{
+                                fontFamily: "var(--font-display)",
+                                fontSize: "clamp(32px, 4.5vw, 68px)",
+                                fontWeight: 300,
+                                color: "var(--black)",
+                                letterSpacing: "-0.02em",
+                                lineHeight: 1.05,
+                            }}>
+                                Faces we&apos;ve had<br /><em>the honour to transform.</em>
+                            </h2>
+                        </div>
+                        <p className="body-sm" style={{ color: "var(--light-grey)", maxWidth: 300, textAlign: "right" }}>
+                            Every look is a collaboration. Every bride, a canvas. Scroll to see the work.
+                        </p>
+                    </div>
+
+                    {/* 3-column masonry grid */}
+                    <div style={{
+                        columns: "3 280px",
+                        columnGap: 6,
+                    }} className="btv-makeup-gallery">
+                        {[
+                            { src: "/makeup/makeup-01.png", alt: "Bridal glam look" },
+                            { src: "/makeup/makeup-02.png", alt: "Bridal makeup close up" },
+                            { src: "/makeup/makeup-03.jpg", alt: "Wedding day makeup" },
+                            { src: "/makeup/makeup-04.png", alt: "Bridal beauty" },
+                            { src: "/makeup/makeup-05.png", alt: "Makeup artistry" },
+                            { src: "/makeup/makeup-06.png", alt: "Bridal look" },
+                            { src: "/makeup/makeup-07.png", alt: "Glam makeup" },
+                            { src: "/makeup/makeup-08.png", alt: "Bridal glam" },
+                            { src: "/makeup/makeup-09.jpg", alt: "Wedding beauty" },
+                            { src: "/makeup/makeup-10.png", alt: "Bridal makeup" },
+                            { src: "/makeup/makeup-11.png", alt: "Makeup artistry" },
+                            { src: "/makeup/makeup-12.png", alt: "Bridal glam look" },
+                            { src: "/makeup/makeup-13.png", alt: "Bridal beauty" },
+                            { src: "/makeup/makeup-14.jpg", alt: "Wedding day look" },
+                            { src: "/makeup/makeup-15.jpg", alt: "Bridal makeup" },
+                            { src: "/makeup/makeup-16.jpg", alt: "Bridal glam" },
+                            { src: "/makeup/makeup-17.jpg", alt: "Bridal beauty transformation" },
+                        ].map((item, i) => (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <div key={i} style={{ breakInside: "avoid", marginBottom: 6, overflow: "hidden" }}>
+                                <img
+                                    src={item.src}
+                                    alt={item.alt}
+                                    style={{
+                                        width: "100%",
+                                        display: "block",
+                                        transition: "transform 0.5s ease",
+                                    }}
+                                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.transform = "scale(1.03)")}
+                                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.transform = "scale(1)")}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <style>{`
+                    @media (max-width: 768px) {
+                        .btv-makeup-gallery { columns: 2 !important; }
+                    }
+                    @media (max-width: 480px) {
+                        .btv-makeup-gallery { columns: 1 !important; }
+                    }
+                `}</style>
+            </section>
+
+
             <section style={{ padding: "100px clamp(24px,5vw,100px)", background: "var(--pale)", overflowX: "hidden" }}>
                 <div style={{ maxWidth: 1440, margin: "0 auto" }}>
                     <div style={{ marginBottom: 64 }}>
