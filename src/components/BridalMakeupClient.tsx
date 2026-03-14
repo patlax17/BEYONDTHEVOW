@@ -337,7 +337,6 @@ export default function BridalMakeupClient() {
                             { src: "/makeup/makeup-13.png", alt: "Bridal beauty" },
                             { src: "/makeup/makeup-14.jpg", alt: "Wedding day look" },
                             { src: "/makeup/makeup-15.jpg", alt: "Bridal makeup" },
-                            { src: "/makeup/makeup-16.jpg", alt: "Bridal glam" },
                             { src: "/makeup/makeup-17.jpg", alt: "Bridal beauty transformation" },
                         ].map((item, i) => (
                             // eslint-disable-next-line @next/next/no-img-element
