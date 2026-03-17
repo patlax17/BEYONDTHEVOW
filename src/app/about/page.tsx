@@ -298,11 +298,8 @@ export default function AboutPage() {
                         We&apos;re not just vendors.<br />
                         <em>We become your people.</em>
                     </h2>
-                    <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 24, maxWidth: 560, margin: "0 auto 24px" }}>
-                        Your support system. Your problem solvers. Your behind-the-scenes protectors.
-                    </p>
-                    <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 60, maxWidth: 560, margin: "0 auto 60px" }}>
-                        So you can be fully present on the most important day of your life.
+                    <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 560, margin: "0 auto 60px" }}>
+                        Your support system. Your problem solvers. Your behind-the-scenes protectors — so you can be fully present on the most important day of your life.
                     </p>
                     <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
                         <span>Book Your Consultation</span>
