@@ -5,34 +5,33 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Beyond The Vow | Bridal Makeup & Beauty Atelier",
-    template: "%s | Beyond The Vow",
+    default: "Beyond the Vow",
+    template: "%s | Beyond the Vow",
   },
   description:
-    "Beyond The Vow is a luxury bridal makeup studio crafting flawless, personalised looks for every bride. Expert artistry across all skin tones — from soft glam to bold editorial.",
+    "Wedding Coordination & Bridal Experience",
   keywords: [
+    "wedding coordination",
+    "bridal experience",
+    "wedding planner",
     "bridal makeup artist",
     "wedding makeup",
     "bridal beauty",
-    "airbrush makeup",
-    "wedding day glam",
-    "bridesmaids makeup",
+    "wedding day coordination",
     "Beyond The Vow",
-    "bridal makeup trial",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://beyondthevow.com",
-    siteName: "Beyond The Vow",
-    title: "Beyond The Vow | Bridal Makeup & Beauty Atelier",
-    description:
-      "Flawless bridal artistry for every complexion. Expert wedding makeup that reveals your most radiant self.",
+    siteName: "Beyond the Vow",
+    title: "Beyond the Vow",
+    description: "Wedding Coordination & Bridal Experience",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Beyond The Vow | Bridal Makeup & Beauty Atelier",
-    description: "Flawless bridal artistry for every complexion.",
+    title: "Beyond the Vow",
+    description: "Wedding Coordination & Bridal Experience",
   },
   robots: {
     index: true,
