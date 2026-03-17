@@ -204,7 +204,7 @@ export default function AboutPage() {
                         className="btv-founder-grid"
                     >
                         {/* Bio — reversed */}
-                        <div style={{ padding: "64px 56px", background: "var(--black)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                        <div className="natalie-bio" style={{ padding: "64px 56px", background: "var(--black)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                             <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 12 }}>Founder</p>
                             <h3
                                 style={{
@@ -234,6 +234,7 @@ export default function AboutPage() {
                         </div>
                         {/* Natalie — real profile photo */}
                         <div
+                            className="natalie-photo"
                             style={{
                                 position: "relative",
                                 minHeight: 700,
@@ -267,6 +268,8 @@ export default function AboutPage() {
                 <style>{`
                     @media (max-width: 768px) {
                         .btv-founder-grid { grid-template-columns: 1fr !important; }
+                        .natalie-photo { order: -1; }
+                        .natalie-bio { order: 1; }
                     }
                 `}</style>
             </section>
