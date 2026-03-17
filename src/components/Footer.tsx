@@ -36,40 +36,6 @@ export default function Footer() {
             }}
         >
             <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-                {/* Top row */}
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr auto",
-                        gap: 60,
-                        marginBottom: 80,
-                        alignItems: "start",
-                    }}
-                >
-                    <div>
-                        <h2
-                            style={{
-                                fontFamily: "var(--font-display)",
-                                fontSize: "clamp(36px, 5vw, 72px)",
-                                fontWeight: 300,
-                                lineHeight: 0.95,
-                                letterSpacing: "-0.02em",
-                                marginBottom: 24,
-                                color: "var(--white)",
-                            }}
-                        >
-                            Every bride deserves<br />
-                            <em>to feel taken care of.</em>
-                        </h2>
-                        <p className="body-sm" style={{ color: "var(--light-grey)", maxWidth: 420 }}>
-                            From the initial preparations to the final dance, we provide the calm, the detail, and the behind-the-scenes magic that makes your day effortless.
-                        </p>
-                    </div>
-                    <Link href="/consultation" className="btn-primary" style={{ whiteSpace: "nowrap" }}>
-                        <span>Book a Consultation</span>
-                    </Link>
-                </div>
-
                 {/* Divider */}
                 <div className="divider" style={{ opacity: 0.15, marginBottom: 60 }} />
 

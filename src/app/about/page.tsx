@@ -292,14 +292,31 @@ export default function AboutPage() {
                             color: "var(--white)",
                             lineHeight: 1.0,
                             letterSpacing: "-0.02em",
-                            marginBottom: 48,
+                            marginBottom: 32,
                         }}
                     >
                         We&apos;re not just vendors.<br />
                         <em>We become your people.</em>
                     </h2>
-                    <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 560, margin: "0 auto 60px" }}>
+                    <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 560, margin: "0 auto 48px" }}>
                         Your support system. Your problem solvers. Your behind-the-scenes protectors — so you can be fully present on the most important day of your life.
+                    </p>
+                    <h3
+                        style={{
+                            fontFamily: "var(--font-display)",
+                            fontSize: "clamp(28px, 3.5vw, 56px)",
+                            fontWeight: 300,
+                            color: "var(--white)",
+                            lineHeight: 1.05,
+                            letterSpacing: "-0.02em",
+                            marginBottom: 24,
+                        }}
+                    >
+                        Every bride deserves<br />
+                        <em>to feel taken care of.</em>
+                    </h3>
+                    <p className="body-lg" style={{ color: "rgba(255,255,255,0.5)", maxWidth: 560, margin: "0 auto 60px" }}>
+                        From the initial preparations to the final dance, we provide the calm, the detail, and the behind-the-scenes magic that makes your day effortless.
                     </p>
                     <Link href="/consultation" className="btn-primary" style={{ display: "inline-flex" }}>
                         <span>Book Your Consultation</span>
