@@ -199,19 +199,19 @@ export default function AboutPage() {
                             display: "grid",
                             gridTemplateColumns: "1fr 1fr",
                             gap: 2,
-                            background: "var(--pale)",
+                            background: "var(--black)",
                         }}
                         className="btv-founder-grid"
                     >
                         {/* Bio — reversed */}
-                        <div style={{ padding: "64px 56px", background: "var(--white)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 12 }}>Co-Founder</p>
+                        <div style={{ padding: "64px 56px", background: "var(--black)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                            <p className="eyebrow" style={{ color: "var(--vogue-red)", marginBottom: 12 }}>Founder</p>
                             <h3
                                 style={{
                                     fontFamily: "var(--font-display)",
                                     fontSize: "clamp(32px, 4vw, 56px)",
                                     fontWeight: 300,
-                                    color: "var(--black)",
+                                    color: "var(--white)",
                                     letterSpacing: "-0.01em",
                                     marginBottom: 8,
                                     lineHeight: 1.1,
@@ -219,47 +219,48 @@ export default function AboutPage() {
                             >
                                 Natalie
                             </h3>
-                            <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 40, letterSpacing: "0.2em" }}>
-                                Chevalier · Planning &amp; Design Specialist
+                            <p className="eyebrow" style={{ color: "rgba(255,255,255,0.3)", marginBottom: 40, letterSpacing: "0.2em" }}>
+                                Assistant Coordinator
                             </p>
-                            <p className="body-sm" style={{ color: "var(--midnight-grey)", marginBottom: 20, lineHeight: 1.9 }}>
-                                With years of experience in event planning and decoration, Natalie is the design brain behind the magic.
+                            <p className="body-lg" style={{ color: "rgba(255,255,255,0.6)", marginBottom: 24, fontStyle: "italic" }}>
+                                &ldquo;I believe the best weddings feel effortless, because every detail has been thoughtfully planned.&rdquo;
                             </p>
-                            <p className="body-sm" style={{ color: "var(--midnight-grey)", marginBottom: 20, lineHeight: 1.9 }}>
-                                From layouts to florals to the smallest styling details, she has an eye for creating spaces that feel intentional, elevated, and unforgettable.
+                            <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 20, lineHeight: 1.9 }}>
+                                With a background supporting C-suite executives, Natalie brings a high level of organization, precision, and calm leadership to every celebration. She specializes in managing timelines, coordinating vendors, and ensuring every moving part comes together seamlessly.
                             </p>
-                            <p className="body-sm" style={{ color: "var(--midnight-grey)", marginBottom: 32, lineHeight: 1.9 }}>
-                                She&apos;s the reason nothing looks misplaced, every table feels curated, and every setup feels luxurious. While Maryleen handles beauty + flow, Natalie ensures the entire aesthetic vision comes to life flawlessly. <em>Together, they&apos;re the perfect balance of glam and logistics.</em>
+                            <p className="body-sm" style={{ color: "rgba(255,255,255,0.5)", marginBottom: 20, lineHeight: 1.9 }}>
+                                Beyond the Vow allows Natalie to combine her operational expertise with her eye for design, helping couples experience a wedding day that feels smooth, intentional, and truly unforgettable.
                             </p>
                         </div>
-                        {/* Photo placeholder */}
+                        {/* Natalie — real profile photo */}
                         <div
                             style={{
-                                background: "linear-gradient(135deg, #f5f0eb 0%, #ede8e3 100%)",
-                                minHeight: 600,
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
+                                position: "relative",
+                                minHeight: 700,
+                                overflow: "hidden",
                             }}
                         >
-                            <div style={{ textAlign: "center", padding: 40 }}>
-                                <div
-                                    style={{
-                                        width: 120,
-                                        height: 120,
-                                        borderRadius: "50%",
-                                        background: "rgba(0,0,0,0.06)",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        margin: "0 auto 24px",
-                                        fontSize: 48,
-                                    }}
-                                >
-                                    🎀
-                                </div>
-                                <p className="eyebrow" style={{ color: "rgba(0,0,0,0.25)" }}>Photo Coming Soon</p>
-                            </div>
+                            <Image
+                                src="/natalie-profile.jpg"
+                                alt="Natalie, Founder & Assistant Coordinator of Beyond the Vow"
+                                fill
+                                style={{ objectFit: "cover", objectPosition: "center top" }}
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                quality={100}
+                                unoptimized
+                            />
+                            {/* Gradient overlay */}
+                            <div
+                                aria-hidden
+                                style={{
+                                    position: "absolute",
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    height: "35%",
+                                    background: "linear-gradient(to top, rgba(0,0,0,0.55), transparent)",
+                                }}
+                            />
                         </div>
                     </div>
                 </div>
