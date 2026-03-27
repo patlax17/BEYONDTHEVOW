@@ -96,6 +96,7 @@ export default function ConsultationPage() {
                         gridTemplateColumns: "repeat(3, 1fr)",
                         gap: 40,
                     }}
+                    className="btv-consult-steps"
                 >
                     {[
                         {
@@ -167,9 +168,10 @@ export default function ConsultationPage() {
                         gap: 100,
                         alignItems: "start",
                     }}
+                    className="btv-consult-layout"
                 >
                     {/* Sidebar info */}
-                    <div style={{ position: "sticky", top: 120 }}>
+                    <div style={{ position: "sticky", top: 120 }} className="btv-consult-sidebar">
                         <p className="eyebrow" style={{ color: "var(--light-grey)", marginBottom: 20 }}>
                             Consultation
                         </p>
@@ -260,7 +262,7 @@ export default function ConsultationPage() {
                     ) : (
                         <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 48 }}>
                             {/* Name & Email */}
-                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }} className="btv-form-2col">
                                 <div>
                                     <label
                                         htmlFor="name"
@@ -324,7 +326,7 @@ export default function ConsultationPage() {
                             </div>
 
                             {/* Phone & Date */}
-                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }} className="btv-form-2col">
                                 <div>
                                     <label
                                         htmlFor="phone"
@@ -386,7 +388,7 @@ export default function ConsultationPage() {
                             </div>
 
                             {/* Location & Service */}
-                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }}>
+                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40 }} className="btv-form-2col">
                                 <div>
                                     <label
                                         htmlFor="location"
@@ -580,6 +582,26 @@ export default function ConsultationPage() {
                     )}
                 </div>
             </section>
+
+            <style>{`
+                @media (max-width: 768px) {
+                    .btv-consult-layout {
+                        grid-template-columns: 1fr !important;
+                        gap: 48px !important;
+                    }
+                    .btv-consult-sidebar {
+                        position: static !important;
+                    }
+                    .btv-consult-steps {
+                        grid-template-columns: 1fr !important;
+                        gap: 32px !important;
+                    }
+                    .btv-form-2col {
+                        grid-template-columns: 1fr !important;
+                        gap: 32px !important;
+                    }
+                }
+            `}</style>
         </div>
     );
 }
