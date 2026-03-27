@@ -106,12 +106,18 @@ export default function Navigation() {
                         </a>
                     </div>
 
-                    {/* CENTER: Logo — absolutely centred on desktop, static on mobile */}
+                    {/* CENTER: Logo — absolutely centred on all screens */}
                     <Link
                         href="/"
                         aria-label="Beyond the Vow – home"
                         className="btv-brand-link"
-                        style={{ textDecoration: "none", display: "flex", alignItems: "center" }}
+                        style={{ textDecoration: "none", display: "flex", alignItems: "center", WebkitTapHighlightColor: "transparent" }}
+                        onClick={(e) => {
+                            if (isHeroPage) {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                            }
+                        }}
                     >
                         <Image
                             src="/btv-logo.png"
@@ -346,24 +352,19 @@ export default function Navigation() {
             </div>
 
             <style>{`
+        .btv-brand-link {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 10;
+          -webkit-tap-highlight-color: transparent;
+        }
         @media (max-width: 900px) {
           .btv-desktop-nav { display: none !important; }
           .btv-mobile-nav { display: flex !important; }
-          /* On mobile: brand stays in normal flow between left/right slots */
-          .btv-brand-link {
-            flex: 1;
-            justify-content: center;
-          }
         }
         @media (min-width: 901px) {
           .btv-mobile-nav { display: none !important; }
-          /* On desktop: brand is absolutely centred in the nav bar */
-          .btv-brand-link {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            pointer-events: auto;
-          }
         }
       `}</style>
         </>
