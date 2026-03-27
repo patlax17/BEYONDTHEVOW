@@ -22,18 +22,6 @@ const InstagramIcon = () => (
     </svg>
 );
 
-const FacebookIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-    </svg>
-);
-
-const TikTokIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.78a4.85 4.85 0 0 1-1.01-.09z" />
-    </svg>
-);
-
 export default function Navigation() {
     const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
@@ -106,7 +94,7 @@ export default function Navigation() {
                         }}
                     >
                         <a
-                            href="https://www.instagram.com/beyondthevow_beauty/"
+                            href="https://www.instagram.com/beyond.thevow/"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Instagram"
@@ -115,28 +103,6 @@ export default function Navigation() {
                             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
                         >
                             <InstagramIcon />
-                        </a>
-                        <a
-                            href="https://www.facebook.com/beyondthevow"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Facebook"
-                            style={{ color: "inherit", display: "flex", alignItems: "center", transition: "opacity 0.25s ease", textDecoration: "none" }}
-                            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.55")}
-                            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
-                        >
-                            <FacebookIcon />
-                        </a>
-                        <a
-                            href="https://www.tiktok.com/@beyondthevow"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="TikTok"
-                            style={{ color: "inherit", display: "flex", alignItems: "center", transition: "opacity 0.25s ease", textDecoration: "none" }}
-                            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.55")}
-                            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
-                        >
-                            <TikTokIcon />
                         </a>
                     </div>
 
@@ -328,22 +294,15 @@ export default function Navigation() {
             >
                 {/* Mobile social icons */}
                 <div style={{ display: "flex", gap: 24, marginBottom: 8 }}>
-                    {[
-                        { href: "https://www.instagram.com/beyondthevow_beauty/", label: "Instagram", Icon: InstagramIcon },
-                        { href: "https://www.facebook.com/beyondthevow", label: "Facebook", Icon: FacebookIcon },
-                        { href: "https://www.tiktok.com/@beyondthevow", label: "TikTok", Icon: TikTokIcon },
-                    ].map(({ href, label, Icon }) => (
-                        <a
-                            key={label}
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={label}
-                            style={{ color: "rgba(255,255,255,0.45)", display: "flex" }}
-                        >
-                            <Icon />
-                        </a>
-                    ))}
+                    <a
+                        href="https://www.instagram.com/beyond.thevow/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        style={{ color: "rgba(255,255,255,0.45)", display: "flex" }}
+                    >
+                        <InstagramIcon />
+                    </a>
                 </div>
 
                 {navLinks.map((link, i) => (
