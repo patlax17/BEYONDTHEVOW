@@ -3,9 +3,20 @@ import Link from "next/link";
 import Timeline from "@/components/Timeline";
 
 export const metadata: Metadata = {
-    title: "The Experience — Our Process",
-    description:
-        "An intimate look at the Beyond The Vow process — from discovery call to final farewell. Over 500 hours, meticulously orchestrated.",
+    title: "The Experience — Our Process | Beyond the Vow",
+    description: "An intimate look at the Beyond The Vow process — from discovery call to final farewell. Over 500 hours, meticulously orchestrated.",
+    openGraph: {
+        title: "The Experience — Beyond the Vow",
+        description: "An intimate look at our process — from discovery call to final farewell. Over 500 hours, meticulously orchestrated.",
+        url: "https://beyondthevow.vercel.app/experience",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Beyond the Vow — The Experience" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "The Experience — Beyond the Vow",
+        description: "Over 500 hours of meticulous wedding coordination, from discovery to final farewell.",
+        images: ["/og-image.png"],
+    },
 };
 
 export default function ExperiencePage() {

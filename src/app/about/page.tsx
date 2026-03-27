@@ -5,7 +5,19 @@ import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
     title: "About / Meet the Team | Beyond the Vow",
-    description: "Meet Maryleen and Natalie, the co-founders of Beyond the Vow—a professional bridal makeup artist and event design specialist who together curate the ultimate wedding day experience.",
+    description: "Meet Maryleen and Natalie, the co-founders of Beyond the Vow — a professional bridal makeup artist and event design specialist who together curate the ultimate wedding day experience.",
+    openGraph: {
+        title: "Meet the Team — Beyond the Vow",
+        description: "Meet Maryleen and Natalie, the co-founders of Beyond the Vow — a professional bridal makeup artist and event design specialist who together curate the ultimate wedding day experience.",
+        url: "https://beyondthevow.vercel.app/about",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Beyond the Vow — Meet the Team" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Meet the Team — Beyond the Vow",
+        description: "Meet Maryleen and Natalie, the co-founders of Beyond the Vow.",
+        images: ["/og-image.png"],
+    },
 };
 
 export default function AboutPage() {

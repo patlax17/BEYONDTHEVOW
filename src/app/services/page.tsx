@@ -5,6 +5,18 @@ import PageHeader from "@/components/PageHeader";
 export const metadata: Metadata = {
     title: "Services + Packages | Beyond the Vow",
     description: "Luxury wedding coordination packages from Beyond the Vow. Day-Of Coordination from $800, Month-Of Coordination from $1,500, and All-Inclusive Management from $3,000. Built-in beauty support and content creation included.",
+    openGraph: {
+        title: "Services + Packages — Beyond the Vow",
+        description: "Luxury wedding coordination packages starting from $800. Day-Of, Month-Of, and All-Inclusive Management options with built-in bridal beauty.",
+        url: "https://beyondthevow.vercel.app/services",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Beyond the Vow — Services & Packages" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Services + Packages — Beyond the Vow",
+        description: "Luxury wedding coordination packages starting from $800.",
+        images: ["/og-image.png"],
+    },
 };
 
 const packages = [

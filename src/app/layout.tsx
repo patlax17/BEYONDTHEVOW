@@ -4,12 +4,13 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://beyondthevow.vercel.app"),
   title: {
     default: "Beyond the Vow",
     template: "%s | Beyond the Vow",
   },
   description:
-    "Wedding Coordination & Bridal Experience",
+    "Luxury wedding coordination and bridal experience. Beyond the Vow manages every detail so you can remain fully present on your wedding day.",
   keywords: [
     "wedding coordination",
     "bridal experience",
@@ -22,28 +23,31 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: "/favicon.png",
+    shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://beyondthevow.com",
+    url: "https://beyondthevow.vercel.app",
     siteName: "Beyond the Vow",
-    title: "Beyond the Vow",
-    description: "Wedding Coordination & Bridal Experience",
+    title: "Beyond the Vow — Wedding Coordination & Bridal Experience",
+    description:
+      "Luxury wedding coordination and bridal experience. Beyond the Vow manages every detail so you can remain fully present on your wedding day.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Beyond the Vow",
+        alt: "Beyond the Vow — Wedding Coordination & Bridal Experience",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Beyond the Vow",
-    description: "Wedding Coordination & Bridal Experience",
+    title: "Beyond the Vow — Wedding Coordination & Bridal Experience",
+    description:
+      "Luxury wedding coordination and bridal experience. Beyond the Vow manages every detail so you can remain fully present on your wedding day.",
     images: ["/og-image.png"],
   },
   robots: {

@@ -2,9 +2,20 @@ import type { Metadata } from "next";
 import InquiryForm from "@/components/InquiryForm";
 
 export const metadata: Metadata = {
-    title: "Begin Your Story — Inquiry",
-    description:
-        "Start your journey with Beyond The Vow. Our multi-step inquiry process ensures we understand your vision before our first conversation.",
+    title: "Begin Your Story — Inquiry | Beyond the Vow",
+    description: "Start your journey with Beyond The Vow. Our multi-step inquiry process ensures we understand your vision before our first conversation.",
+    openGraph: {
+        title: "Begin Your Story — Beyond the Vow",
+        description: "Start your wedding journey with Beyond The Vow. Inquire today and receive a personalised response within 48 hours.",
+        url: "https://beyondthevow.vercel.app/inquiry",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Beyond the Vow — Begin Your Story" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Begin Your Story — Beyond the Vow",
+        description: "Start your wedding journey with Beyond The Vow. Personalised response within 48 hours.",
+        images: ["/og-image.png"],
+    },
 };
 
 const faqSchema = {
