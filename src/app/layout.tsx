@@ -62,7 +62,7 @@ const localBusinessSchema = {
   name: "Beyond The Vow",
   description:
     "Luxury bridal makeup studio crafting flawless, personalised looks for every bride.",
-  url: "https://beyondthevow.com",
+  url: "https://beyondthevow.co",
   priceRange: "$$$",
   hasOfferCatalog: {
     "@type": "OfferCatalog",

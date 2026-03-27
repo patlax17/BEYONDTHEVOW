@@ -215,7 +215,7 @@ export default function ConsultationPage() {
                                     Or email us directly
                                 </p>
                                 <a
-                                    href="mailto:hello@beyondthevow.com"
+                                    href="mailto:info@beyondthevow.co"
                                     style={{
                                         fontFamily: "var(--font-body)",
                                         fontSize: 14,
@@ -226,7 +226,7 @@ export default function ConsultationPage() {
                                         paddingBottom: 2,
                                     }}
                                 >
-                                    hello@beyondthevow.com
+                                    info@beyondthevow.co
                                 </a>
                             </div>
                         </div>

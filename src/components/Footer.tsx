@@ -21,7 +21,7 @@ const footerLinks = {
     ],
     Connect: [
         { label: "Inquire Now", href: "/consultation" },
-        { label: "Email Us", href: "mailto:hello@beyondthevow.com" },
+        { label: "Email Us", href: "mailto:info@beyondthevow.co" },
         { label: "Instagram", href: "https://www.instagram.com/beyond.thevow/", target: "_blank" },
     ],
 };
