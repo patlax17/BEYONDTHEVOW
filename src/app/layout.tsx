@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "wedding day coordination",
     "Beyond The Vow",
   ],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -27,11 +31,20 @@ export const metadata: Metadata = {
     siteName: "Beyond the Vow",
     title: "Beyond the Vow",
     description: "Wedding Coordination & Bridal Experience",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Beyond the Vow",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Beyond the Vow",
     description: "Wedding Coordination & Bridal Experience",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

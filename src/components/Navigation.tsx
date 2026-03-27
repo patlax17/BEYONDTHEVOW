@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -139,47 +140,30 @@ export default function Navigation() {
                         </a>
                     </div>
 
-                    {/* CENTER: Brand name — absolutely centred on desktop, static on mobile */}
+                    {/* CENTER: Logo — absolutely centred on desktop, static on mobile */}
                     <Link
                         href="/"
-                        style={{
-                            textDecoration: "none",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            gap: 3,
-                            /* On desktop the brand is absolutely centred in the bar */
-                        }}
+                        aria-label="Beyond the Vow – home"
                         className="btv-brand-link"
+                        style={{ textDecoration: "none", display: "flex", alignItems: "center" }}
                     >
-                        <span
+                        <Image
+                            src="/btv-logo.png"
+                            alt="Beyond the Vow"
+                            width={500}
+                            height={500}
+                            priority
                             style={{
-                                fontFamily: "var(--font-display)",
-                                fontSize: "clamp(16px, 2vw, 26px)",
-                                fontWeight: 300,
-                                letterSpacing: "0.06em",
-                                color: textColor,
-                                lineHeight: 1,
-                                transition: "color 0.45s ease",
-                                whiteSpace: "nowrap",
+                                height: 56,
+                                width: "auto",
+                                objectFit: "contain",
+                                transition: "filter 0.45s ease",
+                                /* On dark/transparent hero, boost visibility with a soft drop-shadow */
+                                filter: isTransparent
+                                    ? "drop-shadow(0 1px 6px rgba(0,0,0,0.55))"
+                                    : "none",
                             }}
-                        >
-                            Beyond the Vow
-                        </span>
-                        <span
-                            style={{
-                                fontFamily: "var(--font-body)",
-                                fontSize: 7,
-                                fontWeight: 400,
-                                letterSpacing: "0.28em",
-                                textTransform: "uppercase",
-                                color: subtitleColor,
-                                transition: "color 0.45s ease",
-                                whiteSpace: "nowrap",
-                            }}
-                        >
-                            Wedding Coordination &amp; Bridal Experience
-                        </span>
+                        />
                     </Link>
 
                     {/* RIGHT: Book CTA (desktop) + Hamburger (mobile) — always flex-end */}

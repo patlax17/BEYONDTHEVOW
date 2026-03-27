@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
     Studio: [
@@ -36,6 +37,25 @@ export default function Footer() {
             }}
         >
             <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+                {/* Logo */}
+                <div style={{ display: "flex", justifyContent: "center", marginBottom: 40 }}>
+                    <Link href="/" aria-label="Beyond the Vow – home">
+                        <Image
+                            src="/btv-logo.png"
+                            alt="Beyond the Vow"
+                            width={500}
+                            height={500}
+                            style={{
+                                height: 110,
+                                width: "auto",
+                                objectFit: "contain",
+                                /* Invert to white so the gold mark reads on the dark footer */
+                                filter: "brightness(0) invert(1) opacity(0.85)",
+                            }}
+                        />
+                    </Link>
+                </div>
+
                 {/* Divider */}
                 <div className="divider" style={{ opacity: 0.15, marginBottom: 60 }} />
 
