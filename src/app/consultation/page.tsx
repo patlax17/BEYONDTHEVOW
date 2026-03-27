@@ -24,6 +24,8 @@ export default function ConsultationPage() {
         howDidYouHear: "",
     });
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
     const [focused, setFocused] = useState<string | null>(null);
 
     const handleChange = (
@@ -32,10 +34,26 @@ export default function ConsultationPage() {
         setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // TODO: connect to form backend (e.g. Formspree, Resend, or email API)
-        setSubmitted(true);
+        setLoading(true);
+        setError("");
+        try {
+            const res = await fetch("https://formspree.io/f/xkopoweq", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify(formState),
+            });
+            if (res.ok) {
+                setSubmitted(true);
+            } else {
+                setError("Something went wrong. Please try again or email us directly.");
+            }
+        } catch {
+            setError("Network error. Please check your connection and try again.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     const inputStyle = (name: string) => ({
@@ -537,15 +555,22 @@ export default function ConsultationPage() {
                                 />
                             </div>
 
+                            {error && (
+                                <p style={{ color: "#c0392b", fontFamily: "var(--font-body)", fontSize: 13, marginBottom: 8 }}>
+                                    {error}
+                                </p>
+                            )}
+
                             {/* Submit */}
                             <div style={{ display: "flex", alignItems: "center", gap: 24, paddingTop: 16 }}>
                                 <button
                                     type="submit"
                                     className="btn-primary"
-                                    style={{ fontSize: 11 }}
+                                    disabled={loading}
+                                    style={{ fontSize: 11, opacity: loading ? 0.6 : 1 }}
                                 >
-                                    <span>Send Enquiry</span>
-                                    <span style={{ fontSize: 18 }}>→</span>
+                                    <span>{loading ? "Sending…" : "Send Enquiry"}</span>
+                                    {!loading && <span style={{ fontSize: 18 }}>→</span>}
                                 </button>
                                 <p className="body-sm" style={{ color: "var(--light-grey)" }}>
                                     We&apos;ll reply within 48 hours.

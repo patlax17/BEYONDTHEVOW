@@ -44,6 +44,8 @@ const budgetOptions = [
 export default function InquiryForm() {
     const [step, setStep] = useState(1);
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
     const [formData, setFormData] = useState<FormData>({
         firstName: "",
         lastName: "",
@@ -61,9 +63,37 @@ export default function InquiryForm() {
     const update = (field: keyof FormData, value: string) =>
         setFormData((prev) => ({ ...prev, [field]: value }));
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setSubmitted(true);
+        setLoading(true);
+        setError("");
+        try {
+            const res = await fetch("https://formspree.io/f/xkopoweq", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({
+                    name: `${formData.firstName} ${formData.lastName}`,
+                    email: formData.email,
+                    phone: formData.phone,
+                    weddingDate: formData.weddingDate,
+                    location: formData.location,
+                    guestCount: formData.guestCount,
+                    budget: formData.budget,
+                    service: formData.service,
+                    story: formData.story,
+                    hearAboutUs: formData.hearAboutUs,
+                }),
+            });
+            if (res.ok) {
+                setSubmitted(true);
+            } else {
+                setError("Something went wrong. Please try again or email us directly.");
+            }
+        } catch {
+            setError("Network error. Please check your connection and try again.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     if (submitted) {
@@ -456,10 +486,17 @@ export default function InquiryForm() {
                         <span style={{ fontSize: 16 }}>→</span>
                     </button>
                 ) : (
-                    <button type="submit" id="inquiry-submit" className="btn-primary">
-                        <span>Send Your Inquiry</span>
-                        <span style={{ fontSize: 16 }}>→</span>
-                    </button>
+                    <div style={{ marginTop: 24 }}>
+                        {error && (
+                            <p style={{ color: "#e74c3c", fontFamily: "var(--font-body)", fontSize: 13, marginBottom: 16 }}>
+                                {error}
+                            </p>
+                        )}
+                        <button type="submit" id="inquiry-submit" className="btn-primary" disabled={loading} style={{ opacity: loading ? 0.6 : 1 }}>
+                            <span>{loading ? "Sending…" : "Send Your Inquiry"}</span>
+                            {!loading && <span style={{ fontSize: 16 }}>→</span>}
+                        </button>
+                    </div>
                 )}
             </div>
         </form>
