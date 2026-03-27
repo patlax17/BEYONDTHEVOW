@@ -4,7 +4,7 @@ import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
     title: "Services + Packages | Beyond the Vow",
-    description: "Luxury wedding coordination packages from Beyond the Vow. Day-Of Coordination from $1,800, Month-Of from $3,000, and Full Planning + Design from $6,000. Built-in beauty support and content creation included.",
+    description: "Luxury wedding coordination packages from Beyond the Vow. Day-Of Coordination from $800, Month-Of Coordination from $1,500, and All-Inclusive Management from $3,000. Built-in beauty support and content creation included.",
 };
 
 const packages = [
@@ -13,7 +13,7 @@ const packages = [
         tier: "The Signature",
         subtitle: "Day-Of Coordination",
         tagline: "For the couple who planned everything but wants a flawless execution.",
-        price: "From $1,800 to $2,500",
+        price: "From $800 to $1,000",
         accent: false,
         features: [
             "Final timeline creation",
@@ -35,7 +35,7 @@ const packages = [
         tier: "The Luxe",
         subtitle: "Month-Of Coordination",
         tagline: "For the couple who wants guidance + hands-on support leading up to the big day.",
-        price: "From $3,000 to $4,500",
+        price: "From $1,500 to $1,800",
         accent: true,
         features: [
             "Everything in The Signature, PLUS:",
@@ -56,7 +56,7 @@ const packages = [
         tier: "The Beyond Experience",
         subtitle: "Full Planning + Design",
         tagline: "Our premier white-glove experience, providing all-inclusive management from concept to completion.",
-        price: "Custom pricing from $6,000+",
+        price: "From $3,000 to $5,000",
         accent: false,
         features: [
             "Full planning from start to finish",
